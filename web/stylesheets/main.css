@@ -36,6 +36,8 @@
   max-width: 100%;
 }
 */
+div.R{font-size:100px;}
+div.c{clear:left;margin-bottom:1em;text-align:center;}
 p{display:inline;}
 body *{font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'}
 div.mainttl{
