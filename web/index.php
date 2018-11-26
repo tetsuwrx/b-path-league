@@ -23,6 +23,6 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 */
-$app->get('/', 'app/Controllers/HomeController::index')->bind('index');
+$app->get('/', '../app/Controllers/HomeController::index')->bind('index');
 
 $app->run();
