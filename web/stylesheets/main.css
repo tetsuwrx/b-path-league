@@ -65,7 +65,7 @@ div.mains{
 }
 div.mainball{
   text-align:center;
-  padding-top:2vw;
+  padding-top:2vh;
   position:absolute;
   margin-left:2vw;
   margin-top:2vh;
@@ -80,7 +80,7 @@ div.ballNumber{
   background:white;
   border-radius:5vw;
   margin-left:2.5vw;
-  margin-top:2.5vh;
+  margin-top:2.0vh;
   font-weight:bold;
   font-size:0.9em;
 }
