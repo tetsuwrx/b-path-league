@@ -58,7 +58,8 @@ div.mainbase{
 div.mains{
   margin-top:1vh;margin-left:3vw;
   width:calc(100% - 0.6em -1px);
-  border:none;height:10vh;
+  border:none;
+  height:10vh;
   margin-bottom:0.6em;
   border-top-left-radius:0.8em;
   border-bottom-left-radius:0.8em;
@@ -90,7 +91,8 @@ div.main{
   position:absolute;
   width:calc(100%-10vw);
   height:10vh;
-  margin-left:10vw;
+  margin-left:10.5vw;
+  margin-top:2.5vh;
 }
 input.mainsubmit{
   position:relative;
@@ -105,13 +107,10 @@ input.mainsubmit{
 a.mainsubmit{
   position:relative;
   width:calc(80vw);
-  height:10vh;
   background:none;
-  border:none;
   font-size:3vh;
   font-weight:bold;
   text-align:left;
   text-decoration: none;
   color: black;
-  vertical-align: center;
 }
