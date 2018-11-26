@@ -110,3 +110,15 @@ a.mainsubmit{
   font-weight:bold;
   text-align:left;
 }
+div.mainball0{
+  text-align:center;
+  padding-top:2vw;
+  position:absolute;
+  margin-left:2vw;
+  margin-top:2vh;
+  color:black;
+  width:10vw;
+  height:8vw;
+  border-radius:10vw;
+  font-size:0.9em;
+}
