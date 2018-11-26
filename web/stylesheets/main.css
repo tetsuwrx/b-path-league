@@ -67,22 +67,24 @@ div.mainball{
   text-align:center;
   padding-top:2vw;
   position:absolute;
-  margin-left:2vw;
-  margin-top:2vh;
+  margin-left:2.0vw;
+  margin-top:4vw;
   color:black;
-  width:10vw;
-  height:8vw;
-  border-radius:10vw;
+  width:9vw;
+  height:9vw;
+  border-radius:8vw;
+  text-align:center;
+  vertical-align: bottom;
 }
 div.ballNumber{
-  height:5vw;
-  width:5vw;
+  height:3.5vw;
+  width:3.5vw;
   background:white;
-  border-radius:5vw;
-  margin-left:2.5vw;
-  margin-top:2.5vh;
+  border-radius:3vw;
+  margin-left:2.8vw;
+  margin-top:0.8vw;
   font-weight:bold;
-  font-size:0.9em;
+  font-size:1.8em;
 }
 div.main{
   position:absolute;
