@@ -111,4 +111,6 @@ a.mainsubmit{
   font-size:3vh;
   font-weight:bold;
   text-align:left;
+  text-decoration: none;
+  color: black;
 }
