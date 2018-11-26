@@ -17,12 +17,14 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 // Our web handlers
 
-/*
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
 });
-*/
-$app->get('/', '../app/Controllers/HomeController::index')->bind('index');
+
+$app->get('/regist', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('regist.twig');
+});
 
 $app->run();
