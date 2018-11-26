@@ -58,7 +58,6 @@ div.mains{
   border-top-left-radius:0.8em;
   border-bottom-left-radius:0.8em;
 }
-
 div.mainball{
   text-align:center;
   padding-top:2vw;
@@ -71,7 +70,6 @@ div.mainball{
   border-radius:10vw;
   font-size:0.9em;
 }
-
 div.ballNumber{
   height:5vw;
   width:5vw;
@@ -80,4 +78,30 @@ div.ballNumber{
   margin-left:2.5vw;
   margin-top:0.3vh;
   font-weight:bold;
+}
+div.main{
+  position:absolute;
+  width:calc(100%-10vw);
+  height:10vh;
+  margin-left:10vw;
+}
+input.mainsubmit{
+  position:relative;
+  width:calc(80vw);
+  height:10vh;
+  background:none;
+  border:none;
+  font-size:3vh;
+  font-weight:bold;
+  text-align:left;
+}
+a.mainsubmit{
+  position:relative;
+  width:calc(80vw);
+  height:10vh;
+  background:none;
+  border:none;
+  font-size:3vh;
+  font-weight:bold;
+  text-align:left;
 }
