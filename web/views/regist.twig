@@ -1,59 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>メンバー登録</title>
-</head>
-
-<body>
-<form name="entryForm" method="POST" target="_self" action="<?php basename(__FILE__);?>">
-  <input type="hidden" name="ax4" value="<?php echo $n;?>">
-      <div class="a4menu">メンバー登録</div>
-      <div class="a4ttl">
-          <div class="a4main">
-              <!-- No. -->
-              <div class="a4r0">
-                <input class="a4No" type="text" name="a4hidden" value="<?php if($_POST['a4No']<>Null){echo $_POST['a4No'];}else{echo "No";};?>" disabled="disabled">
-                <input type="hidden" name="a4No" value="<?php if($_POST['a4No']<>Null){echo $_POST['a4No'];}else{echo "No";};?>">
-              </div>
-          </div>
-          <div class="a4main">
-              <div class="a4r1">
-                <!-- ニックネーム -->
-                <input class="a4name" onclick="a4nameckick()" onchange="a4namechange()" type="text" name="a4name" value="<?php if($_POST['a4name']<>Null){echo $_POST['a4name'];}else{echo "ニックネーム";};?>">
-              </div>
-          </div>
-          <div class="a4main">
-              <div class="a4r2">
-                <select class="a4Rank" name="a4Rank">
-                    <?php if($_POST['a4Rank']<>Null){?>
-                        <option value="<?php echo $_POST['a4Rank'];?>" selected><?php echo $_POST['a4Rank'];?></option>
-                    <?php } ?>
-                    <option value="class"><p name="a4Rnak">class</p></option>
-                    <?php for($n=0;$n<=count($RankPoints)-1;$n++){ ?>
-                        <option value="<?php echo $RankPoints[$n]['Rank']; ?>"><p name="a4Rnak"><?php echo $RankPoints[$n]['Rank']; ?></p></option>
-                    <?php }?>
-                </select>
-              </div>
-          </div>
-          <div class="a4main">
-              <div class="a4r3">
-              <select class="a4sex" name="a4sex">
-                  <?php if($_POST['a4sex']<>Null){?>
-                      <option value="<?php echo $_POST['a4sex'];?>" selected><?php echo $_POST['a4sex'];?></option>
-                  <?php } ?>
-                  <option value="sex"><p name="a4sex">sex</p></option>
-                  <option value="男"><p name="a4sex">男</p></option>
-                  <option value="女"><p name="a4sex">女</p></option>
-              </select>
-              </div>
-          </div>
-          <div class="a4main">
-              <div class="a4r4">
-              <input class="a4submit" type="submit" name="a4submit" value="<?php echo $_POST['btnval'];?>">
-              </div>
-          </div>
-      </div>
-      <input type="hidden" name="JSPOST" value="a4">
-  </form>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+<form name="entryForm" method="POST" target="_self" action="regist.php">
+  <div class="menu">メンバー登録</div>
+  <div class="title">
+    <div class="main">
+      <!-- No. -->
+      <div class="input1">
+        <input class="inputitem" type="text" name="memberno" value="{{ member.no }}" disabled="disabled">
+        <!--<input type="hidden" name="a4No" value="<?php if($_POST['a4No']<>Null){echo $_POST['a4No'];}else{echo "No";};?>">-->
+    </div>
+  </div>
+  <div class="main">
+    <div class="input2">
+      <!-- ニックネーム -->
+      <input class="inputitem" onclick="a4nameckick()" onchange="a4namechange()" type="text" name="a4name" value="<?php if($_POST['a4name']<>Null){echo $_POST['a4name'];}else{echo "ニックネーム";};?>">
+    </div>
+  </div>
+  <div class="main">
+    <div class="input3">
+      <select class="inputitem" name="a4Rank">
+        <?php if($_POST['a4Rank']<>Null){?>
+          <option value="<?php echo $_POST['a4Rank'];?>" selected><?php echo $_POST['a4Rank'];?></option>
+        <?php } ?>
+        <option value="class"><p name="a4Rnak">class</p></option>
+        <?php for($n=0;$n<=count($RankPoints)-1;$n++){ ?>
+          <option value="<?php echo $RankPoints[$n]['Rank']; ?>"><p name="a4Rnak"><?php echo $RankPoints[$n]['Rank']; ?></p></option>
+        <?php }?>
+      </select>
+    </div>
+  </div>
+  <div class="main">
+    <div class="input4">
+      <select class="inputitem" name="a4sex">
+        <?php if($_POST['a4sex']<>Null){?>
+          <option value="<?php echo $_POST['a4sex'];?>" selected><?php echo $_POST['a4sex'];?></option>
+        <?php } ?>
+        <option value="sex"><p name="a4sex">sex</p></option>
+        <option value="男"><p name="a4sex">男</p></option>
+        <option value="女"><p name="a4sex">女</p></option>
+      </select>
+    </div>
+  </div>
+  <div class="main">
+    <div class="input5">
+      <input class="inputitem" type="submit" name="a4submit" value="<?php echo $_POST['btnval'];?>">
+    </div>
+  </div>
+  </div>
+</form>
+{% endblock %}
