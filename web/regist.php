@@ -19,10 +19,21 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // Our web handlers
 
 $dtutils = new DataUtils();
+$member = array();
+$member['no'] = $request->get('memberno');
+$member['name'] = $request->get('membername');
+$member['sex'] = $request->get('membersex');
+$member['class'] = $request->get('memberclass');
+
+if ( $member['name'] == Null )
+{
+  echo "なまえが未入力です"
+}
 
 $app->get('/regist', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('regist.twig');
+
+  return $app['twig']->render('regist.twig', $member);
 });
 
 $app->run();
