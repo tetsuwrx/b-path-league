@@ -1,6 +1,7 @@
 <?php
 
 require('../vendor/autoload.php');
+require('library/DataUtils.php');
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -16,6 +17,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 ));
 
 // Our web handlers
+
+$dtutils = new DataUtils();
 
 $app->get('/regist', function() use($app) {
   $app['monolog']->addDebug('logging output.');
