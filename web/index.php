@@ -24,6 +24,11 @@ $app->get('/', function() use($app) {
 
 $app->get('/regist', function() use($app) {
   $app['monolog']->addDebug('logging output.');
+  $member = array();
+  $member['no'] = $app['request']->get('memberno');
+  $member['name'] = $app['request']->get('membername');
+  $member['sex'] = $app['request']->get('membersex');
+  $member['class'] = $app['request']->get('memberclass');
   return $app['twig']->render('regist.twig');
 });
 
