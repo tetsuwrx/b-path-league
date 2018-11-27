@@ -13,37 +13,31 @@
   <div class="main">
     <div class="input2">
       <!-- ニックネーム -->
-      <input class="inputitem" onclick="nameckick()" type="text" name="membername" value="<?php if($_POST['a4name']<>Null){echo $_POST['a4name'];}else{echo "ニックネーム";};?>">
+      <input class="inputitem" onclick="nameckick()" type="text" name="membername" value="{{ name }}">
     </div>
   </div>
   <div class="main">
     <div class="input3">
-      <select class="inputitem" name="a4Rank">
-        <?php if($_POST['a4Rank']<>Null){?>
-          <option value="<?php echo $_POST['a4Rank'];?>" selected><?php echo $_POST['a4Rank'];?></option>
-        <?php } ?>
-        <option value="class"><p name="a4Rnak">class</p></option>
-        <?php for($n=0;$n<=count($RankPoints)-1;$n++){ ?>
-          <option value="<?php echo $RankPoints[$n]['Rank']; ?>"><p name="a4Rnak"><?php echo $RankPoints[$n]['Rank']; ?></p></option>
-        <?php }?>
+      <select class="inputitem" name="memberclass">
+        <option value="UC"><p name="memberclass">UC</p></option>
+        <option value="C"><p name="memberclass">C</p></option>
+        <option value="B"><p name="memberclass">B</p></option>
+        <option value="A"><p name="memberclass">A</p></option>
+        <option value="SA"><p name="memberclass">SA</p></option>
       </select>
     </div>
   </div>
   <div class="main">
     <div class="input4">
-      <select class="inputitem" name="a4sex">
-        <?php if($_POST['a4sex']<>Null){?>
-          <option value="<?php echo $_POST['a4sex'];?>" selected><?php echo $_POST['a4sex'];?></option>
-        <?php } ?>
-        <option value="sex"><p name="a4sex">sex</p></option>
-        <option value="男"><p name="a4sex">男</p></option>
-        <option value="女"><p name="a4sex">女</p></option>
+      <select class="inputitem" name="membersex">
+        <option value="男"><p name="sex">男</p></option>
+        <option value="女"><p name="sex">女</p></option>
       </select>
     </div>
   </div>
   <div class="main">
     <div class="input5">
-      <input class="inputitem" type="submit" name="a4submit" value="<?php echo $_POST['btnval'];?>">
+      <input class="inputitem" type="submit" name="membersubmit" value="登　録">
     </div>
   </div>
   </div>

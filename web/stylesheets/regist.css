@@ -29,7 +29,7 @@ div.input1,div.input2,div.input3,div.input4,div.input5{
   border-left:solid 8vw;
   border-color:grey;
 }
-input.inputitem{
+input.inputitem,select.inputitem{
   font-weight:bold;
   font-size:1.2em;
   position:relative;
