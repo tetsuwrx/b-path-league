@@ -24,6 +24,7 @@ $member['no'] = $_REQUEST['memberno'];
 $member['name'] = $_REQUEST['membername'];
 $member['sex'] = $_REQUEST['membersex'];
 $member['class'] = $_REQUEST['memberclass'];
+$member['result'] = 'success';
 
 if ( !isset($member['name']) )
 {
