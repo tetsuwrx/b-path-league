@@ -31,7 +31,7 @@ $app->get('/regist', function(Request $request) use($app) {
   $member['name'] = $request->get('membername');
   $member['sex'] = $request->get('membersex');
   $member['class'] = $request->get('memberclass');
-  return $app['twig']->render('regist.twig');
+  return $app['twig']->render('regist.twig', $member);
 });
 
 $app->run();
