@@ -2,6 +2,8 @@
 
 require('../vendor/autoload.php');
 
+use Symfony\Component\HttpFoundation\Request;
+
 $app = new Silex\Application();
 $app['debug'] = true;
 
@@ -22,13 +24,13 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
-$app->get('/regist', function() use($app) {
+$app->get('/regist', function(Request $request) use($app) {
   $app['monolog']->addDebug('logging output.');
   $member = array();
-  $member['no'] = $app['request']->get('memberno');
-  $member['name'] = $app['request']->get('membername');
-  $member['sex'] = $app['request']->get('membersex');
-  $member['class'] = $app['request']->get('memberclass');
+  $member['no'] = $request->get('memberno');
+  $member['name'] = $request->get('membername');
+  $member['sex'] = $request->get('membersex');
+  $member['class'] = $request->get('memberclass');
   return $app['twig']->render('regist.twig');
 });
 
