@@ -21,7 +21,7 @@
 
       $utils = new DBUtils();
 
-      $stmt = $utils->getMemberList($member);
+      $stmt = $utils->getMemberNo($member);
 
       $memberno = (int)$stmt['memberno'];
 
