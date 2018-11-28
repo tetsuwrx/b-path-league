@@ -25,7 +25,9 @@
 
       $memberno = (int)$stmt['memberno'];
 
-      if ( $count > 0 )
+      $result = FALSE;
+
+      if ( $memberno > 0 )
       {
         $result = TRUE;
       }
