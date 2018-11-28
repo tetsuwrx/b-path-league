@@ -50,7 +50,7 @@ if ( $result < 1 )
 }else {
   echo "上書きします";
 
-  echo 'no:', $member['no'];
+  echo 'no:', $result;
   echo 'name:', $member['name'];
   echo 'sex:', $member['sex'];
   echo 'class:', $member['class'];
