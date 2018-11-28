@@ -37,10 +37,10 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $result = $stmt->execute($member['name'], $member['sex'], $member['class']);
+      $result = $stmt->execute(array($member['name'], $member['sex'], $member['class']));
 
       $pdo = null;
-      
+
       return $result;
     }
 
