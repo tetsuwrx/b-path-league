@@ -82,7 +82,7 @@
       $stmt = $pdo->prepare($sql);
 
       echo '*****updateMember******', "\n";
-      echo 'no:', $result, "\n";
+      echo 'no:', $memberno, "\n";
       echo 'name:', $member['name'], "\n";
       echo 'sex:', $member['sex'], "\n";
       echo 'class:', $member['class'], "\n";
