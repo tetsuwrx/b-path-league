@@ -21,11 +21,9 @@
 
       $utils = new DBUtils();
 
-      $result = FALSE;
-
       $stmt = $utils->getMemberList($member);
 
-      $count = (int)$stmt['cnt'];
+      $memberno = (int)$stmt['memberno'];
 
       if ( $count > 0 )
       {
