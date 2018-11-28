@@ -46,6 +46,7 @@ if ( !isset($member['class']) )
 if ( $result == FALSE )
 {
   echo "新規登録します";
+  $dtutils->registMember($member);
 }else {
   echo "上書きします";
 }

@@ -2,7 +2,7 @@
   // 共通ライブラリ
   class Utils
   {
-    public $matchRecordHeader = '/library/BattleDataHeader.xml';
+    public $matchRecordHeader = 'library/BattleDataHeader.xml';
     public $memberListXML = 'library/MemberList.xml';
 
     // ファイルオープン

@@ -38,7 +38,7 @@
     }
 
     /*
-     * BattleDataHeader.xmlに任意のメンバーが存在するか確認
+     * MemberList.xmlに任意のメンバーが存在するか確認
      */
     function checkMemberList($member)
     {
@@ -67,6 +67,32 @@
       }
 
       return $result;
+    }
+
+    /*
+     * MemberList.xmlにメンバーを登録
+     */
+    function registMember($member)
+    {
+      $utils = new Utils();
+
+      $dom = new DomDocument('1.0', 'UTF-8');
+
+      $response = $dom->appendChild($dom->createElement('response'));
+
+      $members = $response->appendChild($dom->createElement('members'));
+
+      $registDate = date("Y-m-d");
+
+      $members->appendChild($dom->createElement('memberno', '1'));
+      $members->appendChild($dom->createElement('registdate', $registDate));
+      $members->appendChild($dom->createElement('name', $member['name']));
+      $members->appendChild($dom->createElement('class', $member['class']));
+      $members->appendChild($dom->createElement('sex', $member['sex']));
+
+      $dom->formatOutput = true;
+
+      $dom->save($utils->$memberListXML);
     }
   }
 
