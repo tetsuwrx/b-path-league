@@ -49,6 +49,7 @@ if ( $result == FALSE )
   $dtutils->registMember($member);
 }else {
   echo "上書きします";
+  $dtutils->updateMember($member);
 }
 
 echo $app['twig']->render('regist.twig', $member);

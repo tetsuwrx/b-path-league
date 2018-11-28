@@ -54,6 +54,21 @@
       $utils->registMember($rows, $registDate, $member);
 
     }
+
+    /*
+     * MemberList.xmlにメンバーを登録
+     */
+    function updateMember($member)
+    {
+      $utils = new DBUtils();
+
+      $stmt = $utils->getMemberNo($member);
+
+      $memberno = (int)$stmt['memberno'];
+
+      $utils->updateMember($rows, $registDate, $member);
+
+    }
   }
 
 ?>

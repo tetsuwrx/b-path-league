@@ -70,7 +70,7 @@
       return $result;
     }
 
-    function updateMember($member)
+    function updateMember($memberno, $member)
     {
       $url = parse_url(getenv('DATABASE_URL'));
 
@@ -82,7 +82,7 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['class'], $member['sex']));
+      $result = $stmt->execute(array($member['class'], $member['sex'], $memberno));
 
       $pdo = null;
       $stmt = null;
