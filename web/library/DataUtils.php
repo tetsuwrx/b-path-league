@@ -25,9 +25,7 @@
 
       $stmt = $utils->getMemberList($member);
 
-      $rows = $stmt['cnt'];
-
-      $count = count($rows);
+      $count = (int)$stmt['cnt'];
 
       if ( $count > 0 )
       {
