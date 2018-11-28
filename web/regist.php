@@ -55,6 +55,11 @@ if ( $result == FALSE )
   $member['sex'] = $_REQUEST['membersex'];
   $member['class'] = $_REQUEST['memberclass'];
 
+  echo 'no:', $member['no'];
+  echo 'name:', $member['membername'];
+  echo 'sex:', $member['membersex'];
+  echo 'class:', $member['memberclass'];
+
   $dtutils->updateMember($member);
 
   $member['result'] = 'success';
