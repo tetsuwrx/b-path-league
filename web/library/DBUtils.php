@@ -33,13 +33,12 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "select memberno from members where name = :name and sex = :sex and class = :class";
+      $sql = "select memberno from members where name = :name and sex = :sex";
 
       $stmt = $pdo->prepare($sql);
 
       $stmt->bindValue("name", $member['name']);
       $stmt->bindValue("sex", $member['sex']);
-      $stmt->bindValue("class", $member['class']);
 
       $stmt->execute();
 
