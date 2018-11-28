@@ -47,7 +47,7 @@ if ( $result == FALSE )
 {
   echo "新規登録します";
 }else {
-  echo "上書きします"
+  echo "上書きします";
 }
 
 echo $app['twig']->render('regist.twig', $member);
