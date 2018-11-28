@@ -58,7 +58,7 @@
     /*
      * MemberList.xmlにメンバーを登録
      */
-    function updateMember($member)
+    function updateMember($memberno, $member)
     {
       $utils = new DBUtils();
 
@@ -66,7 +66,7 @@
 
       $memberno = (int)$stmt['memberno'];
 
-      $utils->updateMember($rows, $registDate, $member);
+      $utils->updateMember($memberno, $member);
 
     }
   }
