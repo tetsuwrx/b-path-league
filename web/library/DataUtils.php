@@ -25,7 +25,7 @@
 
       $stmt = $utils->getMemberList($member);
 
-      $rows = $stmt->fetch(PDO::FETCH_ASSOC);
+      $rows = $stmt['cnt'];
 
       $count = count($rows);
 

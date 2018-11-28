@@ -33,13 +33,17 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "select * from members where name = ? and sex = ? and class = ?";
+      $sql = "select name from members where name = :name and sex = :sex and class = :class";
 
       $stmt = $pdo->prepare($sql);
 
-      $stmt->execute(array($member['name'], $member['sex'], $member['class']));
+      $stmt->bindValue("name", $member['name']);
+      $stmt->bindValue("sex", $member['sex']);
+      $stmt->bindValue("class", $member['class']);
 
-      $result = $stmt->fetchAll();
+      $stmt->execute();
+
+      $result = $stmt->fetch();
 
       $pdo = null;
 
