@@ -45,10 +45,10 @@ if ( !isset($member['class']) )
 
 if ( $result < 1 )
 {
-  echo "新規登録します";
+  echo "新規登録しました";
   $dtutils->registMember($member);
 }else {
-  echo "上書きします", "\n";
+  echo "上書きしました", "\n";
 
   $member['no'] = $result;
 
