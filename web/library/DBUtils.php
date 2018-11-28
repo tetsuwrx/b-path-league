@@ -33,7 +33,7 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "select name from members where name = :name and sex = :sex and class = :class";
+      $sql = "select count(memberno) as cnt from members where name = :name and sex = :sex and class = :class";
 
       $stmt = $pdo->prepare($sql);
 
@@ -62,7 +62,7 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['sex'], $member['class']));
+      $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['class'], $member['sex']));
 
       $pdo = null;
       $stmt = null;
