@@ -49,20 +49,14 @@ if ( $result == FALSE )
   $dtutils->registMember($member);
 }else {
   echo "上書きします";
-  $member = array();
-  $member['no'] = $_REQUEST['memberno'];
-  $member['name'] = $_REQUEST['membername'];
-  $member['sex'] = $_REQUEST['membersex'];
-  $member['class'] = $_REQUEST['memberclass'];
 
   echo 'no:', $member['no'];
-  echo 'name:', $member['membername'];
-  echo 'sex:', $member['membersex'];
-  echo 'class:', $member['memberclass'];
+  echo 'name:', $member['name'];
+  echo 'sex:', $member['sex'];
+  echo 'class:', $member['class'];
 
   $dtutils->updateMember($member);
 
-  $member['result'] = 'success';
 }
 
 echo $app['twig']->render('regist.twig', $member);
