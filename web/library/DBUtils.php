@@ -25,6 +25,15 @@
       return $result;
     }
 
+    function execDML($sql)
+    {
+      $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+      $result = $pdo->exec( $sql );
+
+      $pdo = null;
+    }
+
   }
 
 ?>
