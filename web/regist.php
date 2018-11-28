@@ -56,8 +56,8 @@ if ( $result < 1 )
   echo 'class:', $member['class'];
 
   $member['no'] = $result;
-  
-  $dtutils->updateMember($member);
+
+  $dtutils->updateMember($result, $member);
 
 }
 
