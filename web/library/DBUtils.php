@@ -92,12 +92,12 @@
       $stmt->bindValue(":memberno", $memberno);
 
       try{
-        $stmt->beginTransaction();
+        $pdo->beginTransaction();
         $stmt->execute();
-        $stmt->commit();
+        $pdo->commit();
       }catch(Exception $e)
       {
-        $stmt->rollBack();
+        $pdo->rollBack();
         echo 'エラーメッセージ：', $e->getMessage(), "\n";
       }
 
