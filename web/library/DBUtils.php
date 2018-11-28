@@ -5,7 +5,7 @@
   class DBUtils
   {
 
-    public $url = parse_utl(getenv('DATABASE_URL'));
+    public $url = parse_url(getenv('DATABASE_URL'));
 
     public $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
 
