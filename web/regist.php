@@ -26,9 +26,28 @@ $member['sex'] = $_REQUEST['membersex'];
 $member['class'] = $_REQUEST['memberclass'];
 $member['result'] = 'success';
 
+$result = $dtutils->checkMemberList($member);
+
 if ( !isset($member['name']) )
 {
   echo "なまえが未入力です";
+}
+
+if ( !isset($member['sex']) )
+{
+  echo "性別が未入力です";
+}
+
+if ( !isset($member['class']) )
+{
+  echo "クラスが未入力です";
+}
+
+if ( $result == FALSE )
+{
+  echo "新規登録します";
+}else {
+  echo "上書きします"
 }
 
 echo $app['twig']->render('regist.twig', $member);
