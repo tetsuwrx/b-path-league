@@ -56,6 +56,8 @@ if ( $result == FALSE )
   $member['class'] = $_REQUEST['memberclass'];
 
   $dtutils->updateMember($member);
+
+  $member['result'] = 'success';
 }
 
 echo $app['twig']->render('regist.twig', $member);
