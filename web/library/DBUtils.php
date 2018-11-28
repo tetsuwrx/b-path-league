@@ -37,7 +37,7 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $result = $stmt->execute(array($member['name'], $member['sex'], $member['class']));
+      $result = $stmt->fetchAll(array($member['name'], $member['sex'], $member['class']));
 
       $pdo = null;
 
