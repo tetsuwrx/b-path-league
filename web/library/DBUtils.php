@@ -77,7 +77,7 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "update members set class = ?, sex = ? where no = ? )";
+      $sql = "update members set class = ?, sex = ? where memberno = ? )";
 
       $stmt = $pdo->prepare($sql);
 

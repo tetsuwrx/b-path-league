@@ -62,10 +62,6 @@
     {
       $utils = new DBUtils();
 
-      $stmt = $utils->getMemberNo($member);
-
-      $memberno = (int)$stmt['memberno'];
-
       $utils->updateMember($memberno, $member);
 
     }
