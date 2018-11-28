@@ -81,12 +81,6 @@
 
       $stmt = $pdo->prepare($sql);
 
-      echo '*****updateMember******', "\n";
-      echo 'no:', $memberno, "\n";
-      echo 'name:', $member['name'], "\n";
-      echo 'sex:', $member['sex'], "\n";
-      echo 'class:', $member['class'], "\n";
-
       $stmt->bindValue(":class", $member['class']);
       $stmt->bindValue(":sex", $member['sex']);
       $stmt->bindValue(":memberno", $memberno);

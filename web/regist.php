@@ -24,7 +24,7 @@ $member['no'] = $_REQUEST['memberno'];
 $member['name'] = $_REQUEST['membername'];
 $member['sex'] = $_REQUEST['membersex'];
 $member['class'] = $_REQUEST['memberclass'];
-$member['result'] = 'success';
+$member['result'] = 'failed';
 
 $result = $dtutils->checkMemberList($member);
 
@@ -50,15 +50,10 @@ if ( $result < 1 )
 }else {
   echo "上書きします", "\n";
 
-  echo 'no:', $result, "\n";
-  echo 'name:', $member['name'], "\n";
-  echo 'sex:', $member['sex'], "\n";
-  echo 'class:', $member['class'], "\n";
-
   $member['no'] = $result;
 
   $dtutils->updateMember($result, $member);
-
 }
+$member['result'] = 'success';
 
 echo $app['twig']->render('regist.twig', $member);

@@ -22,19 +22,47 @@
   <div class="main">
     <div class="input3">
       <select class="inputitem" name="memberclass">
-        <option value="UC"><p name="memberclass">UC</p></option>
-        <option value="C"><p name="memberclass">C</p></option>
-        <option value="B"><p name="memberclass">B</p></option>
-        <option value="A"><p name="memberclass">A</p></option>
-        <option value="SA"><p name="memberclass">SA</p></option>
+        {% if class == 'UC' %}
+          <option value="UC" selected><p name="memberclass">UC</p></option>
+        {% else %}
+          <option value="UC"><p name="memberclass">UC</p></option>
+        {% endif %}
+        {% if class == 'C' %}
+          <option value="C" selected><p name="memberclass">C</p></option>
+        {% else %}
+          <option value="C"><p name="memberclass">C</p></option>
+        {% endif %}
+        {% if class == 'B' %}
+          <option value="B" selected><p name="memberclass">B</p></option>
+        {% else %}
+          <option value="B"><p name="memberclass">B</p></option>
+        {% endif %}
+        {% if class == 'A' %}
+          <option value="A" selected><p name="memberclass">A</p></option>
+        {% else %}
+          <option value="A"><p name="memberclass">A</p></option>
+        {% endif %}
+        {% if class == 'SA' %}
+          <option value="SA" selected><p name="memberclass">SA</p></option>
+        {% else %}
+          <option value="SA"><p name="memberclass">SA</p></option>
+        {% endif %}
       </select>
     </div>
   </div>
   <div class="main">
     <div class="input4">
       <select class="inputitem" name="membersex">
-        <option value="男"><p name="sex">男</p></option>
-        <option value="女"><p name="sex">女</p></option>
+        {% if sex == '男' %}
+          <option value="男" selected><p name="sex">男</p></option>
+        {% else %}
+          <option value="男"><p name="sex">男</p></option>
+        {% endif %}
+        {% if sex == '女' %}
+          <option value="女" selected><p name="sex">女</p></option>
+        {% else %}
+          <option value="女"><p name="sex">女</p></option>
+        {% endif %}
       </select>
     </div>
   </div>
