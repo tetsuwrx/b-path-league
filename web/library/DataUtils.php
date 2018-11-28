@@ -15,7 +15,7 @@
     /*
      * BattleDataHeader.xmlから全レコードを取得してメンバー名を整理
      */
-    function getMemberListFrom()
+    function getMemberList()
     {
       $utils = new Utils();
 
@@ -91,7 +91,6 @@
       $members->appendChild($dom->createElement('sex', $member['sex']));
 
       $dom->formatOutput = true;
-
       $dom->save($utils->$memberListXML);
     }
   }
