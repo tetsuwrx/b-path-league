@@ -19,7 +19,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 // Our web handlers
 
 $dtutils = new DataUtils();
-$member = array();
+$member = new array();
 $member['no'] = $_REQUEST['memberno'];
 $member['name'] = $_REQUEST['membername'];
 $member['sex'] = $_REQUEST['membersex'];
@@ -49,6 +49,12 @@ if ( $result == FALSE )
   $dtutils->registMember($member);
 }else {
   echo "上書きします";
+  $member = new array();
+  $member['no'] = $_REQUEST['memberno'];
+  $member['name'] = $_REQUEST['membername'];
+  $member['sex'] = $_REQUEST['membersex'];
+  $member['class'] = $_REQUEST['memberclass'];
+  
   $dtutils->updateMember($member);
 }
 
