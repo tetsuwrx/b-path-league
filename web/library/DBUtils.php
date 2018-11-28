@@ -37,8 +37,8 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $stmt->bindValue("name", $member['name']);
-      $stmt->bindValue("sex", $member['sex']);
+      $stmt->bindValue(":name", $member['name']);
+      $stmt->bindValue(":sex", $member['sex']);
 
       $stmt->execute();
 
@@ -77,7 +77,7 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "update members set class = :class, sex = :sex where memberno = :memberno )";
+      $sql = "update members set class = :class, sex = :sex where memberno = :memberno";
 
       $stmt = $pdo->prepare($sql);
 
@@ -87,9 +87,9 @@
       echo 'sex:', $member['sex'], "\n";
       echo 'class:', $member['class'], "\n";
 
-      $stmt->bindValue("class", $member['class']);
-      $stmt->bindValue("sex", $member['sex']);
-      $stmt->bindValue("memberno", $memberno);
+      $stmt->bindValue(":class", $member['class']);
+      $stmt->bindValue(":sex", $member['sex']);
+      $stmt->bindValue(":memberno", $memberno);
 
       try{
         $result = $stmt->execute();
