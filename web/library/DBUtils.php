@@ -56,7 +56,7 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $result = $stmt->execute($rows + 1, $registDate, $member['name'], $member['sex'], $member['class']);
+      $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['sex'], $member['class']));
 
       $pdo = null;
       $stmt = null;
