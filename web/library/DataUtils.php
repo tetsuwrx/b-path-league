@@ -78,9 +78,8 @@
 
       $registDate = date("Y-m-d");
 
-      $sql = "insert into members values ( $rows + 1, $registDate, $member['name'], $member['class'], $member['sex'] )";
+      $utils->registMember($rows, $registDate, $member);
 
-      $utils->execDML($sql);
     }
   }
 

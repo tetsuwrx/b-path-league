@@ -41,6 +41,22 @@
       return $result;
     }
 
+    function registMember($rows, $registDate, $member)
+    {
+      $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+      $sql = "insert into members values ( ?, ?, ?, ?, ? )";
+
+      $stmt = $pdo->prepare($sql);
+
+      $result = $stmt->execute($rows + 1, $registDate, $member['name'], $member['sex'], $member['class']);
+
+      $pdo = null;
+      $stmt = null;
+
+      return $result;
+    }
+
     function execDML($sql)
     {
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
