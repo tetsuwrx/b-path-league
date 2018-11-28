@@ -40,8 +40,7 @@
       $result = $stmt->execute($member['name'], $member['sex'], $member['class']);
 
       $pdo = null;
-      $stmt = null;
-
+      
       return $result;
     }
 
@@ -70,7 +69,7 @@
       $url = parse_url(getenv('DATABASE_URL'));
 
       $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
-      
+
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
       $result = $pdo->exec( $sql );
