@@ -43,13 +43,12 @@
      */
     function checkMemberList($member)
     {
+
       $utils = new DBUtils();
 
-      $sql = "select * from members where name = $member['name'] and sex = $member['sex'] and class = $member['class'];";
-
       $result = FALSE;
-
-      $stmt = $utils->getDataSet($sql);
+      
+      $stmt = $utils->getMemberList($member);
 
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
