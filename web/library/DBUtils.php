@@ -77,11 +77,15 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "update members set class = ?, sex = ? where memberno = ? )";
+      $sql = "update members set class = :class, sex = :sex where memberno = :memberno )";
 
       $stmt = $pdo->prepare($sql);
 
-      $result = $stmt->execute(array($member['class'], $member['sex'], $memberno));
+      $stmt->bindValue("class", $member['class']);
+      $stmt->bindValue("sex", $member['sex']);
+      $stmt->bindValue("memberno", $memberno);
+
+      $result = $stmt->execute();
 
       $pdo = null;
       $stmt = null;
