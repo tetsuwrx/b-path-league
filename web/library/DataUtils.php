@@ -47,7 +47,7 @@
       $utils = new DBUtils();
 
       $result = FALSE;
-      
+
       $stmt = $utils->getMemberList($member);
 
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -78,7 +78,7 @@
 
       $registDate = date("Y-m-d");
 
-      $sql = "insert into members values ( $rows + 1, $registDate, $member['name'], $member['class'], $member['sex'] )"
+      $sql = "insert into members values ( $rows + 1, $registDate, $member['name'], $member['class'], $member['sex'] )";
 
       $utils->execDML($sql);
     }
