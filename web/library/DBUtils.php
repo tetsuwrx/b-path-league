@@ -5,10 +5,6 @@
   class DBUtils
   {
 
-    public $url = parse_url(getenv('DATABASE_URL'));
-
-    public $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
-
     function __construct()
     {
       // code...
@@ -16,6 +12,10 @@
 
     function getDataSet($sql)
     {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
       $result = $pdo->query( $sql );
@@ -27,6 +27,10 @@
 
     function getMemberList($member)
     {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
       $sql = "select * from members where name = ? and sex = ? and class = ?";
@@ -43,6 +47,10 @@
 
     function registMember($rows, $registDate, $member)
     {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
       $sql = "insert into members values ( ?, ?, ?, ?, ? )";
@@ -59,6 +67,10 @@
 
     function execDML($sql)
     {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+      
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
       $result = $pdo->exec( $sql );
