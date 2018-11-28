@@ -45,7 +45,7 @@
     {
       $utils = new DBUtils();
 
-      $sql = "select * from members where name = '$member['name']' and sex = '$member['sex']' and class = '$member['class']';";
+      $sql = "select * from members where name = $member['name'] and sex = $member['sex'] and class = $member['class'];";
 
       $result = FALSE;
 
