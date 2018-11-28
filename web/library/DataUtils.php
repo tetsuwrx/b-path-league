@@ -25,11 +25,11 @@
 
       $memberno = (int)$stmt['memberno'];
 
-      $result = FALSE;
+      $result = 0;
 
       if ( $memberno > 0 )
       {
-        $result = TRUE;
+        $result = $memberno;
       }
 
       return $result;

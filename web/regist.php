@@ -43,7 +43,7 @@ if ( !isset($member['class']) )
   echo "クラスが未入力です";
 }
 
-if ( $result == FALSE )
+if ( $result < 1 )
 {
   echo "新規登録します";
   $dtutils->registMember($member);
@@ -55,6 +55,8 @@ if ( $result == FALSE )
   echo 'sex:', $member['sex'];
   echo 'class:', $member['class'];
 
+  $member['no'] = $result;
+  
   $dtutils->updateMember($member);
 
 }
