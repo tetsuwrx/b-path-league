@@ -92,9 +92,12 @@
       $stmt->bindValue(":memberno", $memberno);
 
       try{
-        $result = $stmt->execute();
+        $stmt->beginTransaction();
+        $stmt->execute();
+        $stmt->commit();
       }catch(Exception $e)
       {
+        $stmt->rollBack();
         echo 'エラーメッセージ：', $e->getMessage(), "\n";
       }
 
