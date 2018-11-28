@@ -25,6 +25,22 @@
       return $result;
     }
 
+    function getMemberList($member)
+    {
+      $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+      $sql = "select * from members where name = ? and sex = ? and class = ?";
+
+      $stmt = $pdo->prepare($sql);
+
+      $result = $stmt->execute($member['name'], $member['sex'], $member['class']);
+
+      $pdo = null;
+      $stmt = null;
+
+      return $result;
+    }
+
     function execDML($sql)
     {
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
