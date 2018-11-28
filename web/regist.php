@@ -48,12 +48,12 @@ if ( $result < 1 )
   echo "新規登録します";
   $dtutils->registMember($member);
 }else {
-  echo "上書きします";
+  echo "上書きします", "\n";
 
-  echo 'no:', $result;
-  echo 'name:', $member['name'];
-  echo 'sex:', $member['sex'];
-  echo 'class:', $member['class'];
+  echo 'no:', $result, "\n";
+  echo 'name:', $member['name'], "\n";
+  echo 'sex:', $member['sex'], "\n";
+  echo 'class:', $member['class'], "\n";
 
   $member['no'] = $result;
 

@@ -91,7 +91,13 @@
       $stmt->bindValue("sex", $member['sex']);
       $stmt->bindValue("memberno", $memberno);
 
-      $result = $stmt->execute();
+      try{
+        $result = $stmt->execute();
+      }catch(Exception $e)
+      {
+        echo 'エラーメッセージ：', $e->getMessage(), "\n";
+      }
+
 
       $pdo = null;
       $stmt = null;
