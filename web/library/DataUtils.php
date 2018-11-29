@@ -65,6 +65,30 @@
       $utils->updateMember($memberno, $member);
 
     }
+
+    /*
+     * メンバーのリストを取得
+     */
+    function getMemberList($member)
+    {
+      $utils = new DBUtils();
+
+      // メンバーリストを取得
+      $sql = "select name, class from members order by memberno;";
+
+      $stmt = $utils->getDataSet($sql);
+
+      $memberlist = array();
+
+      while($row = $stmt -> fetch(PHP::FETCH_ASSOC)) {
+        $memberlist[] = array('name' => $row['name'], 'class' => $row['class']);
+      }
+
+      $stmt = null;
+
+      return $memberlist;
+
+    }
   }
 
 ?>

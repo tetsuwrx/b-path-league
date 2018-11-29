@@ -1,6 +1,7 @@
 <?php
 
 require('../vendor/autoload.php');
+require('library/DataUtils.php');
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -52,7 +53,12 @@ $app->get('/regist', function(Request $request) use($app) {
 
 $app->get('/score', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('score.twig');
+
+  $utils = new DataUtils();
+
+  $memberlist = $utils->getMemberList();
+
+  return $app['twig']->render('score.twig', ['memberlist' => $memberlist] );
 });
 
 $app->run();
