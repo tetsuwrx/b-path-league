@@ -29,10 +29,10 @@ function scoreInput(player)
 
     if ( scoreVal == scoreWin )
     {
-      document.entryForm.p1WinnerLabel.value = "Winner";
-      document.entryForm.p2WinnerLabel.value = "Loser";
-      document.entryForm.p1Winner.style.display = "block";
-      document.entryForm.p2Winner.style.display = "block";
+      document.getElementById("p1WinnerLabel").value = "Winner";
+      document.getElementById("p1WinnerLabel").style.display = "block";
+      document.getElementById("p2WinnerLabel").value = "Loser";
+      document.getElementById("p2WinnerLabel").style.display = "block";
     }
   }else {
     var scoreVal = document.entryForm.p2Score.value;
@@ -40,10 +40,10 @@ function scoreInput(player)
 
     if ( scoreVal == scoreWin )
     {
-      document.entryForm.p1WinnerLabel.value = "Loser";
-      document.entryForm.p2WinnerLabel.value = "Winner";
-      document.entryForm.p1Winner.style.display = "block";
-      document.entryForm.p2Winner.style.display = "block";
+      document.getElementById("p1WinnerLabel").value = "Loser";
+      document.getElementById("p1WinnerLabel").style.display = "block";
+      document.getElementById("p2WinnerLabel").value = "Winner";
+      document.getElementById("p2WinnerLabel").style.display = "block";
     }
   }
 
