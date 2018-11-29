@@ -81,7 +81,7 @@
       $memberlist = array();
 
       while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-        $memberlist[] = array('memberno' => row['memberno'], 'name' => $row['name'], 'class' => $row['class']);
+        $memberlist[] = array('memberno' => $row['memberno'], 'name' => $row['name'], 'class' => $row['class']);
       }
 
       $stmt = null;
