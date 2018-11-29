@@ -5,6 +5,6 @@ function setClass1()
   var nameVal = p1Name.options[selInd].value;
   var classVal = nameVal.split(',');
 
-  document.entryForm.getElementsByName("p1Class").value = classVal[2];
-  document.entryForm.getElementsByName("p1ScoreWin").value = classVal[3];
+  document.entryForm.p1Class.value = classVal[2];
+  document.entryForm.p1ScoreWin.value = classVal[3];
 }
