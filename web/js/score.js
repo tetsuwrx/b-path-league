@@ -11,7 +11,7 @@ function setClass1()
 
 function setClass2()
 {
-  var p1Name = document.entryForm.p2Name;
+  var p2Name = document.entryForm.p2Name;
   var selInd = p2Name.selectedIndex;
   var nameVal = p2Name.options[selInd].value;
   var classVal = nameVal.split(',');
