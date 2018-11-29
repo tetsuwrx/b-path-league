@@ -69,7 +69,7 @@
     /*
      * メンバーのリストを取得
      */
-    function getMemberList($member)
+    function getMemberList()
     {
       $utils = new DBUtils();
 
