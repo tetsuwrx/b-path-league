@@ -29,9 +29,9 @@ function scoreInput(player)
 
     if ( scoreVal == scoreWin )
     {
-      document.getElementById("p1WinnerLabel").value = "Winner";
+      document.getElementById("p1WinnerLabel").innerHTML = "Winner";
       document.getElementById("p1WinnerLabel").style.display = "block";
-      document.getElementById("p2WinnerLabel").value = "Loser";
+      document.getElementById("p2WinnerLabel").innerHTML = "Loser";
       document.getElementById("p2WinnerLabel").style.display = "block";
     }
   }else {
@@ -40,9 +40,9 @@ function scoreInput(player)
 
     if ( scoreVal == scoreWin )
     {
-      document.getElementById("p1WinnerLabel").value = "Loser";
+      document.getElementById("p1WinnerLabel").innerHTML = "Loser";
       document.getElementById("p1WinnerLabel").style.display = "block";
-      document.getElementById("p2WinnerLabel").value = "Winner";
+      document.getElementById("p2WinnerLabel").innerHTML = "Winner";
       document.getElementById("p2WinnerLabel").style.display = "block";
     }
   }
