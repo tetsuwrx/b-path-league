@@ -58,7 +58,9 @@ $app->get('/score', function() use($app) {
 
   $memberlist = $utils->getMemberList();
 
-  return $app['twig']->render('score.twig', ['memberlist' => $memberlist] );
+  $entryDate = date("Y-m-d");
+
+  return $app['twig']->render('score.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist) );
 });
 
 $app->run();
