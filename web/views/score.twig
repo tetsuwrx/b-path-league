@@ -19,7 +19,7 @@
           <input class="p1Class" name="p1Class" type="text" value="" readonly="readonly">
         </div>
         <div class="p1Score">
-          <input class="p1Score" name="p1Score" type="text" value="">
+          <input class="p1Score" name="p1Score" type="text" value="" onchange="scoreInput('p1')">
           <input type="hidden" name="p1ScoreWin" value="">
         </div>
         <div class="p1Masu">
@@ -27,7 +27,7 @@
             <option value="◎"><p class="a1masu">◎</p></option>
           </select>
         </div>
-        <div class="p1Winner">WINNER</div>
+        <div class="p1Winner" name="p1WinnerLabel" style="display:none;">WINNER</div>
       </div>
       <div class="p1Center">
         <div class="p1VS"><p class="p1VS">VS</p></div>
@@ -44,7 +44,7 @@
           <input class="p1Class" name="p2Class" type="text" value="" readonly="readonly">
         </div>
         <div class="p1Score">
-          <input class="p1Score" name="p2Score" type="text" value="">
+          <input class="p1Score" name="p2Score" type="text" value="" onchange="scoreInput('p2')">
           <input type="hidden" name="p2ScoreWin" value="">
         </div>
         <div class="p1Masu">
@@ -52,10 +52,10 @@
             <option value="◎"><p class="a1masu">◎</p></option>
           </select>
         </div>
-        <div class="p1Winner">WINNER</div>
-          <div class="a1btns">
-            <input class="a1btns" type="submit" name="a1submit" value="結　果　登　録" onclick="a1datacheck()">
-          </div>
+        <div class="p1Winner" name="p2WinnerLabel" style="display:none;">WINNER</div>
+        <div class="a1btns">
+          <input class="a1btns" type="submit" name="a1submit" value="結　果　登　録" onclick="a1datacheck()">
+        </div>
         </div>
       </div>
     </div>

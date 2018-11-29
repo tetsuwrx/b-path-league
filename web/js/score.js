@@ -19,3 +19,32 @@ function setClass2()
   document.entryForm.p2Class.value = classVal[2];
   document.entryForm.p2ScoreWin.value = classVal[3];
 }
+
+function scoreInput(player)
+{
+  if ( player == 'p1' )
+  {
+    var scoreVal = document.entryForm.p1Score.value;
+    var scoreWin = document.entryForm.p1ScoreWin.value;
+
+    if ( scoreVal == scoreWin )
+    {
+      document.entryForm.p1WinnerLabel.value = "Winner";
+      document.entryForm.p2WinnerLabel.value = "Loser";
+      document.entryForm.p1Winner.style.display = "block";
+      document.entryForm.p2Winner.style.display = "block";
+    }
+  }else {
+    var scoreVal = document.entryForm.p2Score.value;
+    var scoreWin = document.entryForm.p2ScoreWin.value;
+
+    if ( scoreVal == scoreWin )
+    {
+      document.entryForm.p1WinnerLabel.value = "Loser";
+      document.entryForm.p2WinnerLabel.value = "Winner";
+      document.entryForm.p1Winner.style.display = "block";
+      document.entryForm.p2Winner.style.display = "block";
+    }
+  }
+
+}
