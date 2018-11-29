@@ -83,6 +83,10 @@ div.p1Winner{
   color:red;
   background:linear-gradient(160deg, rgb(212, 181, 0), rgb(233, 255, 106));
 }
+div.p1Loser{
+  color:blue;
+  background:linear-gradient(160deg, rgb(0, 155, 0), rgb(170, 255, 170));
+}
 div.p1Center{
   width:10%;
   float:left;
