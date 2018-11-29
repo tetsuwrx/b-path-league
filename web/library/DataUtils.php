@@ -74,14 +74,14 @@
       $utils = new DBUtils();
 
       // メンバーリストを取得
-      $sql = "select name, class from members order by memberno;";
+      $sql = "select memberno, name, class from members order by memberno;";
 
       $stmt = $utils->getDataSet($sql);
 
       $memberlist = array();
 
       while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
-        $memberlist[] = array('name' => $row['name'], 'class' => $row['class']);
+        $memberlist[] = array('memberno' => row['memberno'], 'name' => $row['name'], 'class' => $row['class']);
       }
 
       $stmt = null;
