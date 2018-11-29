@@ -63,19 +63,19 @@
 
       swith ( $member['class'] )
       {
-        case 'UC':
+        case "UC":
           $score = 2;
           break;
-        case 'C':
+        case "C":
           $score = 3;
           break;
-        case 'B':
+        case "B":
           $score = 4;
           break;
-        case 'A':
+        case "A":
           $score = 5;
           break;
-        case 'SA':
+        case "SA":
           $score = 6;
           break;
       }
