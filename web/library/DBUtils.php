@@ -57,11 +57,30 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "insert into members values ( ?, ?, ?, ?, ? )";
+      $sql = "insert into members values ( ?, ?, ?, ?, ?, ? )";
 
       $stmt = $pdo->prepare($sql);
 
-      $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['class'], $member['sex']));
+      swith ( $member['class'] )
+      {
+        case 'UC':
+          $score = 2;
+          break;
+        case 'C':
+          $score = 3;
+          break;
+        case 'B':
+          $score = 4;
+          break;
+        case 'A':
+          $score = 5;
+          break;
+        case 'SA':
+          $score = 6;
+          break;
+      }
+
+      $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['class'], $score, $member['sex']));
 
       $pdo = null;
       $stmt = null;
