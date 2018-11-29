@@ -61,24 +61,7 @@
 
       $stmt = $pdo->prepare($sql);
 
-      switch ( $member['class'] )
-      {
-        case "UC":
-          $score = 2;
-          break;
-        case "C":
-          $score = 3;
-          break;
-        case "B":
-          $score = 4;
-          break;
-        case "A":
-          $score = 5;
-          break;
-        case "SA":
-          $score = 6;
-          break;
-      }
+      $score = getScore( $member['class'] );
 
       $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['class'], $score, $member['sex']));
 
@@ -96,11 +79,14 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "update members set class = :class, sex = :sex where memberno = :memberno";
+      $sql = "update members set class = :class, score = :score, sex = :sex where memberno = :memberno";
 
       $stmt = $pdo->prepare($sql);
 
+      $score = getScore( $member['class'] );
+
       $stmt->bindValue(":class", $member['class']);
+      $stmt->bindValue(":score", $score);
       $stmt->bindValue(":sex", $member['sex']);
       $stmt->bindValue(":memberno", $memberno);
 
@@ -132,6 +118,32 @@
       $result = $pdo->exec( $sql );
 
       $pdo = null;
+    }
+
+    function getScore($class)
+    {
+      $score = 0;
+
+      switch ( $class )
+      {
+        case "UC":
+          $score = 2;
+          break;
+        case "C":
+          $score = 3;
+          break;
+        case "B":
+          $score = 4;
+          break;
+        case "A":
+          $score = 5;
+          break;
+        case "SA":
+          $score = 6;
+          break;
+      }
+
+      return $score;
     }
 
   }
