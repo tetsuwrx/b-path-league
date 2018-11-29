@@ -50,4 +50,9 @@ $app->get('/regist', function(Request $request) use($app) {
   return $app['twig']->render('regist.twig', $member);
 });
 
+$app->get('/score', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('score.twig');
+});
+
 $app->run();
