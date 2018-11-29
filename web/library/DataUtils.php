@@ -80,7 +80,7 @@
 
       $memberlist = array();
 
-      while($row = $stmt -> fetch(PHP::FETCH_ASSOC)) {
+      while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
         $memberlist[] = array('name' => $row['name'], 'class' => $row['class']);
       }
 
