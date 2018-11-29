@@ -61,7 +61,7 @@
 
       $stmt = $pdo->prepare($sql);
 
-      swith ( $member['class'] )
+      switch ( $member['class'] )
       {
         case "UC":
           $score = 2;
