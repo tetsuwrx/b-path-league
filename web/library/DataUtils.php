@@ -43,7 +43,7 @@
       $utils = new DBUtils();
 
       // 件数を取得
-      $sql = "select count(memberno) from members;";
+      $sql = "select max(memberno) from members;";
 
       $stmt = $utils->getDataSet($sql);
 
