@@ -10,9 +10,11 @@
       <div class="matchResult">
         <div class="p1Name">
           <select class="p1Name" name="p1Name">
+            {#
             {% ここたぶんforで回してメンバーのドロップダウン作るとこ %}
               <option value="<?php echo $_POST['a1memberA'];?>" selected><?php echo $_POST['a1memberA'];?></option>
             {% %}
+            #}
           </select>
         </div>
         <div class="p1Class">
@@ -34,9 +36,10 @@
       <div class="p1Result">
         <div class="p1Name">
           <select class="p1Name" name="p2Name">
-            {% ここたぶんforで回してメンバーのドロップダウン作るとこ %}
+            {# {% ここたぶんforで回してメンバーのドロップダウン作るとこ %}
             <option value="<?php echo $_POST['a1memberA'];?>" selected><?php echo $_POST['a1memberA'];?></option>
             {% %}
+            #}
           </select>
         </div>
         <div class="p1Class">
