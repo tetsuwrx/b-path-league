@@ -11,7 +11,7 @@
         <div class="p1Name">
           <select class="p1Name" name="p1Name">
             {% for member in memberlist %}
-              <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.class }}">{{ member.name }}</option>
+              <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
             {% endfor %}
           </select>
         </div>
