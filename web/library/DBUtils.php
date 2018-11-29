@@ -61,7 +61,7 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $score = getScore( $member['class'] );
+      $score = $this->getScore( $member['class'] );
 
       $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['class'], $score, $member['sex']));
 
@@ -83,7 +83,7 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $score = getScore( $member['class'] );
+      $score = $this->getScore( $member['class'] );
 
       $stmt->bindValue(":class", $member['class']);
       $stmt->bindValue(":score", $score);
