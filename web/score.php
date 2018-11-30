@@ -39,4 +39,6 @@ echo "登録完了しました";
 
 $memberlist = $dtutils->getMemberList();
 
+$entryDate = date("Y-m-d");
+
 echo $app['twig']->render('score.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist));
