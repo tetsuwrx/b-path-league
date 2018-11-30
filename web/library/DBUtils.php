@@ -146,6 +146,28 @@
       return $score;
     }
 
+    function registScore($matchno, $matchdate, $score)
+    {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+
+      $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+      $sql = "insert into matchdata values ( ?, ?, ?, ?, ?, ? )";
+
+      $stmt = $pdo->prepare($sql);
+
+      $score = $this->getScore( $member['class'] );
+
+      $result = $stmt->execute(array($matchno + 1, $score['entryDate'], $score['p1no'], $score['p1score'], $score['p1win'], $score['p2no'], $score['p2score'], $score['p2win']));
+
+      $pdo = null;
+      $stmt = null;
+
+      return $result;
+    }
+
   }
 
 ?>

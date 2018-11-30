@@ -42,7 +42,7 @@
     {
       $utils = new DBUtils();
 
-      // 件数を取得
+      // membernoの最大値を取得
       $sql = "select max(memberno) from members;";
 
       $stmt = $utils->getDataSet($sql);
@@ -87,6 +87,26 @@
       $stmt = null;
 
       return $memberlist;
+
+    }
+
+    /*
+     * スコアの結果を登録
+     */
+    function registScore($score)
+    {
+      $utils = new DBUtils();
+
+      // membernoの最大値を取得
+      $sql = "select max(matchno) from members;";
+
+      $stmt = $utils->getDataSet($sql);
+
+      $rows = (int)$stmt->fetchColumn();
+
+      $stmt = null;
+
+      $utils->registScore($rows, $score);
 
     }
   }

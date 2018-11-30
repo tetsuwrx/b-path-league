@@ -1,6 +1,6 @@
 {% extends "scorelayout.html" %}
 {% block content %}
-<form name="entryForm" method="POST" target="_self" action="regist.php">
+<form name="entryForm" method="POST" target="_self" action="score.php">
   <div class="menu">リーグ戦結果入力</div>
   <div class="title">
     <div class="entryDate">
@@ -22,12 +22,17 @@
           <input class="p1Score" name="p1Score" type="text" value="" onchange="scoreInput('p1')">
           <input type="hidden" name="p1ScoreWin" value="">
         </div>
+        <!--
         <div class="p1Masu">
           <select class="p1Masu" name="p1Masu">
             <option value="◎"><p class="a1masu">◎</p></option>
           </select>
         </div>
-        <div class="p1Winner" id="p1WinnerLabel" style="display:none;">WINNER</div>
+        -->
+        <div class="p1Winner" id="p1WinnerLabel" style="display:none;">
+          WINNER
+          <input type="hidden" name="p1Winner" value="1">
+        </div>
       </div>
       <div class="p1Center">
         <div class="p1VS"><p class="p1VS">VS</p></div>
@@ -47,12 +52,17 @@
           <input class="p1Score" name="p2Score" type="text" value="" onchange="scoreInput('p2')">
           <input type="hidden" name="p2ScoreWin" value="">
         </div>
+        <!--
         <div class="p1Masu">
           <select class="p1Masu" name="p2Masu">
             <option value="◎"><p class="a1masu">◎</p></option>
           </select>
         </div>
-        <div class="p1Winner" id="p2WinnerLabel" style="display:none;">WINNER</div>
+        -->
+        <div class="p1Winner" id="p2WinnerLabel" style="display:none;">
+          WINNER
+          <input type="hidden" name="p2Winner" value="1">
+        </div>
         <div class="a1btns">
           <input class="a1btns" type="submit" name="a1submit" value="結　果　登　録" onclick="a1datacheck()">
         </div>
