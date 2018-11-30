@@ -110,7 +110,6 @@
         $rows = 1;
       }
 
-
       $stmt = null;
 
       $utils->registScore($rows, $score);

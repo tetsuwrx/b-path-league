@@ -146,7 +146,7 @@
       return $score;
     }
 
-    function registScore($matchno, $matchdate, $score)
+    function registScore($matchno, $score)
     {
       $url = parse_url(getenv('DATABASE_URL'));
 
