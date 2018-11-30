@@ -33,13 +33,13 @@ function scoreInput(player)
       document.getElementById("p1WinnerLabel").style.display = "block";
       document.getElementById("p1WinnerLabel").style.color = "red";
       document.getElementById("p1WinnerLabel").style.background = "linear-gradient(160deg, rgb(212, 181, 0), rgb(233, 255, 106))";
-      document.getElementById("p1Winner").value = "1";
+      document.entryForm.p1Winner.value = 1;
 
       document.getElementById("p2WinnerLabel").innerHTML = "Loser";
       document.getElementById("p2WinnerLabel").style.display = "block";
       document.getElementById("p2WinnerLabel").style.color = "blue";
       document.getElementById("p2WinnerLabel").style.background = "linear-gradient(160deg, rgb(0, 155, 0), rgb(170, 255, 170))";
-      document.getElementById("p2Winner").value = "0";
+      document.entryForm.p2Winner.value = 0;
     }
   }else {
     var scoreVal = document.entryForm.p2Score.value;
@@ -51,13 +51,13 @@ function scoreInput(player)
       document.getElementById("p1WinnerLabel").style.display = "block";
       document.getElementById("p1WinnerLabel").style.color = "blue";
       document.getElementById("p1WinnerLabel").style.background = "linear-gradient(160deg, rgb(0, 155, 0), rgb(170, 255, 170))";
-      document.getElementById("p1Winner").value = "0";
+      document.entryForm.p1Winner.value = 0;
 
       document.getElementById("p2WinnerLabel").innerHTML = "Winner";
       document.getElementById("p2WinnerLabel").style.display = "block";
       document.getElementById("p2WinnerLabel").style.color = "red";
       document.getElementById("p2WinnerLabel").style.background = "linear-gradient(160deg, rgb(212, 181, 0), rgb(233, 255, 106))";
-      document.getElementById("p2Winner").value = "1";
+      document.entryForm.p2Winner.value = 1;
     }
   }
 
