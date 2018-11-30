@@ -33,9 +33,7 @@ $score['p2no'] = $p2no;
 $score['p2score'] = $_REQUEST['p2Score'];
 $score['p2win'] = $_REQUEST['p2Winner'];
 
-$result = $dtutils->checkMemberList($score);
-
-registScore($score);
+$result = $dtutils->registScore($score);
 
 echo "登録完了しました";
 
