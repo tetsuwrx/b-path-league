@@ -98,11 +98,18 @@
       $utils = new DBUtils();
 
       // membernoの最大値を取得
-      $sql = "select max(matchno) from members;";
+      $sql = "select max(matchno) from matchdata;";
 
       $stmt = $utils->getDataSet($sql);
 
-      $rows = (int)$stmt->fetchColumn();
+      $rows = 0;
+
+      try{
+        $rows = (int)$stmt->fetchColumn();
+      }catch ( Exception $ex ){
+        $rows = 1;
+      }
+
 
       $stmt = null;
 
