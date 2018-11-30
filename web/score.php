@@ -25,13 +25,13 @@ $p1name = explode(",", $_REQUEST['p1Name']);
 $p1no = $p1name[0];
 $score['p1no'] = $p1no;
 $score['p1score'] = $_REQUEST['p1Score'];
-$score['p1win'] = $_REQUEST['p1Winner'];
+$score['p1win'] = $_REQUEST['p1WinnerFlag'];
 
 $p2name = explode(",", $_REQUEST['p2Name']);
 $p2no = $p2name[0];
 $score['p2no'] = $p2no;
 $score['p2score'] = $_REQUEST['p2Score'];
-$score['p2win'] = $_REQUEST['p2Winner'];
+$score['p2win'] = $_REQUEST['p2WinnerFlag'];
 
 $result = $dtutils->registScore($score);
 
