@@ -158,14 +158,18 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $score = $this->getScore( $member['class'] );
-
-      $result = $stmt->execute(array($matchno + 1, $score['entryDate'], $score['p1no'], $score['p1score'], $score['p1win'], $score['p2no'], $score['p2score'], $score['p2win']));
+      try{
+        $pdo->beginTransaction();
+        $stmt->execute(array($matchno + 1, $score['entryDate'], $score['p1no'], $score['p1score'], $score['p1win'], $score['p2no'], $score['p2score'], $score['p2win']));
+        $pdo->commit();
+      }catch(Exception $e)
+      {
+        $pdo->rollBack();
+        echo 'エラーメッセージ：', $e->getMessage(), "\n";
+      }
 
       $pdo = null;
       $stmt = null;
-
-      return $result;
     }
 
   }
