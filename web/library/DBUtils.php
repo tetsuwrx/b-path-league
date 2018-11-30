@@ -154,7 +154,7 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "insert into matchdata values ( ?, ?, ?, ?, ?, ? )";
+      $sql = "insert into matchdata values ( ?, ?, ?, ?, ?, ?, ?, ? )";
 
       $stmt = $pdo->prepare($sql);
 
