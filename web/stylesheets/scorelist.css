@@ -89,3 +89,19 @@ th:nth-of-type(4),
 td:nth-of-type(4){
   background: #ffe8d1;
 }
+th:nth-of-type(5),
+td:nth-of-type(5){
+  background: #d1ffd1;
+}
+th:nth-of-type(6),
+td:nth-of-type(6){
+  background: #e8ffd1;
+}
+th:nth-of-type(7),
+td:nth-of-type(7){
+  background: #ffffd1;
+}
+th:nth-of-type(8),
+td:nth-of-type(8){
+  background: #ffe8d1;
+}
