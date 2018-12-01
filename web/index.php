@@ -69,7 +69,7 @@ $app->get('/scorelist', function() use($app) {
   $dateFrom = date("Y-m-d");
   $dateTo = date("Y-m-d");
 
-  return $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo', $dateTo) );
+  return $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo) );
 });
 
 $app->run();
