@@ -50,7 +50,16 @@ input.searchSubmit{
   background:none;
   border:none;
 }
-
+div.searchResult{
+  margin-left:1vw;
+  float:left;
+  height:8vh;
+  width:100%;
+  margin-top:6vh;
+  margin-bottom:3vh;
+  overflow:hidden;
+  text-align:center;
+}
 table{
   border-collapse: collapse;
   margin:0 auto;
