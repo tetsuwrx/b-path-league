@@ -13,37 +13,37 @@
       <div class="conditionForm">
         <input type="submit" name="searchSubmit" class="searchSubmit" value="検索">
       </div>
-      {% if scorelist|length > 0 %}
-      <div class="searchResult">
-        <table>
-          <thead>
-            <tr>
-              <th>対戦番号</th>
-              <th>対戦日</th>
-              <th>対戦者1なまえ</th>
-              <th>対戦者1スコア</th>
-              <th>対戦者1勝利？</th>
-              <th>対戦者2なまえ</th>
-              <th>対戦者2スコア</th>
-              <th>対戦者2勝利？</th>
-            </tr>
-          </thead>
-        {% for score in scorelist %}
-          <tr>
-            <td>{{ score.matchno }}</td>
-            <td>{{ score.matchdate }}</td>
-            <td>{{ score.player1name }}</td>
-            <td>{{ score.player1score }}</td>
-            <td>{{ score.player1win }}</td>
-            <td>{{ score.player2name }}</td>
-            <td>{{ score.player2score }}</td>
-            <td>{{ score.player2win }}</td>
-          </tr>
-        {% endfor %}
-        </table>
-      </div>
-      {% endif %}
     </div>
+    {% if scorelist|length > 0 %}
+    <div class="searchResult">
+      <table>
+        <thead>
+          <tr>
+            <th>対戦番号</th>
+            <th>対戦日</th>
+            <th>対戦者1なまえ</th>
+            <th>対戦者1スコア</th>
+            <th>対戦者1勝利？</th>
+            <th>対戦者2なまえ</th>
+            <th>対戦者2スコア</th>
+            <th>対戦者2勝利？</th>
+          </tr>
+        </thead>
+      {% for score in scorelist %}
+        <tr>
+          <td>{{ score.matchno }}</td>
+          <td>{{ score.matchdate }}</td>
+          <td>{{ score.player1name }}</td>
+          <td>{{ score.player1score }}</td>
+          <td>{{ score.player1win }}</td>
+          <td>{{ score.player2name }}</td>
+          <td>{{ score.player2score }}</td>
+          <td>{{ score.player2win }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+    {% endif %}
   </div>
 </form>
 {% endblock %}
