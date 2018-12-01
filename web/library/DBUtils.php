@@ -180,7 +180,7 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      // メンバーリストを取得
+      // スコアリストを取得
       $sql = "select matchno
                    , matchdate
                    , player1name
@@ -203,7 +203,7 @@
 
       $pdo = null;
 
-      return $result;
+      return $stmt;
     }
 
   }
