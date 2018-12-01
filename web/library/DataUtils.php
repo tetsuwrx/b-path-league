@@ -107,7 +107,7 @@
       try{
         $rows = (int)$stmt->fetchColumn();
       }catch ( Exception $ex ){
-        $rows = 1;
+        $rows = 0;
       }
 
       $stmt = null;
