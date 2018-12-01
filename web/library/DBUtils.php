@@ -172,6 +172,39 @@
       $stmt = null;
     }
 
+    function getScoreList($dateFrom, $dateTo)
+    {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+
+      $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+      // メンバーリストを取得
+      $sql = "select matchno
+                   , matchdate
+                   , player1name
+                   , player1score
+                   , player1win
+                   , player2name
+                   , player2score
+                   , player2win
+                from v_matchdata
+               where matchdate between :dateFrom and :dateTo
+              ;";
+
+      $stmt = $pdo->prepare($sql);
+
+      $stmt->bindValue(":dateFrom", $dateFrom);
+      $stmt->bindValue(":dateTo", $dateTo);
+
+      $stmt->execute();
+
+      $pdo = null;
+
+      return $result;
+    }
+
   }
 
 ?>
