@@ -1,5 +1,17 @@
 {% extends "scorelistlayout.html" %}
 {% block content %}
 <form name="entryForm" method="POST" target="_self" action="scorelist">
+  <div class="menu">対戦結果検索</div>
+  <div class="title">
+    <div class="main">
+      <div class="conditionForm">
+        <input type="date" name="dateFrom" class="dateForm" value="{{ dateFrom }}">
+        <input type="date" name="dateTo" class="dateForm" value="{{ dateTo }}">
+      </div>
+      <div class="conditionForm">
+        <input type="submit" name="searchSubmit" class="searchSubmit" value="検索">
+      </div>
+    </div>
+  </div>
 </form>
 {% endblock %}

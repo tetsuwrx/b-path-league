@@ -66,7 +66,10 @@ $app->get('/score', function() use($app) {
 $app->get('/scorelist', function() use($app) {
   $app['monolog']->addDebug('logging output.');
 
-  return $app['twig']->render('scorelist.twig');
+  $dateFrom = date("Y-m-d");
+  $dateTo = date("Y-m-d");
+
+  return $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo', $dateTo) );
 });
 
 $app->run();
