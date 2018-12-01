@@ -190,7 +190,8 @@
                    , player2score
                    , player2win
                 from v_matchdata
-               where matchdate between :dateFrom and :dateTo
+               where matchdate >= :dateFrom
+                 and matchdate <= :dateTo
               ;";
 
       $stmt = $pdo->prepare($sql);
