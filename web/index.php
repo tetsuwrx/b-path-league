@@ -63,4 +63,10 @@ $app->get('/score', function() use($app) {
   return $app['twig']->render('score.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist) );
 });
 
+$app->get('/scorelist', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+
+  return $app['twig']->render('scorelist.twig');
+});
+
 $app->run();
