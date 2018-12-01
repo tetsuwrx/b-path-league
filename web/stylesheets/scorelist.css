@@ -50,3 +50,21 @@ input.searchSubmit{
   background:none;
   border:none;
 }
+
+table{
+  border-collapse: collapse;
+  margin:0 auto;
+}
+td.th{
+  padding:10px;
+}
+th{
+  color:#fff;
+  background:#005ab3;
+}
+table tr:nth-child(odd){
+  background:#e6f2ff;
+}
+td{
+  border-bottom:2px solid #80bcff;
+}
