@@ -65,7 +65,8 @@ a.gotoMenu{
   border:none;
   font-size:1.5vh;
   font-weight:bold;
-  text-align:left;
+  text-align:center;
   text-decoration: none;
+  vertical-align: center;
   color: black;
 }
