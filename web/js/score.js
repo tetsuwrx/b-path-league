@@ -7,8 +7,8 @@ function setClass1()
   {
     var classVal = nameVal.split(',');
 
-    document.entryForm.p2Class.value = classVal[2];
-    document.entryForm.p2ScoreWin.value = classVal[3];
+    document.entryForm.p1Class.value = classVal[2];
+    document.entryForm.p1ScoreWin.value = classVal[3];
   }
 }
 
