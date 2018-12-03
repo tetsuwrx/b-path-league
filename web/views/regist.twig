@@ -15,7 +15,11 @@
       <!-- ニックネーム -->
       <input class="inputitem" onclick="nameckick()" type="text" name="membername" value="{{ name }}">
       {% if result == 'success' %}
-        <label> 登録に成功しました</label>
+        <script>
+          window.onload = function(){
+            window.alert('登録に成功しました');
+          }
+        </script>
       {% endif %}
     </div>
   </div>

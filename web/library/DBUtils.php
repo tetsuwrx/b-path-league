@@ -59,11 +59,23 @@
 
       $sql = "insert into members values ( ?, ?, ?, ?, ?, ? )";
 
-      $stmt = $pdo->prepare($sql);
+      $result = FALSE;
+      try{
+        $stmt = $pdo->prepare($sql);
 
-      $score = $this->getScore( $member['class'] );
+        $score = $this->getScore( $member['class'] );
 
-      $result = $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['class'], $score, $member['sex']));
+        $pdo->beginTransaction();
+
+        $stmt->execute(array($rows + 1, $registDate, $member['name'], $member['class'], $score, $member['sex']));
+
+        $pdo->commit();
+
+        $result = TRUE;
+      }catch(Exception $e){
+        $pdo->rollBack();
+        echo 'エラーメッセージ：', $e->getMessage(), "\n";
+      }
 
       $pdo = null;
       $stmt = null;
@@ -90,16 +102,20 @@
       $stmt->bindValue(":sex", $member['sex']);
       $stmt->bindValue(":memberno", $memberno);
 
+      $result = FALSE;
+
       try{
         $pdo->beginTransaction();
         $stmt->execute();
         $pdo->commit();
+
+        $result = TRUE;
+
       }catch(Exception $e)
       {
         $pdo->rollBack();
         echo 'エラーメッセージ：', $e->getMessage(), "\n";
       }
-
 
       $pdo = null;
       $stmt = null;

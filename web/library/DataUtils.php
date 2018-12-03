@@ -51,8 +51,9 @@
 
       $registDate = date("Y-m-d");
 
-      $utils->registMember($rows, $registDate, $member);
+      $result = $utils->registMember($rows, $registDate, $member);
 
+      return $result;
     }
 
     /*
@@ -62,8 +63,9 @@
     {
       $utils = new DBUtils();
 
-      $utils->updateMember($memberno, $member);
+      $result = $utils->updateMember($memberno, $member);
 
+      return $result;
     }
 
     /*

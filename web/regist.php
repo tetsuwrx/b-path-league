@@ -45,14 +45,11 @@ if ( !isset($member['class']) )
 
 if ( $result < 1 )
 {
-  echo "新規登録しました";
-  $dtutils->registMember($member);
+  $return = $dtutils->registMember($member);
 }else {
-  echo "上書きしました", "\n";
-
   $member['no'] = $result;
 
-  $dtutils->updateMember($result, $member);
+  $return = $dtutils->updateMember($result, $member);
 }
 $member['result'] = 'success';
 
