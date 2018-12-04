@@ -33,7 +33,7 @@
         </div>
         <div class="p1Score">
           <label for="p1Score">スコア：</label>
-          <input class="p1Score" name="p1Score" type="text" value="" onchange="scoreInput('p1')">
+          <input class="p1Score" name="p1Score" type="text" value="" onchange="scoreInput('p1')" inputmode="numeric">
           <input type="hidden" name="p1ScoreWin" value="">
         </div>
         <!--
@@ -55,6 +55,7 @@
           <input class="p1Refine" name="p2Refine" type="text" value="" onchange="refineMember(this, document.entryForm.p2Name, document.entryForm.p2NameAll)">
         </div>
         <div class="p1Name">
+          <label for="p2Name">なまえ：</label>
           <select class="p1Name" name="p2Name" onchange="setClass(this, document.entryForm.p2Class, document.entryForm.p2ScoreWin)">
               <option value="0">▼ -- 選択してください -- ▼</option>
             {% for member in memberlist %}
@@ -69,10 +70,12 @@
           </select>
         </div>
         <div class="p1Class">
+          <label for="p2Class">クラス：</label>
           <input class="p1Class" name="p2Class" type="text" value="" readonly="readonly">
         </div>
         <div class="p1Score">
-          <input class="p1Score" name="p2Score" type="text" value="" onchange="scoreInput('p2')">
+          <label for="p2Score">スコア：</label>
+          <input class="p1Score" name="p2Score" type="text" value="" onchange="scoreInput('p2')" inputmode="numeric">
           <input type="hidden" name="p2ScoreWin" value="">
         </div>
         <!--
