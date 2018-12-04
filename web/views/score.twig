@@ -50,7 +50,7 @@
           <input class="p1Refine" name="p2Refine" type="text" value="" onchange="refineMember(this, document.entryForm.p2Name, document.entryForm.p2NameAll)">
         </div>
         <div class="p1Name">
-          <select class="p1Name" name="p2Name" onchange="setClass(this, document.entryForm.p1Class, document.entryForm.p1ScoreWin)">
+          <select class="p1Name" name="p2Name" onchange="setClass(this, document.entryForm.p2Class, document.entryForm.p2ScoreWin)">
               <option value="0">▼ -- 選択してください -- ▼</option>
             {% for member in memberlist %}
               <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
