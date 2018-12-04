@@ -40,8 +40,8 @@ div.matchResult{
 div.p1Name,div.p1Class,div.p1Score,div.p1Masu{
   background:rgba(199, 199, 199, 0.527);
   overflow:hidden;
-  height:8vh
-  ;margin-bottom:1vh;
+  height:8vh;
+  margin-bottom:1vh;
   margin-left:1.4vw;
   width:90%;
   border-radius:1vw;

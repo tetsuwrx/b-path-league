@@ -4,11 +4,12 @@
   <div class="menu">リーグ戦結果入力</div>
   <div class="title">
     <div class="entryDate">
-        <input class="entryDate" name="entryDate" type="date" value="{{ entryDate }}">
+      <input class="entryDate" name="entryDate" type="date" value="{{ entryDate }}">
     </div>
     <div class="scoreMain">
       <div class="matchResult">
         <div class="p1Name">
+          <label for="p1Refine">絞り込み：</label>
           <input class="p1Refine" name="p1Refine" type="text" value="" onchange="refineMember(this, document.entryForm.p1Name, document.entryForm.p1NameAll)">
         </div>
         <div class="p1Name">
