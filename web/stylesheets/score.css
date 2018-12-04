@@ -58,6 +58,12 @@ input.entryDate,select.p1Name,input.p1Class,input.p1Score,select.p1Masu,input.a1
   background:none;
   border:none;
 }
+input.p1Score,input.p1Refine{
+  font-size:1.8em;
+  height:100%;
+  background:none;
+  border:1px;
+}
 div.p1Name{
   margin-top:1vh;
 }
