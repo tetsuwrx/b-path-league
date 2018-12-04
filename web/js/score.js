@@ -90,29 +90,28 @@ function scoreInput(player)
       document.entryForm.p2WinnerFlag.value = "1";
     }
   }
+}
 
-  function refineMember(refineVal, selectObj)
-  {
-    var items = selectObj.children;
-    var value = refineVal.value;
+function refineMember(refineVal, selectObj)
+{
+  var items = selectObj.children;
+  var value = refineVal.value;
 
-    const reg = new RegExp(".*" + value + ".*", "i");
+  const reg = new RegExp(".*" + value + ".*", "i");
 
-    if ( value === ''){
-      for ( i = 0 ; i < items.length; i++) {
-        items[i].style.display = "";
-      }
-    	return;
-    }
-
+  if ( value === ''){
     for ( i = 0 ; i < items.length; i++) {
-      if (items[i].textContent.match(reg)) {
-        items[i].style.display = "";
-      } else {
-        items[i].style.display = "none";
-      }
-      items[i].selected = false;
+      items[i].style.display = "";
     }
+    return;
   }
 
+  for ( i = 0 ; i < items.length; i++) {
+    if (items[i].textContent.match(reg)) {
+      items[i].style.display = "";
+    } else {
+      items[i].style.display = "none";
+    }
+    items[i].selected = false;
+  }
 }
