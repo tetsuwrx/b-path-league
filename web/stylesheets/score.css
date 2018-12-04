@@ -46,6 +46,12 @@ div.p1Name,div.p1Class,div.p1Score,div.p1Masu{
   width:90%;
   border-radius:1vw;
 }
+select.p1Name{
+  font-size:1.8em;
+  height:50%;
+  background:none;
+  border:none;
+}
 input.entryDate,select.p1Name,input.p1Class,input.p1Score,select.p1Masu,input.a1btns{
   font-size:1.8em;
   height:100%;

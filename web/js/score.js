@@ -32,6 +32,22 @@ function setClass2()
   }
 }
 
+function setClass(nameObj, classObj, scoreObj)
+{
+  var selInd = obj.selectedIndex;
+  var nameVal = obj.options[selInd].value;
+  if ( nameVal != "0" )
+  {
+    var classVal = nameVal.split(',');
+
+    classObj.value = classVal[2];
+    scoreObj.value = classVal[3];
+  }else{
+    classObj.value = "";
+    scoreObj.value = "";
+  }
+}
+
 function scoreInput(player)
 {
   if ( player == 'p1' )
