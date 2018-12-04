@@ -13,6 +13,7 @@
           <input class="p1Refine" name="p1Refine" type="text" value="" onchange="refineMember(this, document.entryForm.p1Name, document.entryForm.p1NameAll)">
         </div>
         <div class="p1Name">
+          <label for="p1Name">なまえ：</label>
           <select class="p1Name" name="p1Name" onchange="setClass(this, document.entryForm.p1Class, document.entryForm.p1ScoreWin)">
               <option value="0">▼ -- 選択してください -- ▼</option>
             {% for member in memberlist %}
@@ -27,9 +28,11 @@
           </select>
         </div>
         <div class="p1Class">
+          <label for="p1Class">クラス：</label>
           <input class="p1Class" name="p1Class" type="text" value="" readonly="readonly">
         </div>
         <div class="p1Score">
+          <label for="p1Score">スコア：</label>
           <input class="p1Score" name="p1Score" type="text" value="" onchange="scoreInput('p1')">
           <input type="hidden" name="p1ScoreWin" value="">
         </div>
@@ -48,6 +51,7 @@
       </div>
       <div class="matchResult">
         <div class="p1Name">
+          <label for="p2Refine">絞り込み：</label>
           <input class="p1Refine" name="p2Refine" type="text" value="" onchange="refineMember(this, document.entryForm.p2Name, document.entryForm.p2NameAll)">
         </div>
         <div class="p1Name">
