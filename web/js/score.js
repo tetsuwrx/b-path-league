@@ -94,7 +94,7 @@ function scoreInput(player)
 
 function refineMember(refineVal, selectObj)
 {
-  var items = selectObj.children;
+  var items = selectObj.options;
   var value = refineVal.value;
 
   const reg = new RegExp(".*" + value + ".*", "i");
