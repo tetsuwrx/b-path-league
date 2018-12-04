@@ -108,7 +108,7 @@ function refineMember(refineVal, selectObj, selectAllObj)
   var itemindex = 0;
   for ( i = 0 ; i < allitems.length; i++) {
     if (allitems[i].textContent.match(reg)) {
-      items[itemindex] = new option(allitems[i].textContent, allitems[i].value);
+      items[itemindex] = new Option(allitems[i].textContent, allitems[i].value);
       itemindex++;
     }
   }
