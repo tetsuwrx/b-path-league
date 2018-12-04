@@ -92,26 +92,24 @@ function scoreInput(player)
   }
 }
 
-function refineMember(refineVal, selectObj)
+function refineMember(refineVal, selectObj, selectAllObj)
 {
   var items = selectObj.options;
+  var allitems = selectAllObj.options;
   var value = refineVal.value;
 
   const reg = new RegExp(".*" + value + ".*", "i");
 
-  if ( value === ''){
-    for ( i = 0 ; i < items.length; i++) {
-      items[i].style.display = "";
-    }
-    return;
+  // 全てのアイテムを削除
+  for ( i = items.length; i > 0; i-- ) {
+    items[i-1] = null;
   }
 
-  for ( i = 0 ; i < items.length; i++) {
-    if (items[i].textContent.match(reg)) {
-      items[i].style.display = "";
-    } else {
-      items[i].style.display = "none";
+  var itemindex = 0;
+  for ( i = 0 ; i < allitems.length; i++) {
+    if (allitems[i].textContent.match(reg)) {
+      items[itemindex] = new option(allitems[i].textContent, allitems[i].value);
+      itemindex++;
     }
-    items[i].selected = false;
   }
 }
