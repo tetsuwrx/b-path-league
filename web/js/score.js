@@ -1,3 +1,4 @@
+/*
 function setClass1()
 {
   var p1Name = document.entryForm.p1Name;
@@ -31,6 +32,7 @@ function setClass2()
     document.entryForm.p2ScoreWin.value = "";
   }
 }
+*/
 
 function setClass(nameObj, classObj, scoreObj)
 {
@@ -86,6 +88,30 @@ function scoreInput(player)
       document.getElementById("p2WinnerLabel").style.color = "red";
       document.getElementById("p2WinnerLabel").style.background = "linear-gradient(160deg, rgb(212, 181, 0), rgb(233, 255, 106))";
       document.entryForm.p2WinnerFlag.value = "1";
+    }
+  }
+
+  function refineMember(refineVal, selectObj)
+  {
+    var items = selectObj.children;
+    var value = refineVal.value;
+
+    const reg = new RegExp(".*" + value + ".*", "i");
+
+    if ( value === ''){
+      for ( i = 0 ; i < items.length; i++) {
+        items[i].style.display = "";
+      }
+    	return;
+    }
+
+    for ( i = 0 ; i < items.length; i++) {
+      if (items[i].textContent.match(reg)) {
+        items[i].style.display = "";
+      } else {
+        items[i].style.display = "none";
+      }
+      items[i].selected = false;
     }
   }
 
