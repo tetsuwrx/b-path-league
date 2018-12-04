@@ -34,8 +34,8 @@ function setClass2()
 
 function setClass(nameObj, classObj, scoreObj)
 {
-  var selInd = obj.selectedIndex;
-  var nameVal = obj.options[selInd].value;
+  var selInd = nameObj.selectedIndex;
+  var nameVal = nameObj.options[selInd].value;
   if ( nameVal != "0" )
   {
     var classVal = nameVal.split(',');
