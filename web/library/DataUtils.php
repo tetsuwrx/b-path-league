@@ -236,14 +236,17 @@
       foreach ($scoreList as $score)
       {
         // メンバーNoが変わったら集計リセット
-        if ( $tmp_memberno != $score['memberno'] && $tmp_memberno != -1 )
+        if ( $tmp_memberno != $score['memberno'] )
         {
-          $ranking[] = array('memberno' => $tmp_memberno,
-                             'opponentno' => $tmp_opponentno,
-                             'match_count' => $tmp_matchcount,
-                             'win_count' => $tmp_win_count,
-                             'lose_count' => $tmp_lose_count
-                           );
+          if ( $tmp_memberno != -1 )
+          {
+            $ranking[] = array('memberno' => $tmp_memberno,
+                               'opponentno' => $tmp_opponentno,
+                               'match_count' => $tmp_matchcount,
+                               'win_count' => $tmp_win_count,
+                               'lose_count' => $tmp_lose_count
+                             );
+          }
           $tmp_memberno = $score['memberno'];
           $tmp_opponentno = $score['opponentno'];
           $tmp_match_count = 0;
