@@ -192,6 +192,7 @@
                                  'memberno' => $member['memberno'],
                                  'opponentno' => $score['player2no'],
                                  'matchdate' => $score['matchdate'],
+                                 'score' => $score['player1score'],
                                  'result' => $score['player1win']
                                );
           }elseif ( $member['memberno'] == $score['player2no'] ) {
@@ -199,6 +200,7 @@
                                  'memberno' => $member['memberno'],
                                  'opponentno' => $score['player1no'],
                                  'matchdate' => $score['matchdate'],
+                                 'score' => $score['player2score'],
                                  'result' => $score['player2win']
                                );
           }
@@ -217,6 +219,61 @@
                        $rankingbase);
 
       return $rankingbase;
+    }
+
+    // ランキングの集計
+    function aggregateRanking( $scoreList )
+    {
+      $ranking = array();
+
+      $tmp_memberno = -1;
+      $tmp_opponentno = -1;
+      $tmp_match_count = 0;
+      $tmp_win_count = 0;
+      $tmp_lose_count = 0;
+      $point = 0;
+      foreach ($scorelist as $score)
+      {
+        // メンバーNoが変わったら集計リセット
+        if ( $tmp_memberno != $score['memberno'] )
+        {
+          $ranking[] = array('memberno' => $score['memberno'],
+                             'opponentno' => $score['opponentno'],
+                             'match_count' => $tmp_matchcount,
+                             'win_count' => $tmp_win_count,
+                             'lose_count' => $tmp_lose_count
+                           );
+          $tmp_memberno = $score['memberno'];
+          $tmp_match_count = 0;
+          $tmp_win_count = 0;
+          $tmp_lose_count = 0;
+          $point = 0;
+        }
+
+        // 対戦者が変わった
+        if ( $tmp_opponentno != $score['opponentno'] )
+        {
+          $tmp_opponentno = $score['opponentno'];
+          $tmp_match_count = 0;
+          $tmp_win_count = 0;
+          $tmp_lose_count = 0;
+          $point = 0;
+        }else {
+          // ここで集計
+          $tmp_matchcount++;        // 試合回数を＋１
+
+          if ( $score['result' == 1] )
+          {
+            // 勝数をカウント
+            $tmp_win_count++;
+          }else {
+            // 負け数をカウント
+            $tmp_lose_count++;
+          }
+        }
+      }
+
+      return $ranking;
     }
   }
 
