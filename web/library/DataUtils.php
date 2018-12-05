@@ -153,7 +153,7 @@
     {
       $utils = new DBUtils();
 
-      $stmt = $utils->getScoreList($dateFrom, $dateTo, $memberno);
+      $stmt = $utils->getMatchList($dateFrom, $dateTo, $memberno);
 
       $scorelist = array();
 
@@ -178,7 +178,6 @@
     {
       // メンバーのリストを取得
       $memberlist = $this->getMemberList();
-
 
       $rankingbase = array();
       foreach ($memberlist as $member) {
