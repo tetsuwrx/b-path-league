@@ -191,13 +191,15 @@
           // ランキングのもととなるデータを「<memberno>,<対戦相手>,<試合日>,<結果>」の形で整形する
           if( $member['memberno'] == $score['player1no'] )
           {
-            $rankingbase[] = array('memberno' => $member['memberno'],
+            $rankingbase[] = array('matchno' => $member['matchno'],
+                                 'memberno' => $member['memberno'],
                                  'opponentno' => $score['player2no'],
                                  'matchdate' => $score['matchdate'],
                                  'result' => $score['player1win']
                                );
           }elseif ( $member['memberno'] == $score['player2no'] ) {
-            $rankingbase[] = array('memberno' => $member['memberno'],
+            $rankingbase[] = array('matchno' => $member['matchno'],
+                                 'memberno' => $member['memberno'],
                                  'opponentno' => $score['player1no'],
                                  'matchdate' => $score['matchdate'],
                                  'result' => $score['player2win']

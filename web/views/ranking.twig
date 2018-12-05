@@ -19,6 +19,7 @@
       <table>
         <thead>
           <tr>
+            <th>メンバーNo</th>
             <th>対戦番号</th>
             <th>対戦日</th>
             <th>対戦相手番号</th>
@@ -28,6 +29,7 @@
       {% for score in scorelist %}
         <tr>
           <td>{{ score.memberno }}</td>
+          <td>{{ score.matchno }}</td>
           <td>{{ score.matchdate }}</td>
           <td>{{ score.opponentno }}</td>
           {% if score.result == 1 %}
