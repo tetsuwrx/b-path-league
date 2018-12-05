@@ -232,7 +232,7 @@
       $tmp_win_count = 0;
       $tmp_lose_count = 0;
       $point = 0;
-      foreach ($scorelist as $score)
+      foreach ($scoreList as $score)
       {
         // メンバーNoが変わったら集計リセット
         if ( $tmp_memberno != $score['memberno'] )
