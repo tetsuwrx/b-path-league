@@ -232,17 +232,12 @@
       $tmp_win_count = 0;
       $tmp_lose_count = 0;
       $point = 0;
+      $cnt = 0;
       foreach ($scoreList as $score)
       {
         // メンバーNoが変わったら集計リセット
         if ( $tmp_memberno != $score['memberno'] )
         {
-          $ranking[] = array('memberno' => $score['memberno'],
-                             'opponentno' => $score['opponentno'],
-                             'match_count' => $tmp_matchcount,
-                             'win_count' => $tmp_win_count,
-                             'lose_count' => $tmp_lose_count
-                           );
           $tmp_memberno = $score['memberno'];
           $tmp_match_count = 0;
           $tmp_win_count = 0;
@@ -253,6 +248,16 @@
         // 対戦者が変わった
         if ( $tmp_opponentno != $score['opponentno'] )
         {
+          if ( $cnt > 0 )
+          {
+            $ranking[] = array('memberno' => $score['memberno'],
+                               'opponentno' => $score['opponentno'],
+                               'match_count' => $tmp_matchcount,
+                               'win_count' => $tmp_win_count,
+                               'lose_count' => $tmp_lose_count
+                             );
+          }
+                           
           $tmp_opponentno = $score['opponentno'];
           $tmp_match_count = 0;
           $tmp_win_count = 0;
@@ -270,6 +275,7 @@
             // 負け数をカウント
             $tmp_lose_count++;
           }
+          $cnt++;
         }
       }
 
