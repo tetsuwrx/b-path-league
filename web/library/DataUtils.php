@@ -228,11 +228,9 @@
 
       $tmp_memberno = -1;
       $tmp_opponentno = -1;
-      $tmp_match_count = 0;
       $tmp_win_count = 0;
       $tmp_lose_count = 0;
       $point = 0;
-      $cnt = 0;
       foreach ($scoreList as $score)
       {
         // メンバーNoが変わったら集計リセット
@@ -249,7 +247,6 @@
           }
           $tmp_memberno = $score['memberno'];
           $tmp_opponentno = $score['opponentno'];
-          $tmp_match_count = 0;
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $point = 0;
@@ -266,15 +263,12 @@
                            );
 
           $tmp_opponentno = $score['opponentno'];
-          $tmp_match_count = 0;
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $point = 0;
         }
 
         // ここで集計
-        $tmp_matchcount++;        // 試合回数を＋１
-
         if ( $score['result'] == 1 )
         {
           // 勝数をカウント
@@ -283,8 +277,6 @@
           // 負け数をカウント
           $tmp_lose_count++;
         }
-
-        $cnt++;
       }
 
       return $ranking;
