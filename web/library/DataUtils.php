@@ -266,7 +266,7 @@
         // ここで集計
         $tmp_matchcount++;        // 試合回数を＋１
 
-        if ( $score['result' == '1'] )
+        if ( $score['result'] == 1 )
         {
           // 勝数をカウント
           $tmp_win_count++;
