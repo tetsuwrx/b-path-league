@@ -236,7 +236,7 @@
       foreach ($scoreList as $score)
       {
         // メンバーNoが変わったら集計リセット
-        if ( $tmp_memberno != $score['memberno'] )
+        if ( $tmp_memberno != $score['memberno'] && $tmp_memberno != -1 )
         {
           $ranking[] = array('memberno' => $tmp_memberno,
                              'opponentno' => $tmp_opponentno,
