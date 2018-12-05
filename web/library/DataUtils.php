@@ -160,10 +160,10 @@
       while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
         $scorelist[] = array('matchno' => $row['matchno'],
                              'matchdate' => $row['matchdate'],
-                             'player1name' => $row['player1name'],
+                             'player1no' => $row['player1no'],
                              'player1score' => $row['player1score'],
                              'player1win' => $row['player1win'],
-                             'player2name' => $row['player2name'],
+                             'player2no' => $row['player2no'],
                              'player2score' => $row['player2score'],
                              'player2win' => $row['player2win'],
                            );
