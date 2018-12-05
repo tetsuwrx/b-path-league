@@ -257,26 +257,27 @@
                                'lose_count' => $tmp_lose_count
                              );
           }
-                           
+
           $tmp_opponentno = $score['opponentno'];
           $tmp_match_count = 0;
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $point = 0;
-        }else {
-          // ここで集計
-          $tmp_matchcount++;        // 試合回数を＋１
-
-          if ( $score['result' == 1] )
-          {
-            // 勝数をカウント
-            $tmp_win_count++;
-          }else {
-            // 負け数をカウント
-            $tmp_lose_count++;
-          }
-          $cnt++;
         }
+
+        // ここで集計
+        $tmp_matchcount++;        // 試合回数を＋１
+
+        if ( $score['result' == 1] )
+        {
+          // 勝数をカウント
+          $tmp_win_count++;
+        }else {
+          // 負け数をカウント
+          $tmp_lose_count++;
+        }
+        
+        $cnt++;
       }
 
       return $ranking;
