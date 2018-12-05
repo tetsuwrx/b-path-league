@@ -252,7 +252,7 @@
 
       $stmt->bindValue(":dateFrom", $dateFrom);
       $stmt->bindValue(":dateTo", $dateTo);
-      $stmt->bindValue(":memberno", $memberno)
+      $stmt->bindValue(":memberno", $memberno);
 
       $stmt->execute();
 
