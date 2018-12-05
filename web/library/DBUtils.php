@@ -246,6 +246,7 @@
                where matchdate >= :dateFrom
                  and matchdate <= :dateTo
                  and ( player1no = :memberno or player2no = :memberno )
+               order by matchdate
               ;";
 
       $stmt = $pdo->prepare($sql);
