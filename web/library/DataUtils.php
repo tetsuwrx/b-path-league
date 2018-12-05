@@ -144,7 +144,67 @@
       $stmt = null;
 
       return $scorelist;
+    }
 
+    /*
+     * ランキングのベース情報を取得
+     */
+    function getMatchList($dateFrom, $dateTo, $memberno)
+    {
+      $utils = new DBUtils();
+
+      $stmt = $utils->getScoreList($dateFrom, $dateTo, $memberno);
+
+      $scorelist = array();
+
+      while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+        $scorelist[] = array('matchno' => $row['matchno'],
+                             'matchdate' => $row['matchdate'],
+                             'player1name' => $row['player1name'],
+                             'player1score' => $row['player1score'],
+                             'player1win' => $row['player1win'],
+                             'player2name' => $row['player2name'],
+                             'player2score' => $row['player2score'],
+                             'player2win' => $row['player2win'],
+                           );
+      }
+
+      $stmt = null;
+
+      return $scorelist;
+    }
+
+    function getRankingList($dateFrom, $dateTo)
+    {
+      // メンバーのリストを取得
+      $memberlist = $this->getMemberList();
+
+
+      $rankingbase = array();
+      foreach ($memberlist as $member) {
+        // 試合結果を取得
+        $scorelist = $this->getMatchList($dateFrom, $dateTo, $member['memberno']);
+
+        foreach ($scorelist as $score) {
+          // ランキングのもととなるデータを「<memberno>,<対戦相手>,<試合日>,<結果>」の形で整形する
+          if( $member['memberno'] == $score['player1no'] )
+          {
+            $rankingbase[] = array('memberno' => $member['memberno'],
+                                 'opponentno' => $score['player2no'],
+                                 'matchdate' => $score['matchdate'],
+                                 'result' => $score['player1win']
+                               );
+          }elseif ( $member['memberno'] == $score['player2no'] ) {
+            $rankingbase[] = array('memberno' => $member['memberno'],
+                                 'opponentno' => $score['player1no'],
+                                 'matchdate' => $score['matchdate'],
+                                 'result' => $score['player2win']
+                               );
+          }
+        }
+      }
+
+      return $rankingbase;
     }
   }
 

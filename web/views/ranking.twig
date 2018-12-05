@@ -1,0 +1,45 @@
+{% extends "rankinglayout.html" %}
+{% block content %}
+<form name="entryForm" method="POST" target="_self" action="ranking.php">
+  <div class="menu">対戦結果検索</div>
+  <div class="title">
+    <div class="main">
+      <div class="conditionForm">
+        <input type="date" name="dateFrom" class="dateForm" value="{{ dateFrom }}">
+      </div>
+      <div class="conditionForm">
+        <input type="date" name="dateTo" class="dateForm" value="{{ dateTo }}">
+      </div>
+      <div class="conditionForm">
+        <input type="submit" name="searchSubmit" class="searchSubmit" value="検索">
+      </div>
+    </div>
+    {% if scorelist|length > 0 %}
+    <div class="searchResult">
+      <table>
+        <thead>
+          <tr>
+            <th>対戦番号</th>
+            <th>対戦日</th>
+            <th>対戦相手番号</th>
+            <th>結果？</th>
+          </tr>
+        </thead>
+      {% for score in scorelist %}
+        <tr>
+          <td>{{ score.memberno }}</td>
+          <td>{{ score.matchdate }}</td>
+          <td>{{ score.opponentno }}</td>
+          {% if score.result == 1 %}
+            <td>勝ち</td>
+          {% else %}
+            <td>負け</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+    {% endif %}
+  </div>
+</form>
+{% endblock %}

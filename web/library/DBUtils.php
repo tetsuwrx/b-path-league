@@ -222,6 +222,45 @@
       return $stmt;
     }
 
+    /*
+     * 引数で指定されたメンバーの対戦結果を取得する
+     */
+    function getMatchList($dateFrom, $dateTo, $memberno)
+    {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+
+      $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+      // スコアリストを取得
+      $sql = "select matchno
+                   , matchdate
+                   , player1no
+                   , player1score
+                   , player1win
+                   , player2no
+                   , player2score
+                   , player2win
+                from matchdata
+               where matchdate >= :dateFrom
+                 and matchdate <= :dateTo
+                 and ( player1no = :memberno or player2no = :memberno )
+              ;";
+
+      $stmt = $pdo->prepare($sql);
+
+      $stmt->bindValue(":dateFrom", $dateFrom);
+      $stmt->bindValue(":dateTo", $dateTo);
+      $stmt->bindValue(":memberno", $memberno)
+
+      $stmt->execute();
+
+      $pdo = null;
+
+      return $stmt;
+    }
+
   }
 
 ?>

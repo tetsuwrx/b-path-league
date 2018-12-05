@@ -73,4 +73,14 @@ $app->get('/scorelist', function() use($app) {
   return $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist) );
 });
 
+$app->get('/ranking', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+
+  $dateFrom = date("Y-m-d");
+  $dateTo = date("Y-m-d");
+  $scorelist = array();
+
+  return $app['twig']->render('ranking.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist) );
+});
+
 $app->run();
