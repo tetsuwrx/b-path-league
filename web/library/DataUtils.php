@@ -242,7 +242,7 @@
           {
             $ranking[] = array('memberno' => $tmp_memberno,
                                'opponentno' => $tmp_opponentno,
-                               'match_count' => $tmp_matchcount,
+                               'match_count' => $tmp_win_count + $tmp_lose_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count
                              );
