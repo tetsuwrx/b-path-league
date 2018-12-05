@@ -19,6 +19,27 @@
       <table>
         <thead>
           <tr>
+            <th>matchno</th>
+            <th>memberno</th>
+            <th>opponentno</th>
+            <th>score</th>
+            <th>result</th>
+          </tr>
+        </thead>
+      {% for score in scorelist %}
+        <tr>
+          <td>{{ score.matchno }}</td>
+          <td>{{ score.memberno }}</td>
+          <td>{{ score.match_count }}</td>
+          <td>{{ score.score }}</td>
+          <td>{{ score.result }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+
+      <table>
+        <thead>
+          <tr>
             <th>メンバーNo</th>
             <th>対戦相手番号</th>
             <th>試合数</th>
