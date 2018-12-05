@@ -239,6 +239,7 @@
         if ( $tmp_memberno != $score['memberno'] )
         {
           $tmp_memberno = $score['memberno'];
+          $tmp_opponentno = $score['opponentno'];
           $tmp_match_count = 0;
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
@@ -276,7 +277,7 @@
           // 負け数をカウント
           $tmp_lose_count++;
         }
-        
+
         $cnt++;
       }
 
