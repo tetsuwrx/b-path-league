@@ -344,7 +344,7 @@
         $tmp_point[$key] = $row['point'];
       }
       array_multisort( $tmp_point, SORT_DESC, SORT_NUMERIC,
-                       $rankingpoint );
+                       $ranking );
 
       return $ranking;
     }
