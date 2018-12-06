@@ -248,6 +248,7 @@
                              );
           }
           $tmp_memberno = $score['memberno'];
+          $tmp_opponentno = -1;
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $tmp_match_count = 0;
