@@ -45,8 +45,8 @@
       <table>
         <thead>
           <tr>
-            <th>メンバーNo</th>
-            <th>対戦相手番号</th>
+            <th>メンバー</th>
+            <th>対戦相手</th>
             <th>試合数</th>
             <th>勝数</th>
             <th>負数</th>
@@ -55,8 +55,8 @@
         </thead>
       {% for score in rankingbase %}
         <tr>
-          <td>{{ score.memberno }}</td>
-          <td>{{ score.opponentno }}</td>
+          <td>{{ score.membername }}</td>
+          <td>{{ score.opponentname }}</td>
           <td>{{ score.match_count }}</td>
           <td>{{ score.win_count }}</td>
           <td>{{ score.lose_count }}</td>
@@ -75,6 +75,7 @@
       {% for score in ranking %}
         <tr>
           <td>{{ score.memberno }}</td>
+          <td>{{ score.membername }}</td>
           <td>{{ score.point }}</td>
         </tr>
       {% endfor %}
