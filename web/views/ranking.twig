@@ -19,11 +19,11 @@
       <table>
         <thead>
           <tr>
-            <th>matchno</th>
-            <th>memberno</th>
-            <th>opponentno</th>
-            <th>score</th>
-            <th>result</th>
+            <th>試合番号</th>
+            <th>メンバーNo</th>
+            <th>対戦相手</th>
+            <th>スコア</th>
+            <th>結果</th>
           </tr>
         </thead>
       {% for score in scorelist %}
@@ -32,7 +32,12 @@
           <td>{{ score.memberno }}</td>
           <td>{{ score.opponentno }}</td>
           <td>{{ score.score }}</td>
-          <td>{{ score.result }}</td>
+          {% if score.result == '0' %}
+            <td>負け</td>
+          {% else %}
+            <td>勝ち</td>
+          {% endif %}
+
         </tr>
       {% endfor %}
       </table>
