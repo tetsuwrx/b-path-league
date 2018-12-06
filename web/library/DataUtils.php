@@ -230,6 +230,8 @@
       $tmp_opponentno = -1;
       $tmp_win_count = 0;
       $tmp_lose_count = 0;
+      $tmp_match_count = 0;
+
       $point = 0;
       foreach ($scoreList as $score)
       {
@@ -240,31 +242,35 @@
           {
             $ranking[] = array('memberno' => $tmp_memberno,
                                'opponentno' => $tmp_opponentno,
-                               'match_count' => $tmp_win_count + $tmp_lose_count,
+                               'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count
                              );
           }
           $tmp_memberno = $score['memberno'];
-          $tmp_opponentno = $score['opponentno'];
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
+          $tmp_match_count = 0;
           $point = 0;
         }
 
         // 対戦者が変わった
         if ( $tmp_opponentno != $score['opponentno'] )
         {
-          $ranking[] = array('memberno' => $tmp_memberno,
-                             'opponentno' => $tmp_opponentno,
-                             'match_count' => $tmp_win_count + $tmp_lose_count,
-                             'win_count' => $tmp_win_count,
-                             'lose_count' => $tmp_lose_count
-                           );
+          if ( $tmp_opponentno != -1 )
+          {
+            $ranking[] = array('memberno' => $tmp_memberno,
+                               'opponentno' => $tmp_opponentno,
+                               'match_count' => $tmp_match_count,
+                               'win_count' => $tmp_win_count,
+                               'lose_count' => $tmp_lose_count
+                             );
+          }
 
           $tmp_opponentno = $score['opponentno'];
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
+          $tmp_match_count = 0;
           $point = 0;
         }
 
@@ -277,6 +283,7 @@
           // 負け数をカウント
           $tmp_lose_count++;
         }
+        $tmp_match_count++;
       }
 
       return $ranking;
