@@ -45,6 +45,7 @@
             <th>試合数</th>
             <th>勝数</th>
             <th>負数</th>
+            <th>ポイント</th>
           </tr>
         </thead>
       {% for score in ranking %}
@@ -54,6 +55,7 @@
           <td>{{ score.match_count }}</td>
           <td>{{ score.win_count }}</td>
           <td>{{ score.lose_count }}</td>
+          <td>{{ score.point }}</td>
         </tr>
       {% endfor %}
       </table>

@@ -244,7 +244,8 @@
                                'opponentno' => $tmp_opponentno,
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
-                               'lose_count' => $tmp_lose_count
+                               'lose_count' => $tmp_lose_count,
+                               'point' => $point
                              );
           }
           $tmp_memberno = $score['memberno'];
@@ -264,7 +265,8 @@
                                'opponentno' => $tmp_opponentno,
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
-                               'lose_count' => $tmp_lose_count
+                               'lose_count' => $tmp_lose_count,
+                               'point' => $point
                              );
           }
 
@@ -280,9 +282,26 @@
         {
           // 勝数をカウント
           $tmp_win_count++;
+          if ( $tmp_match_count < 2 )
+          {
+            $point += 7;
+          }else {
+            $point++;
+          }
         }else {
           // 負け数をカウント
           $tmp_lose_count++;
+
+          if ( $tmp_match_count < 2 )
+          {
+            if ( $score['score'] < 2)
+            {
+              $point += $score['score'];
+            }else {
+              $point += 2;
+            }
+
+          }
         }
         $tmp_match_count++;
       }
