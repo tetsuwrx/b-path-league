@@ -234,18 +234,24 @@
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
       // スコアリストを取得
-      $sql = "select matchno
-                   , matchdate
-                   , player1no
-                   , player1score
-                   , player1win
-                   , player2no
-                   , player2score
-                   , player2win
-                from matchdata
-               where matchdate >= :dateFrom
-                 and matchdate <= :dateTo
-                 and ( player1no = :memberno or player2no = :memberno )
+      $sql = "select a.matchno
+                   , a.matchdate
+                   , a.player1no
+                   , b.name as player1name
+                   , a.player1score
+                   , a.player1win
+                   , a.player2no
+                   , c.name as player2name
+                   , a.player2score
+                   , a.player2win
+                from matchdata a
+               inner join members b
+                  on a.player1no = b.memberno
+               inner join members c
+                  on a.player2no = c.memberno
+               where a.matchdate >= :dateFrom
+                 and a.matchdate <= :dateTo
+                 and ( a.player1no = :memberno or a.player2no = :memberno )
                order by matchdate
               ;";
 

@@ -161,9 +161,11 @@
         $scorelist[] = array('matchno' => $row['matchno'],
                              'matchdate' => $row['matchdate'],
                              'player1no' => $row['player1no'],
+                             'player1name' => $row['player1name'],
                              'player1score' => $row['player1score'],
                              'player1win' => $row['player1win'],
                              'player2no' => $row['player2no'],
+                             'player2name' => $row['player2name'],
                              'player2score' => $row['player2score'],
                              'player2win' => $row['player2win'],
                            );
@@ -190,7 +192,9 @@
           {
             $rankingbase[] = array('matchno' => $score['matchno'],
                                  'memberno' => $member['memberno'],
+                                 'membername' => $score['player1name'],
                                  'opponentno' => $score['player2no'],
+                                 'opponentname' => $score['player2name'],
                                  'matchdate' => $score['matchdate'],
                                  'score' => $score['player1score'],
                                  'result' => $score['player1win']
@@ -198,7 +202,9 @@
           }elseif ( $member['memberno'] == $score['player2no'] ) {
             $rankingbase[] = array('matchno' => $score['matchno'],
                                  'memberno' => $member['memberno'],
+                                 'membername' => $score['player2name'],
                                  'opponentno' => $score['player1no'],
+                                 'opponentname' => $score['player1name'],
                                  'matchdate' => $score['matchdate'],
                                  'score' => $score['player2score'],
                                  'result' => $score['player2win']
@@ -241,7 +247,9 @@
           if ( $tmp_memberno != -1 )
           {
             $rankingbase[] = array('memberno' => $tmp_memberno,
+                               'membername' => $tmp_membername,
                                'opponentno' => $tmp_opponentno,
+                               'opponentname' => $tmp_opponentname,
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count,
@@ -249,6 +257,7 @@
                              );
           }
           $tmp_memberno = $score['memberno'];
+          $tmp_membername = $score['membername'];
           $tmp_opponentno = -1;
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
@@ -262,7 +271,9 @@
           if ( $tmp_opponentno != -1 )
           {
             $rankingbase[] = array('memberno' => $tmp_memberno,
+                               'membername' => $tmp_membername,
                                'opponentno' => $tmp_opponentno,
+                               'opponentname' => $tmp_opponentname,
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count,
@@ -271,6 +282,7 @@
           }
 
           $tmp_opponentno = $score['opponentno'];
+          $tmp_opponentname = $score['opponentname'];
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $tmp_match_count = 0;
@@ -329,10 +341,12 @@
           if ( $tmpmemberno != -1 )
           {
             $ranking[] = array('memberno' => $tmpmemberno,
+                               'membername' => $tmpmembername,
                                'point' => $point
                              );
           }
           $tmpmemberno = $base['memberno'];
+          $tmpmembername = $base['membername'];
           $point = 0;
         }
 

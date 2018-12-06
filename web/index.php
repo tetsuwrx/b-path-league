@@ -79,9 +79,10 @@ $app->get('/ranking', function() use($app) {
   $dateFrom = date("Y-m-d");
   $dateTo = date("Y-m-d");
   $ranking = array();
+  $rankingbase = array();
   $scorelist = array();
 
-  return $app['twig']->render('ranking.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'ranking' => $ranking) );
+  return $app['twig']->render('ranking.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking) );
 });
 
 $app->run();
