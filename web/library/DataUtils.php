@@ -328,7 +328,7 @@
         {
           if ( $tmpmemberno != -1 )
           {
-            $ranking[] = array('memberno' => $tmp_memberno,
+            $ranking[] = array('memberno' => $tmpmemberno,
                                'point' => $point
                              );
           }
