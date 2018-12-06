@@ -222,9 +222,9 @@
     }
 
     // ランキングの集計
-    function aggregateRanking( $scoreList )
+    function aggregateRankingBase( $scoreList )
     {
-      $ranking = array();
+      $rankingbase = array();
 
       $tmp_memberno = -1;
       $tmp_opponentno = -1;
@@ -240,7 +240,7 @@
         {
           if ( $tmp_memberno != -1 )
           {
-            $ranking[] = array('memberno' => $tmp_memberno,
+            $rankingbase[] = array('memberno' => $tmp_memberno,
                                'opponentno' => $tmp_opponentno,
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
@@ -261,7 +261,7 @@
         {
           if ( $tmp_opponentno != -1 )
           {
-            $ranking[] = array('memberno' => $tmp_memberno,
+            $rankingbase[] = array('memberno' => $tmp_memberno,
                                'opponentno' => $tmp_opponentno,
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
@@ -305,6 +305,46 @@
         }
         $tmp_match_count++;
       }
+
+      return $rankingbase;
+    }
+
+    function aggregateRanking( $rankingbase )
+    {
+      $ranking = array();
+      $point = 0;
+
+      // 一旦メンバーNoでソート
+      foreach ($rankingbase as $key => $row) {
+        $tmp_memberno[$key] = $row['memberno'];
+      }
+      array_multisort( $tmp_memberno, SORT_ASC, SORT_NUMERIC,
+                       $rankingbase );
+
+      $tmpmemberno = -1;
+
+      foreach ($rankingbase as $base) {
+        if ( $tmpmemberno != $base['memberno'] )
+        {
+          if ( $tmpmemberno != -1 )
+          {
+            $ranking[] = array('memberno' => $tmp_memberno,
+                               'point' => $point
+                             );
+          }
+          $tmpmemberno = $base['memberno'];
+          $point = 0;
+        }
+
+        $point += $base['point'];
+      }
+
+      // ポイントの降順でソート
+      foreach ($ranking as $key => $row) {
+        $tmp_point[$key] = $row['point'];
+      }
+      array_multisort( $tmp_point, SORT_DESC, SORT_NUMERIC,
+                       $rankingpoint );
 
       return $ranking;
     }
