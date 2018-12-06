@@ -68,16 +68,19 @@
       <table>
         <thead>
           <tr>
-            <th>メンバーNo</th>
+            <th>順位</th>
+            <th>なまえ</th>
             <th>ポイント</th>
           </tr>
         </thead>
+      {% set rank = 1 %}
       {% for score in ranking %}
         <tr>
-          <td>{{ score.memberno }}</td>
+          <td>{{ rank }}</td>
           <td>{{ score.membername }}</td>
           <td>{{ score.point }}</td>
         </tr>
+        {% set rank = rank + 1 %}
       {% endfor %}
       </table>
     </div>
