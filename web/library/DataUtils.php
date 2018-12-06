@@ -318,6 +318,16 @@
         $tmp_match_count++;
       }
 
+      $rankingbase[] = array('memberno' => $tmp_memberno,
+                         'membername' => $tmp_membername,
+                         'opponentno' => $tmp_opponentno,
+                         'opponentname' => $tmp_opponentname,
+                         'match_count' => $tmp_match_count,
+                         'win_count' => $tmp_win_count,
+                         'lose_count' => $tmp_lose_count,
+                         'point' => $point
+                       );
+
       return $rankingbase;
     }
 
@@ -352,6 +362,11 @@
 
         $point += $base['point'];
       }
+
+      $ranking[] = array('memberno' => $tmpmemberno,
+                         'membername' => $tmpmembername,
+                         'point' => $point
+                       );
 
       // ポイントの降順でソート
       foreach ($ranking as $key => $row) {
