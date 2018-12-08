@@ -36,8 +36,8 @@ div.input1,div.input2,div.input3,div.input4,div.input5,div.input6{
 input.inputitem,select.inputitem,a.gotoMenu{
   font-weight:bold;
   position:relative;
-  height:100%;
-  width:60%;
+  height:60%;
+  width:100%;
   background:none;
   border:none;
 }
