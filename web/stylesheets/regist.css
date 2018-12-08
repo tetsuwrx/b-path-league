@@ -37,7 +37,7 @@ input.inputitem,select.inputitem,a.gotoMenu{
   font-weight:bold;
   position:relative;
   height:100%;
-  width:100%;
+  width:60%;
   background:none;
   border:none;
 }
