@@ -1,3 +1,7 @@
+body { font-size: 2.0vh; }
+@media screen and [max-width:480px] {
+  body { font-size: 2.5vh; }
+}
 div.menu{
   text-align:center;
   margin-top:2vh;
