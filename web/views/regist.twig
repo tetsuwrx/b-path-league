@@ -13,6 +13,7 @@
   <div class="main">
     <div class="input2">
       <!-- ニックネーム -->
+      <label for="membername">ニックネーム</label>
       <input class="inputitem" onclick="nameckick()" type="text" name="membername" value="{{ name }}">
       {% if result == 'success' %}
         <script>
@@ -25,6 +26,7 @@
   </div>
   <div class="main">
     <div class="input3">
+      <label for="memberclass">クラス</label>
       <select class="inputitem" name="memberclass">
         {% if class == 'UC' %}
           <option value="UC" selected><p name="memberclass">UC</p></option>
@@ -56,6 +58,7 @@
   </div>
   <div class="main">
     <div class="input4">
+      <label for="membersex">性別</label>
       <select class="inputitem" name="membersex">
         {% if sex == '男' %}
           <option value="男" selected><p name="sex">男</p></option>
