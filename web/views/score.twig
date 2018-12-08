@@ -15,13 +15,13 @@
         <div class="p1Name">
           <label for="p1Name">なまえ：</label>
           <select class="p1Name" name="p1Name" onchange="setClass(this, document.entryForm.p1Class, document.entryForm.p1ScoreWin)">
-              <option value="0">▼ -- 選択してください -- ▼</option>
+              <option value="0">▼ -- 選択 -- ▼</option>
             {% for member in memberlist %}
               <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
             {% endfor %}
           </select>
           <select name="p1NameAll" style="display:none;">
-              <option value="0">▼ -- 選択してください -- ▼</option>
+              <option value="0">▼ -- 選択 -- ▼</option>
             {% for member in memberlist %}
               <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
             {% endfor %}
@@ -57,13 +57,13 @@
         <div class="p1Name">
           <label for="p2Name">なまえ：</label>
           <select class="p1Name" name="p2Name" onchange="setClass(this, document.entryForm.p2Class, document.entryForm.p2ScoreWin)">
-              <option value="0">▼ -- 選択してください -- ▼</option>
+              <option value="0">▼ -- 選択 -- ▼</option>
             {% for member in memberlist %}
               <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
             {% endfor %}
           </select>
           <select name="p2NameAll" style="display:none;">
-              <option value="0">▼ -- 選択してください -- ▼</option>
+              <option value="0">▼ -- 選択 -- ▼</option>
             {% for member in memberlist %}
               <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
             {% endfor %}
