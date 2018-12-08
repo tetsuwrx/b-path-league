@@ -41,6 +41,14 @@ input.inputitem,select.inputitem,a.gotoMenu{
   background:none;
   border:none;
 }
+input.submititem{
+  font-weight:bold;
+  position:relative;
+  height:100%;
+  width:100%;
+  background:none;
+  border:none;
+}
 div.input1{
   background:linear-gradient(0deg, rgb(184, 184, 184), rgb(184, 184, 184));
 }
