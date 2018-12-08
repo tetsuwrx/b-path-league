@@ -1,8 +1,8 @@
 body *{font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'}
+body { font-size: 2.0vh; }
 div.menu{
   text-align:center;
   margin-top:2vh;
-  font-size:3.0vh;
   padding-top:0.1em;
   clear:left;
   width:100%;
@@ -32,7 +32,6 @@ div.input1,div.input2,div.input3,div.input4,div.input5,div.input6{
 }
 input.inputitem,select.inputitem,a.gotoMenu{
   font-weight:bold;
-  font-size:3.0vh;
   position:relative;
   height:100%;
   width:100%;
@@ -63,13 +62,9 @@ a.gotoMenu{
   height:100%;
   background:none;
   border:none;
-  font-size:3.0vh;
   font-weight:bold;
   text-align:center;
   text-decoration: none;
   vertical-align: center;
   color: black;
-}
-label{
-  font-size:3.0vh;
 }
