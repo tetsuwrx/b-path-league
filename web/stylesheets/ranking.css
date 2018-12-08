@@ -68,6 +68,7 @@ table{
   border-collapse: separate;
   border-spacing: 5px;
   margin: 0 auto;
+  font-size: +0.5vh;
 }
 td,th{
   padding: 10px;
