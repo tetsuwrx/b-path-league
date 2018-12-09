@@ -170,13 +170,13 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "insert into matchdata values ( ?, ?, ?, ?, ?, ?, ?, ? )";
+      $sql = "insert into matchdata values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 
       $stmt = $pdo->prepare($sql);
 
       try{
         $pdo->beginTransaction();
-        $stmt->execute(array($matchno + 1, $score['entryDate'], $score['p1no'], $score['p1score'], $score['p1win'], $score['p2no'], $score['p2score'], $score['p2win']));
+        $stmt->execute(array($matchno + 1, $score['entryDate'], $score['p1no'], $score['p1score'], $score['p1win'], 0, $score['p2no'], $score['p2score'], $score['p2win'], 0));
         $pdo->commit();
       }catch(Exception $e)
       {
