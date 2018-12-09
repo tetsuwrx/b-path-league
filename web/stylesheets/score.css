@@ -72,7 +72,7 @@ div.p1Name{
   margin-top:1vh;
 }
 div.a1btns{
-  margin-left:4vw;
+  margin-left:1vw;
   overflow:hidden;
   height:8vh;
   Width:90%;
@@ -113,4 +113,16 @@ div.p1VS{
   margin-top:22vh;
   font-size:1.8em;
   font-weight:bold;
+}
+a.gotoMenu{
+  position:relative;
+  width:100%;
+  height:100%;
+  background:none;
+  border:none;
+  font-weight:bold;
+  text-align:center;
+  text-decoration: none;
+  vertical-align: center;
+  color: black;
 }
