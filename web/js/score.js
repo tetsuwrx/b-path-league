@@ -44,6 +44,19 @@ function setClass(nameObj, classObj, scoreObj)
 
     classObj.value = classVal[2];
     scoreObj.value = classVal[3];
+
+    var masuObj = document.entryForm.p2Masu.options;
+
+    // 全てのアイテムを削除
+    for ( i = masuObj.length; i > 0; i-- ) {
+      masuObj[i-1] = null;
+    }
+
+    var itemindex = 0;
+    for ( i = 0 ; i < classVal[3]; i++) {
+      masuObj[i] = new Option("◎-" + i, i);
+    }
+
   }else{
     classObj.value = "";
     scoreObj.value = "";
