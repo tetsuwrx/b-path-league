@@ -25,7 +25,8 @@ $dateFrom = $_REQUEST['dateFrom'];
 $dateTo = $_REQUEST['dateTo'];
 
 $scorelist = $dtutils->getScoreList($dateFrom,$dateTo);
-$rankingbase = $dtutils->aggregateRankingBase($scorelist);
+$rankinglist = $dtutils->getRankingList($dateFrom,$dateTo);
+$rankingbase = $dtutils->aggregateRankingBase($rankinglist);
 $ranking = $dtutils->aggregateRanking($rankingbase);
 
 echo $app['twig']->render('ranking.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking) );
