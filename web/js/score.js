@@ -34,7 +34,7 @@ function setClass2()
 }
 */
 
-function setClass(nameObj, classObj, scoreObj)
+function setClass(nameObj, classObj, scoreObj, masuObj)
 {
   var selInd = nameObj.selectedIndex;
   var nameVal = nameObj.options[selInd].value;
@@ -45,16 +45,16 @@ function setClass(nameObj, classObj, scoreObj)
     classObj.value = classVal[2];
     scoreObj.value = classVal[3];
 
-    var masuObj = document.entryForm.p2Masu.options;
+    var items = masuObj.options;
 
     // 全てのアイテムを削除
-    for ( i = masuObj.length; i > 0; i-- ) {
-      masuObj[i-1] = null;
+    for ( i = items.length; i > 0; i-- ) {
+      items[i-1] = null;
     }
 
     var itemindex = 0;
     for ( i = 0 ; i < classVal[3]; i++) {
-      masuObj[i] = new Option("◎-" + i, i);
+      items[i] = new Option("◎-" + i, i);
     }
 
   }else{
