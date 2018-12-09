@@ -14,7 +14,7 @@
         </div>
         <div class="p1Name">
           <label for="p1Name">なまえ：</label>
-          <select class="p1Name" name="p1Name" onchange="setClass(this, document.entryForm.p1Class, document.entryForm.p1ScoreWin)">
+          <select class="p1Name" name="p1Name" onchange="setClass(this, document.entryForm.p1Class, document.entryForm.p1ScoreWin, document.entryForm.p1Masu)">
               <option value="0">▼ -- 選択 -- ▼</option>
             {% for member in memberlist %}
               <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
@@ -62,7 +62,7 @@
         </div>
         <div class="p1Name">
           <label for="p2Name">なまえ：</label>
-          <select class="p1Name" name="p2Name" onchange="setClass(this, document.entryForm.p2Class, document.entryForm.p2ScoreWin)">
+          <select class="p1Name" name="p2Name" onchange="setClass(this, document.entryForm.p2Class, document.entryForm.p2ScoreWin, document.entryForm.p2Masu)">
               <option value="0">▼ -- 選択 -- ▼</option>
             {% for member in memberlist %}
               <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
