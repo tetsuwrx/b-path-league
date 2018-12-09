@@ -24,7 +24,7 @@ $score = array();
 $dateFrom = $_REQUEST['dateFrom'];
 $dateTo = $_REQUEST['dateTo'];
 
-$scorelist = $dtutils->getRankingList($dateFrom,$dateTo);
+$scorelist = $dtutils->getScoreList($dateFrom,$dateTo);
 $rankingbase = $dtutils->aggregateRankingBase($scorelist);
 $ranking = $dtutils->aggregateRanking($rankingbase);
 
