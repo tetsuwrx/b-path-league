@@ -54,6 +54,15 @@ input.searchSubmit{
   background:none;
   border:none;
 }
+a.gotoMenu{
+  float:left;
+  font-weight:bold;
+  font-size:1.2em;
+  height:100%;
+  width:100%;
+  background:none;
+  border:none;
+}
 div.searchResult{
   margin-left:1vw;
   float:left;
