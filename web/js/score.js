@@ -53,7 +53,7 @@ function setClass(nameObj, classObj, scoreObj, masuObj)
     }
 
     var itemindex = 0;
-    for ( i = 0 ; i < classVal[3]; i++) {
+    for ( i = 0 ; i <= classVal[3]; i++) {
       items[i] = new Option("◎-" + i, i);
     }
 
