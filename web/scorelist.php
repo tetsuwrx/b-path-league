@@ -28,7 +28,6 @@ $memberno = $_REQUEST['p1No'];
 $scorelist = $dtutils->getScoreList($dateFrom,$dateTo);
 
 $memberlist = $dtutils->getMemberList();
-var_dump($memberno);
 $rankinglist = $dtutils->getMatchReport($dateFrom,$dateTo,$memberno);
 $rankingbase = $dtutils->aggregateRankingBase($rankinglist);
 
