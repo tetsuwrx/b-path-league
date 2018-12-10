@@ -32,4 +32,4 @@ var_dump($memberno);
 $rankinglist = $dtutils->getMatchReport($dateFrom,$dateTo,$memberno);
 $rankingbase = $dtutils->aggregateRankingBase($rankinglist);
 
-echo $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'memerlist' => $memberlist) );
+echo $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'memberlist' => $memberlist) );
