@@ -23,7 +23,13 @@ $score = array();
 
 $dateFrom = $_REQUEST['dateFrom'];
 $dateTo = $_REQUEST['dateTo'];
+$memberno = $_REQUEST['p1No'];
 
 $scorelist = $dtutils->getScoreList($dateFrom,$dateTo);
 
-echo $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist) );
+$memberlist = $dtutils->getMemberList();
+
+$rankinglist = $dtutils->getMatchReport($dateFrom,$dateTo,$memberno);
+$rankingbase = $dtutils->aggregateRankingBase($rankinglist);
+
+echo $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'memerlist' => $memberlist) );

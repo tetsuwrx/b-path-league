@@ -377,6 +377,52 @@
 
       return $ranking;
     }
+
+    function getMatchReport($dateFrom, $dateTo, $memberno)
+    {
+      $rankingbase = array();
+      // 試合結果を取得
+      $scorelist = $this->getMatchList($dateFrom, $dateTo, $memberno);
+
+      foreach ($scorelist as $score) {
+        // ランキングのもととなるデータを「<memberno>,<対戦相手>,<試合日>,<結果>」の形で整形する
+        if( $member['memberno'] == $score['player1no'] )
+        {
+          $rankingbase[] = array('matchno' => $score['matchno'],
+                               'memberno' => $member['memberno'],
+                               'membername' => $score['player1name'],
+                               'opponentno' => $score['player2no'],
+                               'opponentname' => $score['player2name'],
+                               'matchdate' => $score['matchdate'],
+                               'score' => $score['player1score'],
+                               'result' => $score['player1win']
+                             );
+        }elseif ( $member['memberno'] == $score['player2no'] ) {
+          $rankingbase[] = array('matchno' => $score['matchno'],
+                               'memberno' => $member['memberno'],
+                               'membername' => $score['player2name'],
+                               'opponentno' => $score['player1no'],
+                               'opponentname' => $score['player1name'],
+                               'matchdate' => $score['matchdate'],
+                               'score' => $score['player2score'],
+                               'result' => $score['player2win']
+                             );
+        }
+      }
+
+      // メンバーNo、対戦相手No、試合番号順にソート
+      foreach ($rankingbase as $key => $row) {
+        $tmp_memberno[$key] = $row['memberno'];
+        $tmp_opponentno[$key] = $row['opponentno'];
+        $tmp_matchno[$key] = $row['matchno'];
+      }
+      array_multisort( $tmp_memberno,
+                       $tmp_opponentno, SORT_ASC, SORT_NUMERIC,
+                       $tmp_matchno, SORT_ASC,
+                       $rankingbase);
+
+      return $rankingbase;
+    }
   }
 
 ?>

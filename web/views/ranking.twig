@@ -41,14 +41,14 @@
           <td>{{ score.matchdate }}</td>
           <td>{{ score.player1name }}</td>
           <td>{{ score.player1score }}</td>
-          {% if score.player1win == 0 %}
+          {% if score.player1win == '0' %}
             <td>負け</td>
           {% else %}
             <td>勝ち</td>
           {% endif %}
           <td>{{ score.player2name }}</td>
           <td>{{ score.player2score }}</td>
-          {% if score.player2win == 0 %}
+          {% if score.player2win == '0' %}
             <td>負け</td>
           {% else %}
             <td>勝ち</td>
