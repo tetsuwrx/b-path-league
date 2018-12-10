@@ -11,7 +11,7 @@
         <input type="date" name="dateTo" class="dateForm" value="{{ dateTo }}">
       </div>
       <div class="conditionForm">
-        <label for="p1Name">なまえ：</label>
+        <label for="p1No">なまえ：</label>
         <select class="p1Name" name="p1No" onchange="setClass(this, document.entryForm.p1Class, document.entryForm.p1ScoreWin, document.entryForm.p1Masu)">
             <option value="0">▼ -- 選択 -- ▼</option>
           {% for member in memberlist %}
