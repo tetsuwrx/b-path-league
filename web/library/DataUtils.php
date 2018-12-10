@@ -412,13 +412,11 @@
 
       // メンバーNo、対戦相手No、試合番号順にソート
       foreach ($rankingbase as $key => $row) {
-        $tmp_memberno[$key] = $row['memberno'];
         $tmp_opponentno[$key] = $row['opponentno'];
         $tmp_matchno[$key] = $row['matchno'];
       }
-      array_multisort( $tmp_memberno,
+      array_multisort( $tmp_matchno, SORT_ASC,
                        $tmp_opponentno, SORT_ASC, SORT_NUMERIC,
-                       $tmp_matchno, SORT_ASC,
                        $rankingbase);
 
       return $rankingbase;
