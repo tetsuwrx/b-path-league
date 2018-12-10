@@ -66,10 +66,12 @@ $app->get('/score', function() use($app) {
 $app->get('/scorelist', function() use($app) {
   $app['monolog']->addDebug('logging output.');
 
+  $utils = new DataUtils();
+
   $dateFrom = date("Y-m-d");
   $dateTo = date("Y-m-d");
   $scorelist = array();
-  $memberlist = array();
+  $memberlist = $utils->getMemberList();
 
   return $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'memberlist' => $memberlist) );
 });
