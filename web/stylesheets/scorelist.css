@@ -109,3 +109,18 @@ th:nth-of-type(8),
 td:nth-of-type(8){
   background: #ffe8d1;
 }
+
+table.matchReport{
+  border-collapse:collapse;
+  margin:0 auto;
+}
+td.matchReport,th.matchReport{
+  padding:10px;
+}
+th.matchReport{
+  color:#fff;
+  background:#005ab3;
+}
+table.matchReport tr:nth-child(odd){
+  background:#e6f2ff;
+}
