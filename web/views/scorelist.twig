@@ -100,16 +100,18 @@
           </tr>
         </thead>
       {% for score in scorelist %}
-        <tr>
-          <td>{{ score.matchno }}</td>
-          <td>{{ score.matchdate }}</td>
-          <td>{{ score.player1name }}</td>
-          <td>{{ score.player1score }}</td>
-          <td>{{ score.player1win }}</td>
-          <td>{{ score.player2name }}</td>
-          <td>{{ score.player2score }}</td>
-          <td>{{ score.player2win }}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>{{ score.matchno }}</td>
+            <td>{{ score.matchdate }}</td>
+            <td>{{ score.player1name }}</td>
+            <td>{{ score.player1score }}</td>
+            <td>{{ score.player1win }}</td>
+            <td>{{ score.player2name }}</td>
+            <td>{{ score.player2score }}</td>
+            <td>{{ score.player2win }}</td>
+          </tr>
+        </tbody>
       {% endfor %}
       </table>
     </div>
