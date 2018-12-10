@@ -381,15 +381,8 @@
     function getMatchReport($dateFrom, $dateTo, $memberno)
     {
       $rankingbase = array();
-      echo "getMatchList start.<br/>";
       // 試合結果を取得
       $scorelist = $this->getMatchList($dateFrom, $dateTo, $memberno);
-
-      echo "getMatchList done.<br/>";
-
-      echo "scoreList:<br/>";
-
-      var_dump($scorelist);
 
       foreach ($scorelist as $score) {
         // ランキングのもととなるデータを「<memberno>,<対戦相手>,<試合日>,<結果>」の形で整形する
