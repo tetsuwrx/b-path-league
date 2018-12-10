@@ -32,8 +32,37 @@
       </div>
     </div>
     {% if scorelist|length > 0 %}
+    <div class="matchReport">
+      <table id="matchReport" name="matchReport">
+        <thead>
+          <tr>
+            <th>対戦番号</th>
+            <th>対戦日</th>
+            <th>対戦者1なまえ</th>
+            <th>対戦者1スコア</th>
+            <th>対戦者1勝利？</th>
+            <th>対戦者2なまえ</th>
+            <th>対戦者2スコア</th>
+            <th>対戦者2勝利？</th>
+          </tr>
+        </thead>
+      {% for score in scorelist %}
+        <tr>
+          <td>{{ score.matchno }}</td>
+          <td>{{ score.matchdate }}</td>
+          <td>{{ score.player1name }}</td>
+          <td>{{ score.player1score }}</td>
+          <td>{{ score.player1win }}</td>
+          <td>{{ score.player2name }}</td>
+          <td>{{ score.player2score }}</td>
+          <td>{{ score.player2win }}</td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
     <div class="searchResult">
-      <table>
+      <button type="button" name="displayAll" value="" onclick="displayChange('matchresultAll')">全試合結果</button>
+      <table id="matchresultAll" style="display:none">
         <thead>
           <tr>
             <th>対戦番号</th>
