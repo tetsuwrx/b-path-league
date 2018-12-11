@@ -454,8 +454,6 @@
       $tmp_runout_rate = 0;
       $tmp_match_count = 0;
 
-      var_dump($scorelist);
-
       foreach ($scorelist as $score)
       {
         $tmp_win_count += $score['win_count'];
