@@ -169,7 +169,8 @@
                              'player2name' => $row['player2name'],
                              'player2score' => $row['player2score'],
                              'player2runout' => $score['player2runout'],
-                             'player2win' => $row['player2win']
+                             'player2win' => $row['player2win'],
+                             'rack_count' => $row['rack_count']
                            );
       }
 
@@ -200,7 +201,8 @@
                                  'matchdate' => $score['matchdate'],
                                  'score' => $score['player1score'],
                                  'runout' => $score['player1runout'],
-                                 'result' => $score['player1win']
+                                 'result' => $score['player1win'],
+                                 'rack_count' => $score['rack_count']
                                );
           }elseif ( $member['memberno'] == $score['player2no'] ) {
             $rankingbase[] = array('matchno' => $score['matchno'],
@@ -211,7 +213,8 @@
                                  'matchdate' => $score['matchdate'],
                                  'score' => $score['player2score'],
                                  'runout' => $score['player2runout'],
-                                 'result' => $score['player2win']
+                                 'result' => $score['player2win'],
+                                 'rack_count' => $score['rack_count']
                                );
           }
         }
@@ -241,7 +244,7 @@
       $tmp_win_count = 0;
       $tmp_lose_count = 0;
       $tmp_match_count = 0;
-      $tmp_score_count = 0;
+      $tmp_rack_count = 0;
       $tmp_runout_count = 0;
 
       $point = 0;
@@ -259,7 +262,7 @@
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count,
-                               'score_count' => $tmp_score_count,
+                               'rack_count' => $tmp_rack_count,
                                'runout_count' => $tmp_runout_count,
                                'point' => $point
                              );
@@ -270,7 +273,7 @@
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $tmp_match_count = 0;
-          $tmp_score_count = 0;
+          $tmp_rack_count = 0;
           $tmp_runout_count = 0;
           $point = 0;
         }
@@ -287,7 +290,7 @@
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count,
-                               'score_count' => $tmp_score_count,
+                               'rack_count' => $tmp_rack_count,
                                'runout_count' => $tmp_runout_count,
                                'point' => $point
                              );
@@ -298,7 +301,7 @@
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $tmp_match_count = 0;
-          $tmp_score_count = 0;
+          $tmp_rack_count = 0;
           $tmp_runout_count = 0;
           $point = 0;
         }
@@ -329,7 +332,7 @@
 
           }
         }
-        $tmp_score_count += $score['score'];
+        $tmp_rack_count += $score['rack_count'];
         $tmp_runout_count += $score['runout'];
         $tmp_match_count++;
       }
@@ -341,7 +344,7 @@
                          'match_count' => $tmp_match_count,
                          'win_count' => $tmp_win_count,
                          'lose_count' => $tmp_lose_count,
-                         'score_count' => $tmp_score_count,
+                         'rack_count' => $tmp_rack_count,
                          'runout_count' => $tmp_runout_count,
                          'point' => $point
                        );
