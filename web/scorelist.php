@@ -24,7 +24,9 @@ $score = array();
 // $dateFrom = $_REQUEST['dateFrom'];
 // $dateTo = $_REQUEST['dateTo'];
 
-$memberno = $_REQUEST['p1No'];
+$p1no = explode(",", $_REQUEST['p1No']);
+$memberno = $p1no[0];
+$membername = $p1no[1];
 
 //現在の月を取得
 $nowMonth = date('Y-n');
@@ -46,4 +48,4 @@ $rankingbasePrev = $dtutils->aggregateRankingBase($rankinglist);
 // ドロップダウン用のメンバーリスト取得
 $memberlist = $dtutils->getMemberList();
 
-echo $app['twig']->render('scorelist.twig', array('dateFrom' => $prevFromDate, 'dateTo' => $toDate, 'scorelist' => $scorelistall, 'memberlist' => $memberlist) );
+echo $app['twig']->render('scorelist.twig', array('dateFrom' => $prevFromDate, 'dateTo' => $toDate, 'scorelist' => $scorelistall, 'memberlist' => $memberlist, 'membername' => $membername) );
