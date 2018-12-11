@@ -39,6 +39,8 @@ $prevFromDate = date('Y-m-d', strtotime($nowDate . 'first day of previous month'
 $prevToDate = date('Y-m-d', strtotime($nowDate . 'last day of previous month'));
 
 //全試合結果を取得
+echo "memberno:".$memberno;
+
 $scorelistall = $dtutils->getMatchReport($prevFromDate,$toDate,$memberno);
 
 //先月の結果を集計
