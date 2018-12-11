@@ -246,6 +246,7 @@
                    , a.player2score
                    , a.player2win
                    , a.player2runout
+                   , ( a.player1score + a.player2score ) as rack_count
                 from matchdata a
                inner join members b
                   on a.player1no = b.memberno
