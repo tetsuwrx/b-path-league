@@ -163,12 +163,12 @@
                              'player1no' => $row['player1no'],
                              'player1name' => $row['player1name'],
                              'player1score' => $row['player1score'],
-                             'player1runout' => $score['player1runout'],
+                             'player1runout' => $row['player1runout'],
                              'player1win' => $row['player1win'],
                              'player2no' => $row['player2no'],
                              'player2name' => $row['player2name'],
                              'player2score' => $row['player2score'],
-                             'player2runout' => $score['player2runout'],
+                             'player2runout' => $row['player2runout'],
                              'player2win' => $row['player2win'],
                              'rack_count' => $row['rack_count']
                            );
