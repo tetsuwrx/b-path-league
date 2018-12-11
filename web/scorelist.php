@@ -45,7 +45,7 @@ $scoreresult = $dtutils->aggregateForReport($scorelist);
 //先月の結果を集計
 $listPrev = $dtutils->getMatchReport($prevFromDate,$prevToDate,$memberno);
 $basePrev = $dtutils->aggregateRankingBase($rankinglistPrev);
-$resultPrev = $dtutils->aggregateForReport($basePrev);
+$prevresult = $dtutils->aggregateForReport($basePrev);
 
 // ドロップダウン用のメンバーリスト取得
 $memberlist = $dtutils->getMemberList();
@@ -56,6 +56,6 @@ $param = array( 'dateFrom' => $prevFromDate
               , 'memberlist' => $memberlist
               , 'membername' => $membername
               , 'scoreresult' => $scoreresult
-              , 'prevresult' => $resultPrev
+              , 'prevresult' => $prevresult
               );
 echo $app['twig']->render('scorelist.twig',  $param);
