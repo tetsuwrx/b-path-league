@@ -416,7 +416,8 @@
                                'matchdate' => $score['matchdate'],
                                'score' => $score['player1score'],
                                'runout' => $score['player1runout'],
-                               'result' => $score['player1win']
+                               'result' => $score['player1win'],
+                               'rack_count' => $score['rack_count']
                              );
         }elseif ( $memberno == $score['player2no'] ) {
           $rankingbase[] = array('matchno' => $score['matchno'],
@@ -427,7 +428,8 @@
                                'matchdate' => $score['matchdate'],
                                'score' => $score['player2score'],
                                'runout' => $score['player2runout'],
-                               'result' => $score['player2win']
+                               'result' => $score['player2win'],
+                               'rack_count' => $score['rack_count']
                              );
         }
       }
