@@ -383,7 +383,6 @@
       $rankingbase = array();
       // 試合結果を取得
       $scorelist = $this->getMatchList($dateFrom, $dateTo, $memberno);
-      var_dump($scorelist);
       foreach ($scorelist as $score) {
         // ランキングのもととなるデータを「<memberno>,<対戦相手>,<試合日>,<結果>」の形で整形する
         if( $member['memberno'] == $score['player1no'] )
@@ -410,6 +409,8 @@
         }
       }
 
+      var_dump($rankingbase);
+
       // メンバーNo、対戦相手No、試合番号順にソート
       foreach ($rankingbase as $key => $row) {
         $tmp_opponentno[$key] = $row['opponentno'];
@@ -418,6 +419,8 @@
       array_multisort( $tmp_matchno, SORT_ASC,
                        $tmp_opponentno, SORT_ASC, SORT_NUMERIC,
                        $rankingbase);
+
+      var_dump($rankingbase);
 
       return $rankingbase;
     }
