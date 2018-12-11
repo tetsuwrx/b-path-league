@@ -462,12 +462,14 @@
         if ( $score['runout_count'] > 0 )
         {
           $tmp_runout_rate += $score['runout_count'] / $score['win_count'];
+          $tmp_runout_rate = floor($tmp_runout_rate * 100) / 100;
         }
       }
 
       if ( $tmp_win_count > 0 )
       {
         $win_rate = ( $tmp_win_count / $tmp_match_count ) * 100;
+        $win_rate = floor($win_rate * 100) / 100;
       }else {
         $win_rate = 0;
       }
@@ -475,6 +477,7 @@
       if ( $tmp_runout_rate > 0 )
       {
         $runout_rate = ( $tmp_runout_rate / $tmp_win_count ) * 100;
+        $runout_rate = floor($runout_rate * 100) / 100;
       }else {
         $runout_rate = 0;
       }
