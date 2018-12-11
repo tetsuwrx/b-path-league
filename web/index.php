@@ -72,8 +72,9 @@ $app->get('/scorelist', function() use($app) {
   $dateTo = date("Y-m-d");
   $scorelist = array();
   $memberlist = $utils->getMemberList();
+  $membername = "";
 
-  return $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'memberlist' => $memberlist) );
+  return $app['twig']->render('scorelist.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'memberlist' => $memberlist, 'membername' => $membername) );
 });
 
 $app->get('/ranking', function() use($app) {
