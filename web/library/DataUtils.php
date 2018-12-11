@@ -445,6 +445,31 @@
 
       return $rankingbase;
     }
+
+    // 対戦結果分析用集計
+    function aggregateForReport($scorelist)
+    {
+      $tmp_win_count = 0;
+      $tmp_lose_count = 0;
+      $tmp_runout_rate = 0;
+      $tmp_match_count = 0;
+
+      foreach ($scoreList as $score)
+      {
+        $tmp_win_count += $score['win_count'];
+        $tmp_lose_count += $score['lose_count'];
+        $tmp_match_count += $score['match_count'];
+        $tmp_runout_rate += $score['runout_count'] / $score['win_count'];
+      }
+
+      $result = array('win_count' => $tmp_win_count,
+                      'lose_count' => $tmp_lose_count,
+                      'win_rate' => ( $tmp_win_count / $tmp_match_count ) * 100,
+                      'runout_rate' => ( $tmp_runout_rate / $tmp_win_count ) * 100
+                     );
+
+      return $result;
+    }
   }
 
 ?>
