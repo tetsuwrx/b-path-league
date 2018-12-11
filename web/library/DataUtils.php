@@ -455,19 +455,36 @@
       $tmp_match_count = 0;
 
       var_dump($scorelist);
-      
+
       foreach ($scoreList as $score)
       {
         $tmp_win_count += $score['win_count'];
         $tmp_lose_count += $score['lose_count'];
         $tmp_match_count += $score['match_count'];
-        $tmp_runout_rate += $score['runout_count'] / $score['win_count'];
+        if ( $score['runout_count'] > 0 )
+        {
+          $tmp_runout_rate += $score['runout_count'] / $score['win_count'];
+        }
+      }
+
+      if ( $tmp_win_count > 0 )
+      {
+        $win_rate = ( $tmp_win_count / $tmp_match_count ) * 100;
+      }else {
+        $win_rate = 0;
+      }
+
+      if ( $tmp_runout_rate > 0 )
+      {
+        $runout_rate = ( $tmp_runout_rate / $tmp_win_count ) * 100;
+      }else {
+        $runout_rate = 0;
       }
 
       $result = array('win_count' => $tmp_win_count,
                       'lose_count' => $tmp_lose_count,
-                      'win_rate' => ( $tmp_win_count / $tmp_match_count ) * 100,
-                      'runout_rate' => ( $tmp_runout_rate / $tmp_win_count ) * 100
+                      'win_rate' => $win_rate,
+                      'runout_rate' => $runout_rate
                      );
 
       return $result;
