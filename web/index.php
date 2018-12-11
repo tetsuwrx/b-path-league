@@ -88,4 +88,14 @@ $app->get('/ranking', function() use($app) {
   return $app['twig']->render('ranking.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking) );
 });
 
+$app->get('/memberlist', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+
+  $utils = new DataUtils();
+
+  $memberlist = $utils->getMemberList();
+
+  return $app['twig']->render('memberlist.twig', array('memberlist' => $memberlist) );
+});
+
 $app->run();
