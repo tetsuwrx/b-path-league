@@ -240,10 +240,12 @@
                    , b.name as player1name
                    , a.player1score
                    , a.player1win
+                   , a.player1runout
                    , a.player2no
                    , c.name as player2name
                    , a.player2score
                    , a.player2win
+                   , a.player2runout
                 from matchdata a
                inner join members b
                   on a.player1no = b.memberno
