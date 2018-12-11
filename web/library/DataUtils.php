@@ -163,11 +163,13 @@
                              'player1no' => $row['player1no'],
                              'player1name' => $row['player1name'],
                              'player1score' => $row['player1score'],
+                             'player1runout' => $score['player1runout'],
                              'player1win' => $row['player1win'],
                              'player2no' => $row['player2no'],
                              'player2name' => $row['player2name'],
                              'player2score' => $row['player2score'],
-                             'player2win' => $row['player2win'],
+                             'player2runout' => $score['player2runout'],
+                             'player2win' => $row['player2win']
                            );
       }
 
@@ -197,6 +199,7 @@
                                  'opponentname' => $score['player2name'],
                                  'matchdate' => $score['matchdate'],
                                  'score' => $score['player1score'],
+                                 'runout' => $score['player1runout'],
                                  'result' => $score['player1win']
                                );
           }elseif ( $member['memberno'] == $score['player2no'] ) {
@@ -207,6 +210,7 @@
                                  'opponentname' => $score['player1name'],
                                  'matchdate' => $score['matchdate'],
                                  'score' => $score['player2score'],
+                                 'runout' => $score['player2runout'],
                                  'result' => $score['player2win']
                                );
           }
@@ -237,6 +241,7 @@
       $tmp_win_count = 0;
       $tmp_lose_count = 0;
       $tmp_match_count = 0;
+      $tmp_runout_count = 0;
 
       $point = 0;
       foreach ($scoreList as $score)
@@ -253,6 +258,7 @@
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count,
+                               'runout_count' => $tmp_runout_count,
                                'point' => $point
                              );
           }
@@ -262,6 +268,7 @@
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $tmp_match_count = 0;
+          $tmp_runout_count = 0;
           $point = 0;
         }
 
@@ -277,6 +284,7 @@
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count,
+                               'runout_count' => $tmp_runout_count,
                                'point' => $point
                              );
           }
@@ -286,6 +294,7 @@
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $tmp_match_count = 0;
+          $tmp_runout_count = 0;
           $point = 0;
         }
 
@@ -315,6 +324,7 @@
 
           }
         }
+        $tmp_runout_count += $score['score'];
         $tmp_match_count++;
       }
 
