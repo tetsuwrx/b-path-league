@@ -29,12 +29,12 @@ $memberno = $_REQUEST['p1No'];
 //現在の月を取得
 $nowMonth = date('Y-n');
 //現在の日付から、月初と月末の日付を取得
-$fromDate = date('Y-m-d', strtodate('first day of ' . $nowMonth));
-$toDate = date('Y-m-d', strtodate('last day of ' . $nowMonth));
+$fromDate = date('Y-m-d', strtotime('first day of ' . $nowMonth));
+$toDate = date('Y-m-d', strtotime('last day of ' . $nowMonth));
 $nowDate = date('Y-m-d');
 //先月の月初と月末の日付を取得
-$prevFromDate = date('Y-m-d', strtodate($nowDate . 'first day of previous month'));
-$prevToDate = date('Y-m-d', strtodate($nowDate . 'last day of previous month'));
+$prevFromDate = date('Y-m-d', strtotime($nowDate . 'first day of previous month'));
+$prevToDate = date('Y-m-d', strtotime($nowDate . 'last day of previous month'));
 
 //全試合結果を取得
 $scorelistall = $dtutils->getScoreList($prevFromDate,$toDate);
