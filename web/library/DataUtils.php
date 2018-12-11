@@ -468,6 +468,8 @@
                       'runout_rate' => ( $tmp_runout_rate / $tmp_win_count ) * 100
                      );
 
+      var_dump($result);
+
       return $result;
     }
   }
