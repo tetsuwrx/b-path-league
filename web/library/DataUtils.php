@@ -454,6 +454,8 @@
       $tmp_runout_rate = 0;
       $tmp_match_count = 0;
 
+      var_dump($scorelist);
+
       foreach ($scoreList as $score)
       {
         echo "win_count:".$score['win_count']."<br>";
