@@ -19,13 +19,13 @@
         <select class="p1Name" name="p1No" onchange="setClass(this, document.entryForm.p1Class, document.entryForm.p1ScoreWin, document.entryForm.p1Masu)">
             <option value="0">▼ -- 選択 -- ▼</option>
           {% for member in memberlist %}
-            <option value="{{ member.memberno }}">{{ member.name }}</option>
+            <option value="{{ member.memberno }},{{ member.name }}">{{ member.name }}</option>
           {% endfor %}
         </select>
         <select name="p1NameAll" style="display:none;">
             <option value="0">▼ -- 選択 -- ▼</option>
           {% for member in memberlist %}
-            <option value="{{ member.memberno }}">{{ member.name }}</option>
+            <option value="{{ member.memberno }},{{ member.name }}">{{ member.name }}</option>
           {% endfor %}
         </select>
       </div>
