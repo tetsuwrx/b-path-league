@@ -42,7 +42,6 @@ $prevToDate = date('Y-m-d', strtotime($nowDate . 'last day of previous month'));
 $scorelistall = $dtutils->getMatchReport($prevFromDate,$toDate,$memberno);
 $scorelist = $dtutils->aggregateRankingBase($scorelistall);
 $scoreresult = $dtutils->aggregateForReport($scorelist);
-var_dump($scorelist);
 //先月の結果を集計
 $rankinglistPrev = $dtutils->getMatchReport($prevFromDate,$prevToDate,$memberno);
 $rankingbasePrev = $dtutils->aggregateRankingBase($rankinglistPrev);
