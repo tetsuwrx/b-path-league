@@ -394,6 +394,7 @@
                                'opponentname' => $score['player2name'],
                                'matchdate' => $score['matchdate'],
                                'score' => $score['player1score'],
+                               'runout' => $score['player1runout'],
                                'result' => $score['player1win']
                              );
         }elseif ( $memberno == $score['player2no'] ) {
@@ -404,6 +405,7 @@
                                'opponentname' => $score['player1name'],
                                'matchdate' => $score['matchdate'],
                                'score' => $score['player2score'],
+                               'runout' => $score['player2runout'],
                                'result' => $score['player2win']
                              );
         }
