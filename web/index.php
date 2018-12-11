@@ -74,6 +74,7 @@ $app->get('/scorelist', function() use($app) {
   $memberlist = $utils->getMemberList();
   $membername = "";
   $scoreresult = array();
+  $prevresult = array();
 
   $param = array( 'dateFrom' => $dateFrom
                 , 'dateTo' => $dateTo
@@ -81,6 +82,7 @@ $app->get('/scorelist', function() use($app) {
                 , 'memberlist' => $memberlist
                 , 'membername' => $membername
                 , 'scoreresult' => $scoreresult
+                , 'prevresult' => $prevresult
                 );
 
   return $app['twig']->render('scorelist.twig', $param );
