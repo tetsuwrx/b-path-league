@@ -456,6 +456,7 @@
 
       foreach ($scoreList as $score)
       {
+        echo "win_count:".$score['win_count']."<br>";
         $tmp_win_count += $score['win_count'];
         $tmp_lose_count += $score['lose_count'];
         $tmp_match_count += $score['match_count'];
