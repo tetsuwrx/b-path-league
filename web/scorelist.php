@@ -40,10 +40,11 @@ $prevToDate = date('Y-m-d', strtotime($nowDate . 'last day of previous month'));
 
 //全試合結果を取得
 $scorelistall = $dtutils->getMatchReport($prevFromDate,$toDate,$memberno);
+$scorelist = $dtutils->aggregateRankingBase($scorelistall);
 //先月の結果を集計
 $rankinglistPrev = $dtutils->getMatchReport($prevFromDate,$prevToDate,$memberno);
 $rankingbasePrev = $dtutils->aggregateRankingBase($rankinglistPrev);
 // ドロップダウン用のメンバーリスト取得
 $memberlist = $dtutils->getMemberList();
 
-echo $app['twig']->render('scorelist.twig', array('dateFrom' => $prevFromDate, 'dateTo' => $toDate, 'scorelist' => $scorelistall, 'memberlist' => $memberlist, 'membername' => $membername) );
+echo $app['twig']->render('scorelist.twig', array('dateFrom' => $prevFromDate, 'dateTo' => $toDate, 'scorelist' => $scorelist, 'memberlist' => $memberlist, 'membername' => $membername) );
