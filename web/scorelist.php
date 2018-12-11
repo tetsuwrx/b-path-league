@@ -41,10 +41,8 @@ $prevToDate = date('Y-m-d', strtotime($nowDate . 'last day of previous month'));
 //全試合結果を取得
 $scorelistall = $dtutils->getMatchReport($prevFromDate,$toDate,$memberno);
 //先月の結果を集計
-/*
 $rankinglistPrev = $dtutils->getMatchReport($prevFromDate,$prevToDate,$memberno);
 $rankingbasePrev = $dtutils->aggregateRankingBase($rankinglistPrev);
-*/
 // ドロップダウン用のメンバーリスト取得
 $memberlist = $dtutils->getMemberList();
 
