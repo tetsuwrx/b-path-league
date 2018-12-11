@@ -241,6 +241,7 @@
       $tmp_win_count = 0;
       $tmp_lose_count = 0;
       $tmp_match_count = 0;
+      $tmp_score_count = 0;
       $tmp_runout_count = 0;
 
       $point = 0;
@@ -258,6 +259,7 @@
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count,
+                               'score_count' => $tmp_score_count,
                                'runout_count' => $tmp_runout_count,
                                'point' => $point
                              );
@@ -268,6 +270,7 @@
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $tmp_match_count = 0;
+          $tmp_score_count = 0;
           $tmp_runout_count = 0;
           $point = 0;
         }
@@ -284,6 +287,7 @@
                                'match_count' => $tmp_match_count,
                                'win_count' => $tmp_win_count,
                                'lose_count' => $tmp_lose_count,
+                               'score_count' => $tmp_score_count,
                                'runout_count' => $tmp_runout_count,
                                'point' => $point
                              );
@@ -294,6 +298,7 @@
           $tmp_win_count = 0;
           $tmp_lose_count = 0;
           $tmp_match_count = 0;
+          $tmp_score_count = 0;
           $tmp_runout_count = 0;
           $point = 0;
         }
@@ -324,7 +329,8 @@
 
           }
         }
-        $tmp_runout_count += $score['score'];
+        $tmp_score_count += $score['score'];
+        $tmp_runout_count += $score['runout'];
         $tmp_match_count++;
       }
 
@@ -335,6 +341,8 @@
                          'match_count' => $tmp_match_count,
                          'win_count' => $tmp_win_count,
                          'lose_count' => $tmp_lose_count,
+                         'score_count' => $tmp_score_count,
+                         'runout_count' => $tmp_runout_count,
                          'point' => $point
                        );
 
