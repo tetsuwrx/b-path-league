@@ -43,7 +43,7 @@ $scorelistall = $dtutils->getMatchReport($prevFromDate,$toDate,$memberno);
 
 //先月の結果を集計
 $rankinglistPrev = $dtutils->getMatchReport($prevFromDate,$prevToDate,$memberno);
-$rankingbasePrev = $dtutils->aggregateRankingBase($rankinglist);
+$rankingbasePrev = $dtutils->aggregateRankingBase($rankinglistPrev);
 
 // ドロップダウン用のメンバーリスト取得
 $memberlist = $dtutils->getMemberList();
