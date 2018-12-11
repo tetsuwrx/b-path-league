@@ -383,7 +383,7 @@
       $rankingbase = array();
       // 試合結果を取得
       $scorelist = $this->getMatchList($dateFrom, $dateTo, $memberno);
-
+      var_dump($scorelist);
       foreach ($scorelist as $score) {
         // ランキングのもととなるデータを「<memberno>,<対戦相手>,<試合日>,<結果>」の形で整形する
         if( $member['memberno'] == $score['player1no'] )
