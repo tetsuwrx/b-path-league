@@ -91,27 +91,23 @@
       <table id="matchresultAll" name="matchresultAll" style="display:none" class="matchresultAll">
         <thead>
           <tr>
-            <th>対戦番号</th>
-            <th>対戦日</th>
-            <th>対戦者1なまえ</th>
-            <th>対戦者1スコア</th>
-            <th>対戦者1勝利？</th>
-            <th>対戦者2なまえ</th>
-            <th>対戦者2スコア</th>
-            <th>対戦者2勝利？</th>
+            <th>メンバー</th>
+            <th>対戦相手</th>
+            <th>試合数</th>
+            <th>勝数</th>
+            <th>負数</th>
+            <th>ポイント</th>
           </tr>
         </thead>
       {% for score in scorelist %}
         <tbody>
           <tr>
-            <td>{{ score.matchno }}</td>
-            <td>{{ score.matchdate }}</td>
-            <td>{{ score.player1name }}</td>
-            <td>{{ score.player1score }}</td>
-            <td>{{ score.player1win }}</td>
-            <td>{{ score.player2name }}</td>
-            <td>{{ score.player2score }}</td>
-            <td>{{ score.player2win }}</td>
+            <td>{{ score.membername }}</td>
+            <td>{{ score.opponentname }}</td>
+            <td>{{ score.match_count }}</td>
+            <td>{{ score.win_count }}</td>
+            <td>{{ score.lose_count }}</td>
+            <td>{{ score.point }}</td>
           </tr>
         </tbody>
       {% endfor %}
