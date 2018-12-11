@@ -44,9 +44,12 @@ $scorelist = $dtutils->aggregateRankingBase($scorelistall);
 $scoreresult = $dtutils->aggregateForReport($scorelist);
 //先月の結果を集計
 $listPrev = $dtutils->getMatchReport($prevFromDate,$prevToDate,$memberno);
-$basePrev = $dtutils->aggregateRankingBase($rankinglistPrev);
+$basePrev = $dtutils->aggregateRankingBase($listPrev);
 $prevresult = $dtutils->aggregateForReport($basePrev);
-
+//今月の結果を集計
+$listNow = $dtutils->getMatchReport($fromDate,$toDate,$memberno);
+$baseNow = $dtutils->aggregateRankingBase($listNow);
+$nowresult = $dtutils->aggregateForReport($baseNow);
 // ドロップダウン用のメンバーリスト取得
 $memberlist = $dtutils->getMemberList();
 
@@ -57,5 +60,6 @@ $param = array( 'dateFrom' => $prevFromDate
               , 'membername' => $membername
               , 'scoreresult' => $scoreresult
               , 'prevresult' => $prevresult
+              , 'nowresult' => $nowresult
               );
 echo $app['twig']->render('scorelist.twig',  $param);
