@@ -42,14 +42,31 @@ $prevToDate = date('Y-m-d', strtotime($nowDate . 'last day of previous month'));
 $scorelistall = $dtutils->getMatchReport($prevFromDate,$toDate,$memberno);
 $scorelist = $dtutils->aggregateRankingBase($scorelistall);
 $scoreresult = $dtutils->aggregateForReport($scorelist);
+$allMostWin = $dtutils->getMostWin($scorelist);
+$allMostLose = $dtutils->getMostLose($scorelist);
+
 //先月の結果を集計
 $listPrev = $dtutils->getMatchReport($prevFromDate,$prevToDate,$memberno);
 $basePrev = $dtutils->aggregateRankingBase($listPrev);
 $prevresult = $dtutils->aggregateForReport($basePrev);
+$prevMostWin = $dtutils->getMostWin($basePrev);
+$prevMostLose = $dtutils->getMostLose($basePrev);
+
 //今月の結果を集計
 $listNow = $dtutils->getMatchReport($fromDate,$toDate,$memberno);
 $baseNow = $dtutils->aggregateRankingBase($listNow);
 $nowresult = $dtutils->aggregateForReport($baseNow);
+$nowMostWin = $dtutils->getMostWin($baseNow);
+$nowMostLose = $dtutils->getMostLose($baseNow);
+
+$mostWinnerLoser = array('allMostWin' => $allMostWin
+                        , 'allMostLose' => $allMostLose
+                        , 'prevMostWin' => $prevMostWin
+                        , 'prevMostLose' => $prevMostLose
+                        , 'nowMostWin' => $nowMostWin
+                        , 'nowMostLose' => $nowMostLose
+                      );
+
 // ドロップダウン用のメンバーリスト取得
 $memberlist = $dtutils->getMemberList();
 
@@ -61,5 +78,6 @@ $param = array( 'dateFrom' => $prevFromDate
               , 'scoreresult' => $scoreresult
               , 'prevresult' => $prevresult
               , 'nowresult' => $nowresult
+              , 'mostWinnerLoser' => $mostWinnerLoser
               );
 echo $app['twig']->render('scorelist.twig',  $param);
