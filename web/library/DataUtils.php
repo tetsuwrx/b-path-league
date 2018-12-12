@@ -490,6 +490,36 @@
 
       return $result;
     }
+
+    // 一番勝った人を取得
+    function getMostWin($scorelist)
+    {
+      // メンバーNo、対戦相手No、試合番号順にソート
+      foreach ($scorelist as $key => $row) {
+        $tmp_win_count[$key] = $row['win_count'];
+      }
+      array_multisort( $tmp_win_count, SORT_DESC, SORT_NUMERIC,
+                       $scorelist);
+
+      $wintarget = $scorelist[0]['opponentname'];
+
+      return $wintarget;
+    }
+
+    // 一番負けた人を取得
+    function getMostLose($scorelist)
+    {
+      // メンバーNo、対戦相手No、試合番号順にソート
+      foreach ($scorelist as $key => $row) {
+        $tmp_lose_count[$key] = $row['lose_count'];
+      }
+      array_multisort( $tmp_lose_count, SORT_DESC, SORT_NUMERIC,
+                       $scorelist);
+
+      $losetarget = $scorelist[0]['opponentname'];
+
+      return $losetarget;
+    }
   }
 
 ?>
