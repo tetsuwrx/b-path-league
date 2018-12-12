@@ -20,7 +20,32 @@
       <td>{{ member.registdate }}</td>
       <td>{{ member.name }}</td>
       <td>
-          {{ member.class }}
+        <select name="class">
+          {% if member.class == 'UC' %}
+            <option value="UC" selected><p name="memberclass">UC</p></option>
+          {% else %}
+            <option value="UC"><p name="memberclass">UC</p></option>
+          {% endif %}
+          {% if member.class == 'C' %}
+            <option value="C" selected><p name="memberclass">C</p></option>
+          {% else %}
+            <option value="C"><p name="memberclass">C</p></option>
+          {% endif %}
+          {% if member.class == 'B' %}
+            <option value="B" selected><p name="memberclass">B</p></option>
+          {% else %}
+            <option value="B"><p name="memberclass">B</p></option>
+          {% endif %}
+          {% if member.class == 'A' %}
+            <option value="A" selected><p name="memberclass">A</p></option>
+          {% else %}
+            <option value="A"><p name="memberclass">A</p></option>
+          {% endif %}
+          {% if member.class == 'SA' %}
+            <option value="SA" selected><p name="memberclass">SA</p></option>
+          {% else %}
+            <option value="SA"><p name="memberclass">SA</p></option>
+          {% endif %}
       </td>
       <td>{{ member.score }}</td>
       <td>{{ member.sex }}</td>

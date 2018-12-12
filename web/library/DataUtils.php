@@ -112,6 +112,7 @@
                              , 'name' => $row['name']
                              , 'class' => $row['class']
                              , 'score' => $row['score']
+                             , 'sex' => $row['sex']
                             );
       }
 
