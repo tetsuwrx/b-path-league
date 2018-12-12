@@ -9,6 +9,7 @@
       <th>クラス</th>
       <th>勝ラック数</th>
       <th>性別</th>
+      <th>編集</th>
     </tr>
   </thead>
   {% if memberlist|length > 0 %}
@@ -18,9 +19,12 @@
       <td>{{ member.memberno }}</td>
       <td>{{ member.registdate }}</td>
       <td>{{ member.name }}</td>
-      <td>{{ member.class }}</td>
+      <td>
+          {{ member.class }}
+      </td>
       <td>{{ member.score }}</td>
       <td>{{ member.sex }}</td>
+      <td><input type="button">編集</input></td>
     </tr>
   </tbody>
   {% endfor %}
