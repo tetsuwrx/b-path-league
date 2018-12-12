@@ -124,3 +124,16 @@ th.matchReport{
 table.matchReport tr:nth-child(odd){
   background:#e6f2ff;
 }
+a.gotoMenu{
+  position:relative;
+  width:100%;
+  height:100%;
+  background:none;
+  border:none;
+  font-weight:bold;
+  text-align:center;
+  text-decoration: none;
+  vertical-align: center;
+  color: black;
+  font-size:1.8em;
+}
