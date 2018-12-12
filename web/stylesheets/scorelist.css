@@ -28,7 +28,7 @@ div.conditionForm{
   margin-left:1vw;
   float:left;
   height:8vh;
-  width:40%;
+  width:30%;
   margin-top:6vh;
   margin-bottom:3vh;
   overflow:hidden;
@@ -135,5 +135,5 @@ a.gotoMenu{
   text-decoration: none;
   vertical-align: center;
   color: black;
-  font-size:1.8em;
+  font-size:1.6em;
 }
