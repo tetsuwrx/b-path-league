@@ -76,6 +76,7 @@ $app->get('/scorelist', function() use($app) {
   $scoreresult = array();
   $prevresult = array();
   $nowresult = array();
+  $mostWinnerLoser = array();
 
   $param = array( 'dateFrom' => $dateFrom
                 , 'dateTo' => $dateTo
@@ -85,6 +86,7 @@ $app->get('/scorelist', function() use($app) {
                 , 'scoreresult' => $scoreresult
                 , 'prevresult' => $prevresult
                 , 'nowresult' => $nowresult
+                , 'mostWinnerLoser' => $mostWinnerLoser
                 );
 
   return $app['twig']->render('scorelist.twig', $param );
