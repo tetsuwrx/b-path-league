@@ -109,7 +109,7 @@ $app->get('/memberlist', function() use($app) {
 
   $utils = new DataUtils();
 
-  $memberlist = $utils->getMemberList();
+  $memberlist = $utils->getAllMemberList();
 
   return $app['twig']->render('memberlist.twig', array('memberlist' => $memberlist) );
 });

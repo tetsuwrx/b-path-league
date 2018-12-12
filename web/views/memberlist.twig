@@ -1,3 +1,29 @@
 {% extends "memberlistlayout.html" %}
 {% block content %}
+<table name="memberlist" class="memberlist">
+  <thead>
+    <tr>
+      <th>メンバーNo</th>
+      <th>登録日</th>
+      <th>なまえ</th>
+      <th>クラス</th>
+      <th>勝ラック数</th>
+      <th>性別</th>
+    </tr>
+  </thead>
+  {% if memberlist|length > 0 %}
+  {% for member in memberlist %}
+  <tbody>
+    <tr>
+      <td>{{ member.memberno }}</td>
+      <td>{{ member.registdate }}</td>
+      <td>{{ member.name }}</td>
+      <td>{{ member.class }}</td>
+      <td>{{ member.score }}</td>
+      <td>{{ member.sex }}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+  {% endif %}
+</table>
 {% endblock %}

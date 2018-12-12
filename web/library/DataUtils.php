@@ -93,6 +93,35 @@
     }
 
     /*
+     * メンバーのリスト(全カラム)を取得
+     */
+    function getAllMemberList()
+    {
+      $utils = new DBUtils();
+
+      // メンバーリストを取得
+      $sql = "select memberno, registdate, name, class, score, sex from members order by memberno;";
+
+      $stmt = $utils->getDataSet($sql);
+
+      $memberlist = array();
+
+      while($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+        $memberlist[] = array( 'memberno' => $row['memberno']
+                             , 'registdate' => $row['registdate']
+                             , 'name' => $row['name']
+                             , 'class' => $row['class']
+                             , 'score' => $row['score']
+                            );
+      }
+
+      $stmt = null;
+
+      return $memberlist;
+
+    }
+
+    /*
      * スコアの結果を登録
      */
     function registScore($score)
