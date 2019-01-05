@@ -1,4 +1,4 @@
-table{
+table {
   border-collapse:separate;
   border-spacing: 5px;
   width: 100%;
@@ -21,10 +21,10 @@ table td{
   border:solid 1px #af9d85;
 }
 
-.class1 {
-  width: 10px;
+table th.class1 {
+  width: 30px;
 }
 
-.score {
-  width: 10px;
+table th.score {
+  width: 50px;
 }
