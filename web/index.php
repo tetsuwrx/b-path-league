@@ -121,7 +121,9 @@ $app->get('/scoreregist', function() use($app) {
 
   $memberlist = $utils->getMemberList();
 
-  return $app['twig']->render('scoreregist.twig', array('memberlist' => $memberlist) );
+  $entryDate = date("Y-m-d");
+
+  return $app['twig']->render('scoreregist.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist) );
 });
 
 $app->run();
