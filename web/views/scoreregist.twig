@@ -3,53 +3,78 @@
 <table name="memberlist" class="bordered">
   <thead>
     <tr>
-      <th>メンバーNo</th>
-      <th>登録日</th>
-      <th>なまえ</th>
-      <th>クラス</th>
-      <th>勝ラック数</th>
-      <th>性別</th>
-      <th>編集</th>
+      <th>No</th>
+      <th>対戦日</th>
+      <th>なまえ1</th>
+      <th>クラス1</th>
+      <th>スコア1</th>
+      <th>マスワリ1</th>
+      <th></th>
+      <th>なまえ2</th>
+      <th>クラス2</th>
+      <th>スコア2</th>
+      <th>マスワリ2</th>
     </tr>
   </thead>
   {% if memberlist|length > 0 %}
-  {% for member in memberlist %}
+  {% for i = 1 1..20 %}
   <tbody>
     <tr>
-      <td>{{ member.memberno }}</td>
-      <td>{{ member.registdate }}</td>
-      <td>{{ member.name }}</td>
+      <td>{{ i }}</td>
       <td>
-        <select name="class">
-          {% if member.class == 'UC' %}
-            <option value="UC" selected><p name="memberclass">UC</p></option>
-          {% else %}
-            <option value="UC"><p name="memberclass">UC</p></option>
-          {% endif %}
-          {% if member.class == 'C' %}
-            <option value="C" selected><p name="memberclass">C</p></option>
-          {% else %}
-            <option value="C"><p name="memberclass">C</p></option>
-          {% endif %}
-          {% if member.class == 'B' %}
-            <option value="B" selected><p name="memberclass">B</p></option>
-          {% else %}
-            <option value="B"><p name="memberclass">B</p></option>
-          {% endif %}
-          {% if member.class == 'A' %}
-            <option value="A" selected><p name="memberclass">A</p></option>
-          {% else %}
-            <option value="A"><p name="memberclass">A</p></option>
-          {% endif %}
-          {% if member.class == 'SA' %}
-            <option value="SA" selected><p name="memberclass">SA</p></option>
-          {% else %}
-            <option value="SA"><p name="memberclass">SA</p></option>
-          {% endif %}
+        <input class="entryDate" id="entryDate_{{ i }}" type="date" value="{{ entryDate }}">
       </td>
-      <td>{{ member.score }}</td>
-      <td>{{ member.sex }}</td>
-      <td><input type="button" value="編集"></td>
+      <td>
+        <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, document.entryForm.class1_{{ i }}, document.entryForm.p1Masu_{{ i }})">
+        {% for member in memberlist %}
+          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
+        {% endfor %}
+        </select>
+      </td>
+      <td>
+        <input class="pClass" id="class1_{{ i }}" type="text" value="" readonly="readonly">
+      </td>
+      <td>
+        <input class="pScore" id="score1_{{ i }}" type="number" value="" ">
+      </td>
+      <td>
+        <select class="p1Masu" name="p1Masu_{{ i }}">
+          <option value="0"><p class="a1masu">◎-0</p></option>
+          <option value="1"><p class="a1masu">◎-1</p></option>
+          <option value="2"><p class="a1masu">◎-2</p></option>
+          <option value="3"><p class="a1masu">◎-3</p></option>
+          <option value="4"><p class="a1masu">◎-4</p></option>
+          <option value="5"><p class="a1masu">◎-5</p></option>
+          <option value="6"><p class="a1masu">◎-6</p></option>
+          <option value="7"><p class="a1masu">◎-7</p></option>
+        </select>
+      </td>
+      <td> v.s </td>
+      <td>
+        <select class="pName" id="player2name_{{ i }}" onchange="setClass(this, document.entryForm.class2_{{ i }}, document.entryForm.p2Masu_{{ i }})">
+        {% for member in memberlist %}
+          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
+        {% endfor %}
+        </select>
+      </td>
+      <td>
+        <input class="pClass" id="class2_{{ i }}" type="text" value="" readonly="readonly">
+      </td>
+      <td>
+        <input class="pScore" id="score2_{{ i }}" type="number" value="" ">
+      </td>
+      <td>
+        <select class="p1Masu" name="p2Masu_{{ i }}">
+          <option value="0"><p class="masu">◎-0</p></option>
+          <option value="1"><p class="masu">◎-1</p></option>
+          <option value="2"><p class="masu">◎-2</p></option>
+          <option value="3"><p class="masu">◎-3</p></option>
+          <option value="4"><p class="masu">◎-4</p></option>
+          <option value="5"><p class="masu">◎-5</p></option>
+          <option value="6"><p class="masu">◎-6</p></option>
+          <option value="7"><p class="masu">◎-7</p></option>
+        </select>
+      </td>
     </tr>
   </tbody>
   {% endfor %}
