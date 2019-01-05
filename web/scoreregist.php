@@ -22,4 +22,6 @@ $dtutils = new DataUtils();
 
 $memberlist = $utils->getMemberList();
 
-echo $app['twig']->render('scoreregist.twig', array('memberlist' => $memberlist) );
+$entryDate = date("Y-m-d");
+
+echo $app['twig']->render('scoreregist.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist) );
