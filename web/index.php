@@ -114,4 +114,14 @@ $app->get('/memberlist', function() use($app) {
   return $app['twig']->render('memberlist.twig', array('memberlist' => $memberlist) );
 });
 
+$app->get('/scoreregist', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+
+  $utils = new DataUtils();
+
+  $memberlist = $utils->getMemberList();
+
+  return $app['twig']->render('scoreregist.twig', array('memberlist' => $memberlist) );
+});
+
 $app->run();
