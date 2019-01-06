@@ -45,14 +45,26 @@ function checkEntry()
     var class2val = document.getElementById('class2_' + i).value;
     var score2val = document.getElementById('score2_' + i).value;
 
+    var check = false;
+
     if ( !(class1val != "" && score1val != "" && class2val != "" && score2val != "" ) )
     {
       if ( score1val == "" && score2val != "" )
       {
         errMsg += i + "行目:スコア1が未入力です\r\n";
+        check = true;
       }else if ( score1val != "" && score2val == "" )
       {
         errMsg += i + "行目:スコア2が未入力です\r\n";
+        check = true;
+      }
+
+      if ( check == true )
+      {
+        for ( j = 0; j < scorelist.rows[i].cells.lentrh; j++)
+        {
+          scorelist.rows[i].cells[j].style.backgroundColor = 'red';
+        }
       }
     }
   }
