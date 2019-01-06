@@ -35,7 +35,7 @@ function registScore()
 
 function checkEntry()
 {
-  for ( i = 1; i < scorelist.rows.length; i++; )
+  for ( i = 1; i < scorelist.rows.length; i++ )
   {
     var class1val = document.getElementById('class1_' + i).value;
     var score1val = document.getElementById('score1_' + i).value;
