@@ -61,7 +61,7 @@ function checkEntry()
 
       if ( check == true )
       {
-        for ( j = 0; j < scorelist.rows[i].cells.lentrh; j++)
+        for ( j = 0; j < scorelist.rows[i].cells.length; j++)
         {
           scorelist.rows[i].cells[j].style.backgroundColor = 'red';
         }
