@@ -1,5 +1,6 @@
 {% extends "scoreregistlayout.html" %}
 {% block content %}
+<form name="entryForm" method="POST" target="_self" action="score.php">
 <table name="scorelist" class="scorelistTable">
   <thead>
     <tr>
@@ -25,7 +26,7 @@
         <input class="entryDate" id="entryDate_{{ i }}" type="date" value="{{ entryDate }}">
       </td>
       <td>
-        <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, document.class1_{{ i }}, document.p1Masu_{{ i }})">
+        <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, document.entryForm.class1_{{ i }}, document.entryForm.p1Masu_{{ i }})">
         {% for member in memberlist %}
           <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
         {% endfor %}
@@ -51,7 +52,7 @@
       </td>
       <td> v.s </td>
       <td>
-        <select class="pName" id="player2name_{{ i }}" onchange="setClass(this, document.class2_{{ i }}, document.p2Masu_{{ i }})">
+        <select class="pName" id="player2name_{{ i }}" onchange="setClass(this, document.entryForm.class2_{{ i }}, document.entryForm.p2Masu_{{ i }})">
         {% for member in memberlist %}
           <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
         {% endfor %}
@@ -80,4 +81,5 @@
   {% endfor %}
   {% endif %}
 </table>
+</form>
 {% endblock %}
