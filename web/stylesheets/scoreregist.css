@@ -28,3 +28,11 @@ table th.class1 {
 table th.score {
   width: 50px;
 }
+
+input.pClass {
+  width: 80px;
+}
+
+input.pScore {
+  width: 80px;
+}
