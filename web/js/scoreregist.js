@@ -35,6 +35,8 @@ function registScore()
 
 function checkEntry()
 {
+  var errMsg = "";
+  
   for ( i = 1; i < scorelist.rows.length; i++ )
   {
     var class1val = document.getElementById('class1_' + i).value;
@@ -42,8 +44,6 @@ function checkEntry()
 
     var class2val = document.getElementById('class2_' + i).value;
     var score2val = document.getElementById('score2_' + i).value;
-
-    var errMsg = "";
 
     if ( !(class1val != "" && score1val != "" && class2val != "" && score2val != "" ) )
     {
