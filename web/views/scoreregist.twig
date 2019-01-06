@@ -27,6 +27,7 @@
       </td>
       <td>
         <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, document.entryForm.class1_{{ i }}, document.entryForm.p1Masu_{{ i }})">
+        <option value="0">--</option>
         {% for member in memberlist %}
           <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
         {% endfor %}
@@ -53,6 +54,7 @@
       <td> v.s </td>
       <td>
         <select class="pName" id="player2name_{{ i }}" onchange="setClass(this, document.entryForm.class2_{{ i }}, document.entryForm.p2Masu_{{ i }})">
+        <option value="0">--</option>
         {% for member in memberlist %}
           <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
         {% endfor %}
