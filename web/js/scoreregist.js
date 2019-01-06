@@ -36,7 +36,7 @@ function registScore()
 function checkEntry()
 {
   var errMsg = "";
-  
+
   for ( i = 1; i < scorelist.rows.length; i++ )
   {
     var class1val = document.getElementById('class1_' + i).value;
@@ -47,10 +47,10 @@ function checkEntry()
 
     if ( !(class1val != "" && score1val != "" && class2val != "" && score2val != "" ) )
     {
-      if ( score1val == "" )
+      if ( score1val == "" && score2val != "" )
       {
         errMsg += i + "行目:スコア1が未入力です\r\n";
-      }else if ( score2val == "" )
+      }else if ( score1val != "" && score2val == "" )
       {
         errMsg += i + "行目:スコア2が未入力です\r\n";
       }
