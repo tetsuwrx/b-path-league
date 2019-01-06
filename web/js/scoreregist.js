@@ -45,12 +45,12 @@ function checkEntry()
 
     var errMsg = "";
 
-    if ( !(class1val != null && score1val != null && class2val != null && score2val != null ) )
+    if ( !(class1val != "" && score1val != "" && class2val != "" && score2val != "" ) )
     {
-      if ( score1val != null )
+      if ( score1val != "" )
       {
         errMsg += i + "行目:スコア1が未入力です\r\n";
-      }else if ( score2val != null)
+      }else if ( score2val != "" )
       {
         errMsg += i + "行目:スコア2が未入力です\r\n";
       }
