@@ -28,7 +28,7 @@ $dtutils = new DataUtils();
 
 $cnt = 0;
 
-$score = array();
+$scorelist = array();
 
 for ($i = 1; $i <= 20; $i++) {
 
@@ -68,7 +68,7 @@ for ($i = 1; $i <= 20; $i++) {
   if ( $score1 != null && $score2 != null )
   {
     $cnt++;
-    $score[] = array( 'entryDate' => $entryDate
+    $scorelist[] = array( 'entryDate' => $entryDate
                     , 'p1no' => $player1no
                     , 'p1score' => $score1
                     , 'p1win' => $p1win
@@ -82,6 +82,15 @@ for ($i = 1; $i <= 20; $i++) {
 
 }
 
-echo '登録件数：', $cnt, '件です。';
-var_dump($score);
+for ( $score in $scorelist)
+{
+  $dtutils->registScore($score);
+}
+
+echo '登録件数：', $cnt, '件完了しました。';
+
+echo '<p>';
+echo '<a class="gotoMenu" href="/">メニューへ</a>';
+echo '</p>';
+
 ?>
