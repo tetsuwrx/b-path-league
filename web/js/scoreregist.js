@@ -44,15 +44,59 @@ function registScore()
   {
     var entryDate = document.getElementById('entryDate_' + i);
 
+    var obj = document.createElement('input');
+    obj.value = entryDate.value;
+    obj.name = entryDate.id;
+    formObj.appendChild(obj);
+
     var player1Obj = document.getElementById('player1name_' + i);
+
+    var obj = document.createElement('input');
+    obj.value = player1Obj.value;
+    obj.name = player1Obj.id;
+    formObj.appendChild(obj);
+
     var class1Obj = document.getElementById('class1_' + i);
+    var obj = document.createElement('input');
+    obj.value = class1Obj.value;
+    obj.name = class1Obj.id;
+    formObj.appendChild(obj);
+
     var score1Obj = document.getElementById('score1_' + i);
+    var obj = document.createElement('input');
+    obj.value = score1Obj.value;
+    obj.name = score1Obj.id;
+    formObj.appendChild(obj);
+
     var masu1Obj = document.getElementById('p1Masu_' + i);
+    var obj = document.createElement('input');
+    obj.value = masu1Obj.value;
+    obj.name = masu1Obj.id;
+    formObj.appendChild(obj);
 
     var class2Obj = document.getElementById('class2_' + i);
+    var obj = document.createElement('input');
+    obj.value = class2Obj.value;
+    obj.name = class2Obj.id;
+    formObj.appendChild(obj);
+
     var player2Obj = document.getElementById('player2name_' + i);
+    var obj = document.createElement('input');
+    obj.value = player2Obj.value;
+    obj.name = player2Obj.id;
+    formObj.appendChild(obj);
+
     var score2Obj = document.getElementById('score2_' + i);
+    var obj = document.createElement('input');
+    obj.value = score2Obj.value;
+    obj.name = score2Obj.id;
+    formObj.appendChild(obj);
+
     var masu2Obj = document.getElementById('p2Masu_' + i);
+    var obj = document.createElement('input');
+    obj.value = masu2Obj.value;
+    obj.name = masu2Obj.id;
+    formObj.appendChild(obj);
 
     formObj.appendChild(entryDate);
 
