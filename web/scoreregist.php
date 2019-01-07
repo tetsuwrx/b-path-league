@@ -82,7 +82,7 @@ for ($i = 1; $i <= 20; $i++) {
 
 }
 
-for ( $score in $scorelist)
+foreach ( $scorelist as $score )
 {
   $dtutils->registScore($score);
 }
