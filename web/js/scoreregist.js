@@ -136,7 +136,7 @@ function checkEntry()
     var score1val = document.getElementById('score1_' + i).value;
     var p1masu = document.getElementById('p1Masu_' + i).value;
 
-    var p2ayer1Obj = document.getElementById('player2name_' + i);
+    var player2Obj = document.getElementById('player2name_' + i);
     var p2val = player2Obj.value.split(',');
     var p2no = p1val[0];
     var p2win = p1val[3];
