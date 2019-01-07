@@ -158,7 +158,7 @@ function checkEntry()
         errMsg += i + "行目:スコア2が未入力です\r\n";
         check = true;
       }
-
+    }else {
       if ( score1val > p1win )
       {
         errMsg += i + "行目:スコア1が勝利数よりも多いです\r\n";
@@ -178,13 +178,13 @@ function checkEntry()
         errMsg += i + "行目:マスワリ2がスコア2よりも多いです\r\n";
         check = true;
       }
+    }
 
-      if ( check == true )
+    if ( check == true )
+    {
+      for ( j = 0; j < scorelist.rows[i].cells.length; j++)
       {
-        for ( j = 0; j < scorelist.rows[i].cells.length; j++)
-        {
-          scorelist.rows[i].cells[j].style.backgroundColor = 'red';
-        }
+        scorelist.rows[i].cells[j].style.backgroundColor = 'red';
       }
     }
   }
