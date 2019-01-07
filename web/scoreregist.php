@@ -35,8 +35,8 @@ for ($i = 1; $i <= 20; $i++) {
   $key = 'entryDate_'.$i;
   $entryDate = $_REQUEST[$key];
 
-  $key = 'player1name_'.$i;
-  $player1name = $_REQUEST[$key];
+  $key = 'player1no_'.$i;
+  $player1no = $_REQUEST[$key];
 
   $key = 'class1_'.$i;
   $class1 = $_REQUEST[$key];
@@ -50,8 +50,8 @@ for ($i = 1; $i <= 20; $i++) {
   $key = 'p1Masu_'.$i;
   $p1masu = $_REQUEST[$key];
 
-  $key = 'player2name_'.$i;
-  $player2name = $_REQUEST[$key];
+  $key = 'player2no_'.$i;
+  $player2no = $_REQUEST[$key];
 
   $key = 'class2_'.$i;
   $class2 = $_REQUEST[$key];
@@ -69,13 +69,11 @@ for ($i = 1; $i <= 20; $i++) {
   {
     $cnt++;
     $score[] = array( 'entryDate' => $entryDate
-                    , 'player1name' => $player1name
-                    , 'class1' => $class1
+                    , 'player1no' => $player1no
                     , 'score1' => $score1
                     , 'p1win' => $p1win
                     , 'p1masu' => $p1masu
-                    , 'player2name' => $player2name
-                    , 'class2' => $class2
+                    , 'player2no' => $player2no
                     , 'score2' => $score2
                     , 'p2win' => $p2win
                     , 'p2masu' => $p2masu
