@@ -55,7 +55,7 @@ function registScore()
     var p1win = p1val[3];
     var obj = document.createElement('input');
     obj.value = p1no;
-    obj.name = player1Obj.id;
+    obj.name = 'player1no_' + i;
     formObj.appendChild(obj);
 
     var score1Obj = document.getElementById('score1_' + i);
@@ -88,7 +88,7 @@ function registScore()
     var p2win = p2val[3];
     var obj = document.createElement('input');
     obj.value = p2no;
-    obj.name = player2Obj.id;
+    obj.name = 'player2no_' + i;
     formObj.appendChild(obj);
 
     var score2Obj = document.getElementById('score2_' + i);
