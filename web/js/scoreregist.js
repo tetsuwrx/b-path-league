@@ -50,7 +50,7 @@ function registScore()
     var masu1Obj = document.getElementById('p1Masu_' + i);
 
     var class2Obj = document.getElementById('class2_' + i);
-    var player1Obj = document.getElementById('player2name_' + i);
+    var player2Obj = document.getElementById('player2name_' + i);
     var score2Obj = document.getElementById('score2_' + i);
     var masu2Obj = document.getElementById('p2Masu_' + i);
 
