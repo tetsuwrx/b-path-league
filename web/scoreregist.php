@@ -69,12 +69,12 @@ for ($i = 1; $i <= 20; $i++) {
   {
     $cnt++;
     $score[] = array( 'entryDate' => $entryDate
-                    , 'player1no' => $player1no
-                    , 'score1' => $score1
+                    , 'p1no' => $player1no
+                    , 'p1score' => $score1
                     , 'p1win' => $p1win
                     , 'p1masu' => $p1masu
-                    , 'player2no' => $player2no
-                    , 'score2' => $score2
+                    , 'p2no' => $player2no
+                    , 'p2score' => $score2
                     , 'p2win' => $p2win
                     , 'p2masu' => $p2masu
                );
