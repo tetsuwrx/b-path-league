@@ -1,7 +1,10 @@
-function setClass(nameObj, classObj, masuObj)
+function setClass(nameObj, classID, masuID)
 {
   var selInd = nameObj.selectedIndex;
   var nameVal = nameObj.options[selInd].value;
+  var classObj = document.getElementById(classID);
+  var masuObj = document.getElementById(masuID);
+  
   if ( nameVal != "0" )
   {
     var classVal = nameVal.split(',');
