@@ -127,11 +127,23 @@ function checkEntry()
 
   for ( i = 1; i < scorelist.rows.length; i++ )
   {
+    var player1Obj = document.getElementById('player1name_' + i);
+    var p1val = player1Obj.value.split(',');
+    var p1no = p1val[0];
+    var p1win = p1val[3];
+
     var class1val = document.getElementById('class1_' + i).value;
     var score1val = document.getElementById('score1_' + i).value;
+    var p1masu = document.getElementById('p1masu_' + i).value;
+
+    var p2ayer1Obj = document.getElementById('player2name_' + i);
+    var p2val = player2Obj.value.split(',');
+    var p2no = p1val[0];
+    var p2win = p1val[3];
 
     var class2val = document.getElementById('class2_' + i).value;
     var score2val = document.getElementById('score2_' + i).value;
+    var p2masu = document.getElementById('p2masu_' + i).value;
 
     var check = false;
 
@@ -145,6 +157,26 @@ function checkEntry()
       {
         errMsg += i + "行目:スコア2が未入力です\r\n";
         check = true;
+      }else {
+        if ( score1val > p1win )
+        {
+          errMsg += i + "行目:スコア1が勝利数よりも多いです\r\n";
+          check = true;
+        }else if ( score2val > p2win )
+        {
+          errMsg += i + "行目:スコア2が勝利数よりも多いです\r\n";
+          check = true;
+        }
+
+        if ( score1val < p1masu )
+        {
+          errMsg += i + "行目:マスワリ1がスコア1よりも多いです\r\n";
+          check = true;
+        }else if ( score2val < p2masu )
+        {
+          errMsg += i + "行目:マスワリ2がスコア2よりも多いです\r\n";
+          check = true;
+        }
       }
 
       if ( check == true )
