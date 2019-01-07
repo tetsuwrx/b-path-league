@@ -157,26 +157,26 @@ function checkEntry()
       {
         errMsg += i + "行目:スコア2が未入力です\r\n";
         check = true;
-      }else {
-        if ( score1val > p1win )
-        {
-          errMsg += i + "行目:スコア1が勝利数よりも多いです\r\n";
-          check = true;
-        }else if ( score2val > p2win )
-        {
-          errMsg += i + "行目:スコア2が勝利数よりも多いです\r\n";
-          check = true;
-        }
+      }
 
-        if ( score1val < p1masu )
-        {
-          errMsg += i + "行目:マスワリ1がスコア1よりも多いです\r\n";
-          check = true;
-        }else if ( score2val < p2masu )
-        {
-          errMsg += i + "行目:マスワリ2がスコア2よりも多いです\r\n";
-          check = true;
-        }
+      if ( score1val > p1win )
+      {
+        errMsg += i + "行目:スコア1が勝利数よりも多いです\r\n";
+        check = true;
+      }else if ( score2val > p2win )
+      {
+        errMsg += i + "行目:スコア2が勝利数よりも多いです\r\n";
+        check = true;
+      }
+
+      if ( score1val < p1masu )
+      {
+        errMsg += i + "行目:マスワリ1がスコア1よりも多いです\r\n";
+        check = true;
+      }else if ( score2val < p2masu )
+      {
+        errMsg += i + "行目:マスワリ2がスコア2よりも多いです\r\n";
+        check = true;
       }
 
       if ( check == true )
