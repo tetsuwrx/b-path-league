@@ -178,6 +178,12 @@ function checkEntry()
         errMsg += i + "行目:マスワリ2がスコア2よりも多いです\r\n";
         check = true;
       }
+
+      if ( p1no == p2no )
+      {
+        errMsg += i + "行目:なまえ1となまえ2が同じです\r\n";
+        check = true;
+      }
     }
 
     if ( check == true )
