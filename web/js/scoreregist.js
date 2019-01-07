@@ -37,7 +37,7 @@ function registScore()
 
   var formObj = document.createElement('form');
 
-  formObj.action = ('scoreregist.php');
+  formObj.action = 'scoreregist.php';
   formObj.method = 'post';
 
   for ( i = 1; i < scorelist.rows.length; i++ )
