@@ -97,18 +97,6 @@ function registScore()
     obj.value = masu2Obj.value;
     obj.name = masu2Obj.id;
     formObj.appendChild(obj);
-
-    formObj.appendChild(entryDate);
-
-    formObj.appendChild(player1Obj);
-    formObj.appendChild(class1Obj);
-    formObj.appendChild(score1Obj);
-    formObj.appendChild(masu1Obj);
-
-    formObj.appendChild(player2Obj);
-    formObj.appendChild(class2Obj);
-    formObj.appendChild(score2Obj);
-    formObj.appendChild(masu2Obj);
   }
 
   document.body.appendChild(formObj);
