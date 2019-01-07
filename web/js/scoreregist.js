@@ -50,7 +50,7 @@ function registScore()
     formObj.appendChild(obj);
 
     var player1Obj = document.getElementById('player1no_' + i);
-    var p1val = player1Obj.split(',');
+    var p1val = player1Obj.value.split(',');
     var p1no = p1val[0];
     var p1win = p1val[3];
     var obj = document.createElement('input');
@@ -83,7 +83,7 @@ function registScore()
     formObj.appendChild(obj);
 
     var player2Obj = document.getElementById('player2no_' + i);
-    var p2val = player2Obj.split(',');
+    var p2val = player2Obj.value.split(',');
     var p2no = p2val[0];
     var p2win = p2val[3];
     var obj = document.createElement('input');
