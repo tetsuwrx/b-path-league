@@ -44,6 +44,9 @@ for ($i = 1; $i <= 20; $i++) {
   $key = 'score1_'.$i;
   $score1 = $_REQUEST[$key];
 
+  $key = 'p1win_'.$i;
+  $p1win = $_REQUEST[$key];
+
   $key = 'p1Masu_'.$i;
   $p1masu = $_REQUEST[$key];
 
@@ -56,6 +59,9 @@ for ($i = 1; $i <= 20; $i++) {
   $key = 'score2_'.$i;
   $score2 = $_REQUEST[$key];
 
+  $key = 'p2win_'.$i;
+  $p2win = $_REQUEST[$key];
+
   $key = 'p2Masu_'.$i;
   $p2masu = $_REQUEST[$key];
 
@@ -66,10 +72,12 @@ for ($i = 1; $i <= 20; $i++) {
                     , 'player1name' => $player1name
                     , 'class1' => $class1
                     , 'score1' => $score1
+                    , 'p1win' => $p1win
                     , 'p1masu' => $p1masu
                     , 'player2name' => $player2name
                     , 'class2' => $class2
                     , 'score2' => $score2
+                    , 'p2win' => $p2win
                     , 'p2masu' => $p2masu
                );
   }
