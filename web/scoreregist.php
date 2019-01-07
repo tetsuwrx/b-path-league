@@ -76,6 +76,6 @@ for ($i = 1; $i <= 20; $i++) {
 
 }
 
-echo '登録件数：', $cnt, '件です。'
+echo '登録件数：', $cnt, '件です。';
 var_dump($score);
 ?>
