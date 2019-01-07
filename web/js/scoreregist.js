@@ -49,17 +49,13 @@ function registScore()
     obj.name = entryDate.id;
     formObj.appendChild(obj);
 
-    var player1Obj = document.getElementById('player1name_' + i);
-
+    var player1Obj = document.getElementById('player1no_' + i);
+    var p1val = player1Obj.split(',');
+    var p1no = p1val[0];
+    var p1win = p1val[3];
     var obj = document.createElement('input');
-    obj.value = player1Obj.value;
+    obj.value = p1no;
     obj.name = player1Obj.id;
-    formObj.appendChild(obj);
-
-    var class1Obj = document.getElementById('class1_' + i);
-    var obj = document.createElement('input');
-    obj.value = class1Obj.value;
-    obj.name = class1Obj.id;
     formObj.appendChild(obj);
 
     var score1Obj = document.getElementById('score1_' + i);
@@ -68,21 +64,30 @@ function registScore()
     obj.name = score1Obj.id;
     formObj.appendChild(obj);
 
+    var p1winflg = -1;
+    if ( score1Obj.value == p1win )
+    {
+      p1winflg = 1;
+    }else {
+      p1winflg = 0;
+    }
+    var obj = document.createElement('input');
+    obj.value = p1winflg;
+    obj.name = 'p1win_' + i;
+    formObj.appendChild(obj);
+
     var masu1Obj = document.getElementById('p1Masu_' + i);
     var obj = document.createElement('input');
     obj.value = masu1Obj.value;
     obj.name = masu1Obj.id;
     formObj.appendChild(obj);
 
-    var class2Obj = document.getElementById('class2_' + i);
+    var player2Obj = document.getElementById('player2no_' + i);
+    var p2val = player2Obj.split(',');
+    var p2no = p2val[0];
+    var p2win = p2val[3];
     var obj = document.createElement('input');
-    obj.value = class2Obj.value;
-    obj.name = class2Obj.id;
-    formObj.appendChild(obj);
-
-    var player2Obj = document.getElementById('player2name_' + i);
-    var obj = document.createElement('input');
-    obj.value = player2Obj.value;
+    obj.value = p2no;
     obj.name = player2Obj.id;
     formObj.appendChild(obj);
 
@@ -90,6 +95,18 @@ function registScore()
     var obj = document.createElement('input');
     obj.value = score2Obj.value;
     obj.name = score2Obj.id;
+    formObj.appendChild(obj);
+
+    var p2winflg = -1;
+    if ( score2Obj.value == p2win )
+    {
+      p2winflg = 1;
+    }else {
+      p2winflg = 0;
+    }
+    var obj = document.createElement('input');
+    obj.value = p2winflg;
+    obj.name = 'p2win_' + i;
     formObj.appendChild(obj);
 
     var masu2Obj = document.getElementById('p2Masu_' + i);
