@@ -59,7 +59,7 @@ for ($i = 1; $i <= 20; $i++) {
   $key = 'p2Masu_'.$i;
   $p2masu = $_REQUEST[$key];
 
-  if ( $p1masu != null && $p2masu != null )
+  if ( $score1 != null && $score2 != null )
   {
     $cnt++;
     $score[] = array( 'entryDate' => $entryDate
