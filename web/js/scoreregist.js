@@ -138,7 +138,7 @@ function checkEntry()
 
     var player2Obj = document.getElementById('player2name_' + i);
     var p2val = player2Obj.value.split(',');
-    var p2no = p1val[0];
+    var p2no = p2val[0];
     var p2win = p1val[3];
 
     var class2val = document.getElementById('class2_' + i).value;
