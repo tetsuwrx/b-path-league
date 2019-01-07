@@ -20,8 +20,14 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $dtutils = new DataUtils();
 
-$memberlist = $utils->getMemberList();
+// $memberlist = $utils->getMemberList();
 
-$entryDate = date("Y-m-d");
+// $entryDate = date("Y-m-d");
 
-echo $app['twig']->render('scoreregist.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist) );
+// echo $app['twig']->render('scoreregist.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist) );
+
+$cnt = 0;
+
+echo '登録件数：', $cnt, '件です。'
+
+?>

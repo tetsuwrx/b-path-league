@@ -4,7 +4,7 @@ function setClass(nameObj, classID, masuID)
   var nameVal = nameObj.options[selInd].value;
   var classObj = document.getElementById(classID);
   var masuObj = document.getElementById(masuID);
-  
+
   if ( nameVal != "0" )
   {
     var classVal = nameVal.split(',');
@@ -30,10 +30,46 @@ function setClass(nameObj, classID, masuID)
 
 function registScore()
 {
-  if ( checkEntry() == true )
+  if ( checkEntry() == false )
   {
-    window.alert('登録はっじめーるよー！');
+    return false;
   }
+
+  var formObj = document.createElement('form');
+
+  form.action = ('scoreregist.php');
+  form.method = 'post';
+
+  for ( i = 1; i < scorelist.rows.length; i++ )
+  {
+    var entryDate = document.getElementById('entryDate_' + i);
+
+    var player1Obj = document.getElementById('player1name_' + i);
+    var class1Obj = document.getElementById('class1_' + i);
+    var score1Obj = document.getElementById('score1_' + i);
+    var masu1Obj = document.getElementById('p1Masu_' + i);
+
+    var class2Obj = document.getElementById('class2_' + i);
+    var player1Obj = document.getElementById('player2name_' + i);
+    var score2Obj = document.getElementById('score2_' + i);
+    var masu2Obj = document.getElementById('p2Masu_' + i);
+
+    form.appendChild(entryDate);
+
+    form.appendChild(player1Obj);
+    form.appendChild(class1Obj);
+    form.appendChild(score1Obj);
+    form.appendChild(masu1Obj);
+
+    form.appendChild(player2Obj);
+    form.appendChild(class2Obj);
+    form.appendChild(score2Obj);
+    form.appendChild(masu2Obj);
+  }
+
+  document.body.appendChild(form);
+
+  form.submit();
 }
 
 function checkEntry()
