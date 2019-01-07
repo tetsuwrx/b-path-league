@@ -176,7 +176,7 @@
 
       try{
         $pdo->beginTransaction();
-        $stmt->execute(array($matchno + 1, $score['entryDate'], $score['p1no'], $score['p1score'], $score['p1win'], $score['p1masu'], $score['p2no'], $score['p2score'], $score['p2win'], $score['p2win']));
+        $stmt->execute(array($matchno + 1, $score['entryDate'], $score['p1no'], $score['p1score'], $score['p1win'], $score['p1masu'], $score['p2no'], $score['p2score'], $score['p2win'], $score['p2masu']));
         $pdo->commit();
       }catch(Exception $e)
       {
