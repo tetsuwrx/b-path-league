@@ -1,6 +1,5 @@
 {% extends "scoreregistlayout.html" %}
 {% block content %}
-<form name="entryForm" method="POST" target="_self" action="score.php">
 <table id="scorelist" class="scorelistTable">
   <thead>
     <tr>
@@ -83,7 +82,6 @@
   {% endfor %}
   {% endif %}
 </table>
-</form>
 <p>
   <input type="button" name="registBtn" value="登録" onclick="registScore();">
 </p>
