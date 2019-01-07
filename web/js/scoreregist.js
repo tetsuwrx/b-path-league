@@ -134,7 +134,7 @@ function checkEntry()
 
     var class1val = document.getElementById('class1_' + i).value;
     var score1val = document.getElementById('score1_' + i).value;
-    var p1masu = document.getElementById('p1masu_' + i).value;
+    var p1masu = document.getElementById('p1Masu_' + i).value;
 
     var p2ayer1Obj = document.getElementById('player2name_' + i);
     var p2val = player2Obj.value.split(',');
@@ -143,7 +143,7 @@ function checkEntry()
 
     var class2val = document.getElementById('class2_' + i).value;
     var score2val = document.getElementById('score2_' + i).value;
-    var p2masu = document.getElementById('p2masu_' + i).value;
+    var p2masu = document.getElementById('p2Masu_' + i).value;
 
     var check = false;
 
