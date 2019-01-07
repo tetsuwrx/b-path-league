@@ -37,8 +37,8 @@ function registScore()
 
   var formObj = document.createElement('form');
 
-  form.action = ('scoreregist.php');
-  form.method = 'post';
+  formObj.action = ('scoreregist.php');
+  formObj.method = 'post';
 
   for ( i = 1; i < scorelist.rows.length; i++ )
   {
@@ -54,22 +54,22 @@ function registScore()
     var score2Obj = document.getElementById('score2_' + i);
     var masu2Obj = document.getElementById('p2Masu_' + i);
 
-    form.appendChild(entryDate);
+    formObj.appendChild(entryDate);
 
-    form.appendChild(player1Obj);
-    form.appendChild(class1Obj);
-    form.appendChild(score1Obj);
-    form.appendChild(masu1Obj);
+    formObj.appendChild(player1Obj);
+    formObj.appendChild(class1Obj);
+    formObj.appendChild(score1Obj);
+    formObj.appendChild(masu1Obj);
 
-    form.appendChild(player2Obj);
-    form.appendChild(class2Obj);
-    form.appendChild(score2Obj);
-    form.appendChild(masu2Obj);
+    formObj.appendChild(player2Obj);
+    formObj.appendChild(class2Obj);
+    formObj.appendChild(score2Obj);
+    formObj.appendChild(masu2Obj);
   }
 
-  document.body.appendChild(form);
+  document.body.appendChild(formObj);
 
-  form.submit();
+  formObj.submit();
 }
 
 function checkEntry()
