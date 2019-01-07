@@ -90,6 +90,10 @@ foreach ( $scorelist as $score )
 echo '登録件数：', $cnt, '件完了しました。';
 
 echo '<p>';
+echo '<a class="gotoMenu" href="/scoreregist">前へ戻る</a>';
+echo '</p>';
+
+echo '<p>';
 echo '<a class="gotoMenu" href="/">メニューへ</a>';
 echo '</p>';
 
