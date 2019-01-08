@@ -132,8 +132,14 @@ $app->get('/admin', function() use($app) {
 });
 
 $app->get('/maintenance', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('maintenance.twig');
+  if ( $_SESSION['auth'] == 'true' )
+  {
+    $app['monolog']->addDebug('logging output.');
+    return $app['twig']->render('maintenance.twig');
+  }else {
+    $app['monolog']->addDebug('logging output.');
+    return $app['twig']->render('auth.twig');
+  }
 });
 
 $app->run();
