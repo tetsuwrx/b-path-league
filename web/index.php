@@ -126,4 +126,9 @@ $app->get('/scoreregist', function() use($app) {
   return $app['twig']->render('scoreregist.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist) );
 });
 
+$app->get('/maintenance', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('maintenance.twig');
+});
+
 $app->run();
