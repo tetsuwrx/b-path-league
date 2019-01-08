@@ -132,6 +132,8 @@ $app->get('/admin', function() use($app) {
 });
 
 $app->get('/maintenance', function() use($app) {
+  echo $_SESSION['auth'];
+  
   if ( $_SESSION['auth'] == 'true' )
   {
     $app['monolog']->addDebug('logging output.');
