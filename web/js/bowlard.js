@@ -14,13 +14,18 @@ function scoreInput( scoreVal )
       break;
     case 'SP':
       //スペア
+      frameObj.innerText = "SP";
       break;
     case 'G':
       frameObj.innerText = "G";
     default:
       //普通にスコア入れる
+      frameObj.innerText = scoreVal.value;
       break;
   }
+  // スコア計算
+
+  // ボタンの値を変更
 }
 
 function getEmptyCell()
