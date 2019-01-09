@@ -22,11 +22,8 @@ function scoreInput( scoreVal )
       {
         frameObj.innerText = "G";
       }else {
-        frameObj = getEmptyTd();
-        frameObj.style.backgroundImage = "linear-gradient(-45deg, transparent 49%, black 49%, black 51%, transparent 51%, transparent)";
         frameObj = getEmptyCell();
-        frameObj.innerText = "G";
-        frameObj.style.display = "none";
+        frameObj.innerText = "-";
       }
 
     default:
@@ -35,8 +32,17 @@ function scoreInput( scoreVal )
       break;
   }
   // スコア計算
+  calcScore();
 
   // ボタンの値を変更
+  var idval = frameObj.id;
+  if ( idval.substr(-1,1) == '1' )
+  {
+    changeAllBtnVal( scoreVal.value );
+  }else {
+    resetAllBtnVal();
+  }
+
 }
 
 function getEmptyCell()
@@ -108,6 +114,7 @@ function getEmptyTd()
   }
 }
 
+// スコア計算
 function calcScore()
 {
   var currentScore = 0;
@@ -136,11 +143,28 @@ function calcScore()
       {
         currentScore += frameObj.innerText;
       }
-    }
 
-    // スコアの表示
-    var idkey = 'frame' + i;
-    var frameObj = document.getElementById(idkey);
-    frameObj.innerText = currentScore;
+      // スコアの表示
+      var idkey = 'frame' + i;
+      var frameObj = document.getElementById(idkey);
+      frameObj.innerText = currentScore;
+    }
+  }
+}
+
+// ボタンの値をリセット
+function resetAllBtnVal()
+{
+  document.getElementById('btnS').value = "S";
+  document.getElementById('btnS').disabled = false;
+  document.getElementById('btnG').value = "G";
+  document.getElementById('btnG').disabled = false;
+
+  for ( var i = 1; i < 10; i++ )
+  {
+    var key = 'btn' + i;
+
+    document.getElementById(key).value = i;
+    document.getElementById(key).disabled = false;
   }
 }
