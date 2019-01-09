@@ -9,6 +9,9 @@ table.sheet th,table.sheet td{
   border: solid 1px #000000;
   text-align: center;
 }
+table.sheet td{
+  width:4.5%;
+}
 table.score {
   border-collapse:collapse;
   width: 100%;
