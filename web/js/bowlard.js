@@ -55,6 +55,17 @@ function getEmptyCell()
     {
       return frameObj;
     }
+
+    if ( i == 10 )
+    {
+      var idkey3 = 'frame10-3';
+
+      var frameObj = document.getElementById(idkey3);
+      if ( frameObj.innerText == "" )
+      {
+        return frameObj;
+      }
+    }
   }
 }
 
@@ -83,7 +94,7 @@ function getEmptyTd()
 
     if ( i == 10 )
     {
-      var idkey2 = 'frame10-3';
+      var idkey3 = 'frame10-3';
       var tdkey3 = 'td10-3';
 
       var frameObj = document.getElementById(idkey3);
