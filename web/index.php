@@ -126,6 +126,11 @@ $app->get('/scoreregist', function() use($app) {
   return $app['twig']->render('scoreregist.twig', array('entryDate' => $entryDate, 'memberlist' => $memberlist) );
 });
 
+$app->get('/bowlards', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('bowlard.twig');
+});
+
 $app->get('/admin', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('auth.twig');
