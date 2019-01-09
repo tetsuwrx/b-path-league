@@ -29,9 +29,3 @@ table.score {
     height:0;
     padding-bottom: 100%;
 }
-
-.btn:active {/*押したとき*/
-   border-bottom: solid 2px #00BCD4;
-   box-shadow: none;
-   text-shadow: -1px -1px rgba(255, 255, 255, 0.3), 1px 1px rgba(0, 0, 0, 0.3);
-}
