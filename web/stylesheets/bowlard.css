@@ -21,7 +21,7 @@ table.score {
 table.score td{
   border: solid 1px #000000;
   text-align: center;
-  width: 100%;
+  width: 33.3%;
 }
 .btn {
     position: relative;
