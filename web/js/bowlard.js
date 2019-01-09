@@ -2,7 +2,7 @@ function scoreInput( scoreVal )
 {
   frameObj = searchEmpty();
 
-  switch( scoreVal ) {
+  switch( scoreVal.value ) {
     case 'S':
       //ストライク
       frameObj.innerText = "ST";
