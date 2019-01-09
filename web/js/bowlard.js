@@ -107,3 +107,40 @@ function getEmptyTd()
     }
   }
 }
+
+function calcScore()
+{
+  var currentScore = 0;
+
+  for ( var i = 1; i <= 10; i++ ){
+    var idkey1 = 'frame' + i + '-1';
+    var idkey2 = 'frame' + i + '-2';
+
+    // １投目の計算
+    var frameObj = document.getElementById(idkey1);
+    if ( frameObj.innerText != "" )
+    {
+      // 数字だったら単純に足す
+      if ( isNan(frameObj.innerText) )
+      {
+        currentScore += frameObj.innerText;
+      }
+    }
+
+    // ２投目の計算
+    var frameObj = document.getElementById(idkey2);
+    if ( frameObj.innerText != "" )
+    {
+      // 数字だったら単純に足す
+      if ( isNan(frameObj.innerText) )
+      {
+        currentScore += frameObj.innerText;
+      }
+    }
+
+    // スコアの表示
+    var idkey = 'frame' + i;
+    var frameObj = document.getElementById(idkey);
+    frameObj.innerText = currentScore;
+  }
+}
