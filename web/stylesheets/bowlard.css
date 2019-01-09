@@ -1,8 +1,8 @@
-table {
+table.score {
   border-collapse:collapse;
   border-spacing: 5px;
   width: 100%;
 }
-table th,table td{
+table.score th,table.score td{
   text-align: center;
 }
