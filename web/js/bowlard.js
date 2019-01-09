@@ -8,6 +8,8 @@ function scoreInput( scoreVal )
       frameObj.innerText = "ST";
       frameObj = getEmptyTd();
       frameObj.style.backgroundImage = "linear-gradient(-45deg, transparent 49%, black 49%, black 51%, transparent 51%, transparent)";
+      frameObj = getEmptyCell();
+      frameObj.style.display = "none";
       break;
     case 'SP':
       //スペア
