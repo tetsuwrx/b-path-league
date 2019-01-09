@@ -12,12 +12,11 @@ table.sheet th,table.sheet td{
 table.score {
   border-collapse:collapse;
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 .btn {
     position: relative;
     display: inline-block;
-    padding: 0.25em 0.5em;
     text-decoration: none;
     background: #00BCD4;/*背景色*/
     color: #000000;/*=背景色*/
@@ -27,7 +26,8 @@ table.score {
     font-weight: bold;
     text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
     width: 100%;
-    height:100%;
+    height:0;
+    padding-bottom: 100%;
 }
 
 .btn:active {/*押したとき*/
