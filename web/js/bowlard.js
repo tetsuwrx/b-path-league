@@ -1,6 +1,6 @@
 function scoreInput( scoreVal )
 {
-  frameObj = searchEmpty();
+  frameObj = getEmptyCell();
 
   switch( scoreVal.value ) {
     case 'S':
@@ -20,11 +20,11 @@ function scoreInput( scoreVal )
   }
 }
 
-function searchEmpty()
+function getEmptyCell()
 {
   for ( var i = 1; i <= 10; i++ ){
-    var idkey1 = 'frame' + i + '_1';
-    var idkey2 = 'frame' + i + '_1';
+    var idkey1 = 'frame' + i + '-1';
+    var idkey2 = 'frame' + i + '-2';
 
     var frameObj = document.getElementById(idkey1);
     if ( frameObj.innerText == "" )
