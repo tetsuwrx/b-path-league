@@ -3,9 +3,9 @@ table.score {
   width: 100%;
 }
 table.score th{
-  border: 1px;
+  border: solid 1px #000000;
 }
 table.score th,table.score td{
-  border: 1px;
+  border: solid 1px #000000;
   text-align: center;
 }
