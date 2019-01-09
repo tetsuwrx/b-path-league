@@ -17,7 +17,17 @@ function scoreInput( scoreVal )
       frameObj.innerText = "SP";
       break;
     case 'G':
-      frameObj.innerText = "G";
+      var idval = frameObj.id;
+      if ( idval.substr(-1,1) == '1' )
+      {
+        frameObj.innerText = "G";
+      }else {
+        frameObj.style.backgroundImage = "linear-gradient(-45deg, transparent 49%, black 49%, black 51%, transparent 51%, transparent)";
+        frameObj = getEmptyCell();
+        frameObj.innerText = "G";
+        frameObj.style.display = "none";
+      }
+
     default:
       //普通にスコア入れる
       frameObj.innerText = scoreVal.value;
