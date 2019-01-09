@@ -6,7 +6,7 @@ function scoreInput( scoreVal )
     case 'S':
       //ストライク
       frameObj.innerText = "ST";
-      frameObj = searchEmpty();
+      frameObj = getEmptyTd();
       frameObj.style.backgroundImage = "linear-gradient(-45deg, transparent 49%, black 49%, black 51%, transparent 51%, transparent)";
       break;
     case 'SP':
