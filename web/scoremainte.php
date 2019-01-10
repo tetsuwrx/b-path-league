@@ -45,7 +45,8 @@ $match = array( 'matchno' => $matchno
               , 'player2runout' => $p2masu
           );
 
-$dtutils->updateMatchScore($match);
+var_dump($match);
+//$dtutils->updateMatchScore($match);
 
 echo 'スコア修正を行いました：<br>';
 
