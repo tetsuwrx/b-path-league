@@ -135,7 +135,7 @@ $app->get('/scoremainte', function() use($app) {
 
   $nowDate = date("Y-m-d");
 
-  $scorelist = $utils->getMemberList('1900-01-01', $nowDate);
+  $scorelist = $utils->getScoreList('1900-01-01', $nowDate);
 
   return $app['twig']->render('scoremainte.twig', array( 'memberlist' => $memberlist, 'scorelist' => $scorelist ) );
 });
