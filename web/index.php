@@ -137,6 +137,12 @@ $app->get('/scoremainte', function() use($app) {
 
   $scorelist = $utils->getScoreList('1900-01-01', $nowDate);
 
+  foreach ($scorelist as $key => $row) {
+    $tmp_matchno[$key] = $row['matchno'];
+  }
+  array_multisort( $tmp_matchno, SORT_ASC, SORT_NUMERIC,
+                   $scorelist );
+
   return $app['twig']->render('scoremainte.twig', array( 'memberlist' => $memberlist, 'scorelist' => $scorelist ) );
 });
 
