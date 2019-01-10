@@ -28,6 +28,89 @@ function setClass(nameObj, classID, masuID)
   }
 }
 
+function updateMatchScore( matchno, rowno )
+{
+  var formObj = document.createElement('form');
+
+  formObj.action = 'scoremainte.php';
+  formObj.method = 'post';
+
+  var obj = document.createElement('input');
+  obj.name = 'matchno';
+  obj.value = matchno;
+  formObj.appendChild(obj);
+
+  var entryDate = document.getElementById('matchdate_' + rowno).value;
+  var obj = document.createElement('input');
+  obj.name = 'matchdate';
+  obj.value = entryDate;
+  formObj.appendChild(obj);
+
+  var player1val = document.getElementById('player1name_' + rowno).value;
+  var p1val = player1val.split(',');
+  var player1no = p1val[0];
+  var obj = document.createElement('input');
+  obj.name = 'player1no';
+  obj.value = player1no;
+  formObj.appendChild(obj);
+
+  var player1score = document.getElementById('score1_' + rowno).value;
+  var obj = document.createElement('input');
+  obj.name = 'player1score';
+  obj.value = player1score;
+  formObj.appendChild(obj);
+
+  var player1win = 0;
+
+  if ( player1score == p1val[3] )
+  {
+    player1win = 1;
+  }
+  var obj = document.createElement('input');
+  obj.name = 'player1win';
+  obj.value = player1win;
+  formObj.appendChild(obj);
+
+  var player1runout = document.getElementById('p1Masu_' + rowno).value;
+  var obj = document.createElement('input');
+  obj.name = 'player1runout';
+  obj.value = player1runout;
+  formObj.appendChild(obj);
+
+  var player2val = document.getElementById('player2name_' + rowno).value;
+  var p2val = player2val.split(',');
+  var player2no = p2val[0];
+  var obj = document.createElement('input');
+  obj.name = 'player2no';
+  obj.value = player2no;
+  formObj.appendChild(obj);
+
+  var player2score = document.getElementById('score2_' + rowno).value;
+  var obj = document.createElement('input');
+  obj.name = 'player2score';
+  obj.value = player2score;
+  formObj.appendChild(obj);
+
+  var player2win = 0;
+
+  if ( player2score == p2val[3] )
+  {
+    player2win = 1;
+  }
+  var obj = document.createElement('input');
+  obj.name = 'player2win';
+  obj.value = player2win;
+  formObj.appendChild(obj);
+
+  var player2runout = document.getElementById('p2Masu_' + rowno).value;
+  var obj = document.createElement('input');
+  obj.name = 'player2runout';
+  obj.value = player2runout;
+  formObj.appendChild(obj);
+
+
+}
+
 function registScore()
 {
   if ( checkEntry() == false )

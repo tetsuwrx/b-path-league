@@ -23,7 +23,7 @@
     <tr>
       <td>{{ score.matchno }}</td>
       <td>
-        {{ score.matchdate }}
+        <label id="matchdate_{{ i }}">{{ score.matchdate }}</label>
       </td>
       <td>
         <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, 'class1_{{ i }}', 'p1Masu_{{ i }}')">
@@ -88,7 +88,7 @@
         </select>
       </td>
       <td>
-        <input type="button" name="editBtn" value="更新">
+        <input type="button" name="editBtn" value="更新" onclick="updateMatchScore('{{ score.matchno }}, {{ i }}');">
       </td>
     </tr>
   </tbody>
