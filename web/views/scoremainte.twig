@@ -17,18 +17,23 @@
     </tr>
   </thead>
   {% if memberlist|length > 0 %}
-  {% for i in 1..20 %}
+  {% set i = 1 %}
+  {% for score in scorelist %}
   <tbody>
     <tr>
-      <td>{{ i }}</td>
+      <td>{{ score.matchno }}</td>
       <td>
-        <input class="entryDate" id="entryDate_{{ i }}" type="date" value="{{ entryDate }}">
+        {{ score.matchdate }}
       </td>
       <td>
         <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, 'class1_{{ i }}', 'p1Masu_{{ i }}')">
         <option value="0">--</option>
         {% for member in memberlist %}
+          {% if score.player1name == member.name %}
+          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" selected="selected">{{ member.name }}</option>
+          {% else %}
           <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
+          {% endif %}
         {% endfor %}
         </select>
       </td>
@@ -54,9 +59,11 @@
       <td>
         <select class="pName" id="player2name_{{ i }}" onchange="setClass(this, 'class2_{{ i }}', 'p2Masu_{{ i }}')">
         <option value="0">--</option>
-        {% for member in memberlist %}
-          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
-        {% endfor %}
+        {% if score.player2name == member.name %}
+        <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" selected="selected">{{ member.name }}</option>
+        {% else %}
+        <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
+        {% endif %}
         </select>
       </td>
       <td>
@@ -79,6 +86,7 @@
       </td>
     </tr>
   </tbody>
+  {% set i = i + 1 %}
   {% endfor %}
   {% endif %}
 </table>

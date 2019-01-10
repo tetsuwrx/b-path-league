@@ -133,7 +133,11 @@ $app->get('/scoremainte', function() use($app) {
 
   $memberlist = $utils->getMemberList();
 
-  return $app['twig']->render('scoremainte.twig', array( 'memberlist' => $memberlist ) );
+  $nowDate = date("Y-m-d");
+
+  $scorelist = $utils->getMemberList('1900-01-01', $nowDate);
+
+  return $app['twig']->render('scoremainte.twig', array( 'memberlist' => $memberlist, 'scorelist' => $scorelist ) );
 });
 
 $app->get('/bowlards', function() use($app) {
