@@ -205,11 +205,12 @@
                    , player1win
                    , player2name
                    , player2score
-                  , player2runout
+                   , player2runout
                    , player2win
                 from v_matchdata
                where matchdate >= :dateFrom
                  and matchdate <= :dateTo
+               order by matchdate
               ;";
 
       $stmt = $pdo->prepare($sql);
