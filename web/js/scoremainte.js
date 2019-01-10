@@ -40,7 +40,7 @@ function updateMatchScore( matchno, rowno )
   obj.value = matchno;
   formObj.appendChild(obj);
 
-  var entryDate = document.getElementById('matchdate_' + rowno).innetTEXT;
+  var entryDate = document.getElementById('matchdate_' + rowno).innerText;
   var obj = document.createElement('input');
   obj.name = 'matchdate';
   obj.value = entryDate;
