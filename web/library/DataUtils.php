@@ -57,7 +57,7 @@
     }
 
     /*
-     * MemberList.xmlにメンバーを登録
+     * メンバーリスト更新
      */
     function updateMember($memberno, $member)
     {
@@ -555,6 +555,19 @@
 
       return $losetarget;
     }
+
+    /*
+     * メンバーリスト更新
+     */
+    function updateMatchScore($match)
+    {
+      $utils = new DBUtils();
+
+      $result = $utils->updateMatchScore($match);
+
+      return $result;
+    }
+
   }
 
 ?>

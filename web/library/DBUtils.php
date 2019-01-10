@@ -274,6 +274,58 @@
       return $stmt;
     }
 
+    /*
+    * スコアの更新
+    */
+    function updateMatchScore($match)
+    {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+
+      $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+      $sql = "update matchdata
+                 set player1score = :player1score
+                   , player1win = :player1win
+                   , player1runout = :player1runout
+                   , player2score = :player2score
+                   , player2win = :player2win
+                   , player2runout = :player2runout
+               where matchno = :matchno";
+
+      $stmt = $pdo->prepare($sql);
+
+      $stmt->bindValue(":player1score", $member['player1score']);
+      $stmt->bindValue(":player1win", $member['player1win']);
+      $stmt->bindValue(":player1runout", $member['player1runout']);
+      $stmt->bindValue(":player2score", $member['player2score']);
+      $stmt->bindValue(":player2win", $member['player2win']);
+      $stmt->bindValue(":player2runout", $member['player2runout']);
+
+      $stmt->bindValue(":matchno", $match['matchno']);
+
+      $result = FALSE;
+
+      try{
+        $pdo->beginTransaction();
+        $stmt->execute();
+        $pdo->commit();
+
+        $result = TRUE;
+
+      }catch(Exception $e)
+      {
+        $pdo->rollBack();
+        echo 'エラーメッセージ：', $e->getMessage(), "\n";
+      }
+
+      $pdo = null;
+      $stmt = null;
+
+      return $result;
+    }
+
   }
 
 ?>
