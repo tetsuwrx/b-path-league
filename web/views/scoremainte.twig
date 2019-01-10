@@ -58,11 +58,13 @@
       <td>
         <select class="pName" id="player2name_{{ i }}" onchange="setClass(this, 'class2_{{ i }}', 'p2Masu_{{ i }}')">
         <option value="0">--</option>
-        {% if score.player2name == member.name %}
-        <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" selected="selected">{{ member.name }}</option>
-        {% else %}
-        <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
-        {% endif %}
+        {% for member in memberlist %}
+          {% if score.player2name == member.name %}
+          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" selected="selected">{{ member.name }}</option>
+          {% else %}
+          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}">{{ member.name }}</option>
+          {% endif %}
+        {% endfor %}
         </select>
       </td>
       <td>
