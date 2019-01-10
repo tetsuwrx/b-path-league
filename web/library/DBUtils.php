@@ -201,9 +201,11 @@
                    , matchdate
                    , player1name
                    , player1score
+                   , player1runout
                    , player1win
                    , player2name
                    , player2score
+                  , player2runout
                    , player2win
                 from v_matchdata
                where matchdate >= :dateFrom

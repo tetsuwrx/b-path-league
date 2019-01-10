@@ -164,10 +164,12 @@
                              'matchdate' => $row['matchdate'],
                              'player1name' => $row['player1name'],
                              'player1score' => $row['player1score'],
+                             'player1runout' => $row['player1runout'],
                              'player1win' => $row['player1win'],
                              'player2name' => $row['player2name'],
                              'player2score' => $row['player2score'],
-                             'player2win' => $row['player2win'],
+                             'player2runout' => $row['player2runout'],
+                             'player2win' => $row['player2win']
                            );
       }
 
