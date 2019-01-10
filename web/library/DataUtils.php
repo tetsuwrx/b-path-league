@@ -484,6 +484,7 @@
       $tmp_win_count = 0;
       $tmp_lose_count = 0;
       $tmp_runout_rate = 0;
+      $tmp_runout_count = 0;
       $tmp_match_count = 0;
 
       foreach ($scorelist as $score)
@@ -491,6 +492,7 @@
         $tmp_win_count += $score['win_count'];
         $tmp_lose_count += $score['lose_count'];
         $tmp_match_count += $score['match_count'];
+        $tmp_runout_count += $score['runout_count'];
         if ( $score['runout_count'] > 0 )
         {
           $tmp_runout_rate += $score['runout_count'] / $score['win_count'];
@@ -517,6 +519,7 @@
       $result = array('win_count' => $tmp_win_count,
                       'lose_count' => $tmp_lose_count,
                       'win_rate' => $win_rate,
+                      'runout_count' => $tmp_runout_count,
                       'runout_rate' => $runout_rate
                      );
 
