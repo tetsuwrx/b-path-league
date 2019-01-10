@@ -27,7 +27,7 @@
       </td>
       <td>
         <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, 'class1_{{ i }}', 'p1Masu_{{ i }}')">
-        <option value="0">--</option>
+        <option value="0" disabled="">--</option>
         {% set p1class = "" %}
         {% for member in memberlist %}
           {% if score.player1name == member.name %}
@@ -58,7 +58,7 @@
       </td>
       <td>
         <select class="pName" id="player2name_{{ i }}" onchange="setClass(this, 'class2_{{ i }}', 'p2Masu_{{ i }}')">
-        <option value="0">--</option>
+        <option value="0" disabled="">--</option>
         {% set p2class = "" %}
         {% for member in memberlist %}
           {% if score.player2name == member.name %}
