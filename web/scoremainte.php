@@ -36,13 +36,13 @@ $player2runout = $_REQUEST['player2runout'];
 $match = array( 'matchno' => $matchno
               , 'matchdate' => $matchdate
               , 'player1no' => $player1no
-              , 'player1score' => $score1
-              , 'player1win' => $p1win
-              , 'player1runout' => $p1masu
+              , 'player1score' => $player1score
+              , 'player1win' => $player1win
+              , 'player1runout' => $player1runout
               , 'player2no' => $player2no
-              , 'player2score' => $score2
-              , 'player2win' => $p2win
-              , 'player2runout' => $p2masu
+              , 'player2score' => $player2score
+              , 'player2win' => $player2win
+              , 'player2runout' => $player2runout
           );
 
 var_dump($match);
