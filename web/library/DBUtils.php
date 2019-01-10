@@ -296,12 +296,12 @@
 
       $stmt = $pdo->prepare($sql);
 
-      $stmt->bindValue(":player1score", $member['player1score']);
-      $stmt->bindValue(":player1win", $member['player1win']);
-      $stmt->bindValue(":player1runout", $member['player1runout']);
-      $stmt->bindValue(":player2score", $member['player2score']);
-      $stmt->bindValue(":player2win", $member['player2win']);
-      $stmt->bindValue(":player2runout", $member['player2runout']);
+      $stmt->bindValue(":player1score", $match['player1score']);
+      $stmt->bindValue(":player1win", $match['player1win']);
+      $stmt->bindValue(":player1runout", $match['player1runout']);
+      $stmt->bindValue(":player2score", $match['player2score']);
+      $stmt->bindValue(":player2win", $match['player2win']);
+      $stmt->bindValue(":player2runout", $match['player2runout']);
 
       $stmt->bindValue(":matchno", $match['matchno']);
 
