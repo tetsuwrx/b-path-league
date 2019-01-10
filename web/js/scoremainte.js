@@ -53,6 +53,14 @@ function updateMatchScore( matchno, rowno )
   obj.name = 'player1no';
   obj.value = player1no;
   formObj.appendChild(obj);
+  var obj = document.createElement('input');
+  obj.name = 'player1name';
+  obj.value = p1val[1];
+  formObj.appendChild(obj);
+  var obj = document.createElement('input');
+  obj.name = 'player1class';
+  obj.value = p1val[2];
+  formObj.appendChild(obj);
 
   var player1score = document.getElementById('score1_' + rowno).value;
   var obj = document.createElement('input');
@@ -83,6 +91,14 @@ function updateMatchScore( matchno, rowno )
   var obj = document.createElement('input');
   obj.name = 'player2no';
   obj.value = player2no;
+  formObj.appendChild(obj);
+  var obj = document.createElement('input');
+  obj.name = 'player2name';
+  obj.value = p2val[1];
+  formObj.appendChild(obj);
+  var obj = document.createElement('input');
+  obj.name = 'player2class';
+  obj.value = p2val[2];
   formObj.appendChild(obj);
 
   var player2score = document.getElementById('score2_' + rowno).value;
