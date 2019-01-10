@@ -108,6 +108,11 @@ function updateMatchScore( matchno, rowno )
   obj.value = player2runout;
   formObj.appendChild(obj);
 
+  document.body.appendChild(formObj);
+
+  formObj.submit();
+
+  document.body.removeChild(formObj);
 
 }
 
