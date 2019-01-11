@@ -49,6 +49,27 @@
       return $result;
     }
 
+    function getLatestMatchdate()
+    {
+      $url = parse_url(getenv('DATABASE_URL'));
+
+      $dsn = sprintf('pgsql:host=%s;dbname=%s', $url['host'], substr($url['path'],1));
+
+      $pdo = new PDO($dsn, $url['user'], $url['pass']);
+
+      $sql = "select max(matchdate) as matchdate from matchdata";
+
+      $stmt = $pdo->prepare($sql);
+
+      $stmt->execute();
+
+      $result = $stmt->fetch();
+
+      $pdo = null;
+
+      return $result;
+    }
+
     function registMember($rows, $registDate, $member)
     {
       $url = parse_url(getenv('DATABASE_URL'));

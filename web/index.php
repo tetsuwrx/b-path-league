@@ -126,11 +126,12 @@ $app->get('/ranking', function() use($app) {
 
   $dateFrom = date("Y-m-d");
   $dateTo = date("Y-m-d");
+  $latest = "";
   $ranking = array();
   $rankingbase = array();
   $scorelist = array();
 
-  return $app['twig']->render('ranking.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking) );
+  return $app['twig']->render('ranking.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking, 'latest' => $latest) );
 });
 
 $app->get('/ranking2', function() use($app) {
@@ -138,11 +139,12 @@ $app->get('/ranking2', function() use($app) {
 
   $dateFrom = date("Y-m-d");
   $dateTo = date("Y-m-d");
+  $latest = "";
   $ranking = array();
   $rankingbase = array();
   $scorelist = array();
 
-  return $app['twig']->render('ranking2.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking) );
+  return $app['twig']->render('ranking2.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking, 'latest' => $latest) );
 });
 
 $app->get('/memberlist', function() use($app) {

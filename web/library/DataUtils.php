@@ -36,6 +36,21 @@
     }
 
     /*
+     * 対戦結果の最終登録日を取得する
+     */
+    function getLatestMatchdate()
+    {
+
+      $utils = new DBUtils();
+
+      $stmt = $utils->getLatestMatchdate($member);
+
+      $matchdate = $stmt['matchdate'];
+
+      return $matchdate;
+    }
+
+    /*
      * MemberList.xmlにメンバーを登録
      */
     function registMember($member)
