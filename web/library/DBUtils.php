@@ -307,9 +307,12 @@
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
       $sql = "update matchdata
-                 set player1score = :player1score
+                 set matchdate = :matchdate
+                   , player1no = :player1no
+                   , player1score = :player1score
                    , player1win = :player1win
                    , player1runout = :player1runout
+                   , player2no = :player2no
                    , player2score = :player2score
                    , player2win = :player2win
                    , player2runout = :player2runout
@@ -317,9 +320,12 @@
 
       $stmt = $pdo->prepare($sql);
 
+      $stmt->bindValue(":matchdate", $match['matchdate']);
+      $stmt->bindValue(":player1no", $match['player1no']);
       $stmt->bindValue(":player1score", $match['player1score']);
       $stmt->bindValue(":player1win", $match['player1win']);
       $stmt->bindValue(":player1runout", $match['player1runout']);
+      $stmt->bindValue(":player2no", $match['player2no']);
       $stmt->bindValue(":player2score", $match['player2score']);
       $stmt->bindValue(":player2win", $match['player2win']);
       $stmt->bindValue(":player2runout", $match['player2runout']);

@@ -23,7 +23,7 @@
     <tr>
       <td>{{ score.matchno }}</td>
       <td>
-        <label id="matchdate_{{ i }}">{{ score.matchdate }}</label>
+        <input class="entryDate" id="matchdate_{{ i }}" type="date" value="{{ score.matchdate }}">
       </td>
       <td>
         <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, 'class1_{{ i }}', 'p1Masu_{{ i }}')">
@@ -34,7 +34,7 @@
           <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" selected="selected">{{ member.name }}</option>
           {% set p1class = member.class %}
           {% else %}
-          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" disabled="">{{ member.name }}</option>
+          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" >{{ member.name }}</option>
           {% endif %}
         {% endfor %}
         </select>
@@ -65,7 +65,7 @@
           {% set p2class = member.class %}
           <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" selected="selected">{{ member.name }}</option>
           {% else %}
-          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" disabled="">{{ member.name }}</option>
+          <option value="{{ member.memberno }},{{ member.name }},{{ member.class }},{{ member.score }}" >{{ member.name }}</option>
           {% endif %}
         {% endfor %}
         </select>
