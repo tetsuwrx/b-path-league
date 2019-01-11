@@ -92,6 +92,35 @@ $app->get('/scorelist', function() use($app) {
   return $app['twig']->render('scorelist.twig', $param );
 });
 
+$app->get('/scorelist2', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+
+  $utils = new DataUtils();
+
+  $dateFrom = date("Y-m-d");
+  $dateTo = date("Y-m-d");
+  $scorelist = array();
+  $memberlist = $utils->getMemberList();
+  $membername = "";
+  $scoreresult = array();
+  $prevresult = array();
+  $nowresult = array();
+  $mostWinnerLoser = array();
+
+  $param = array( 'dateFrom' => $dateFrom
+                , 'dateTo' => $dateTo
+                , 'scorelist' => $scorelist
+                , 'memberlist' => $memberlist
+                , 'membername' => $membername
+                , 'scoreresult' => $scoreresult
+                , 'prevresult' => $prevresult
+                , 'nowresult' => $nowresult
+                , 'mostWinnerLoser' => $mostWinnerLoser
+                );
+
+  return $app['twig']->render('scorelist2.twig', $param );
+});
+
 $app->get('/ranking', function() use($app) {
   $app['monolog']->addDebug('logging output.');
 
