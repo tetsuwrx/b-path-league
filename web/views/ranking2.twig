@@ -83,6 +83,13 @@
 
       <table id="rankingData">
         <thead>
+          {% if latest != "" %}
+          <tr>
+            <th colspan="3">
+              {{ latest }}時点
+            </th>
+          </tr>
+          {% endif %}
           <tr>
             <th>順位</th>
             <th>なまえ</th>
