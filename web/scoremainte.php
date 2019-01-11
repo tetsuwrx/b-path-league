@@ -55,6 +55,7 @@ $dtutils->updateMatchScore($match);
 echo 'スコア修正を行いました：<br>';
 echo '試合番号：', $matchno, '<br>';
 echo '対戦日：', $matchdate, '<br>';
+echo 'Player1no：', $player1no, '<br>';
 echo 'なまえ１：', $player1name, '<br>';
 echo 'クラス１：', $player1class, '<br>';
 echo 'スコア１：', $player1score, '<br>';
