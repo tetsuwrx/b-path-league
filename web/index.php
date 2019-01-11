@@ -104,6 +104,18 @@ $app->get('/ranking', function() use($app) {
   return $app['twig']->render('ranking.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking) );
 });
 
+$app->get('/ranking2', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+
+  $dateFrom = date("Y-m-d");
+  $dateTo = date("Y-m-d");
+  $ranking = array();
+  $rankingbase = array();
+  $scorelist = array();
+
+  return $app['twig']->render('ranking2.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'scorelist' => $scorelist, 'rankingbase' => $rankingbase, 'ranking' => $ranking) );
+});
+
 $app->get('/memberlist', function() use($app) {
   $app['monolog']->addDebug('logging output.');
 
