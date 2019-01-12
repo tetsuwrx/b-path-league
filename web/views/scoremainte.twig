@@ -1,5 +1,16 @@
 {% extends "scoremaintelayout.html" %}
 {% block content %}
+<div class="main">
+  <div class="conditionForm">
+    <input type="date" name="dateFrom" class="dateForm" value="{{ dateFrom }}">
+  </div>
+  <div class="conditionForm">
+    <input type="date" name="dateTo" class="dateForm" value="{{ dateTo }}">
+  </div>
+  <div class="conditionForm">
+    <input type="submit" name="searchSubmit" class="searchSubmit" value="検索">
+  </div>
+</div>
 <table id="scorelist" class="scorelistTable">
   <thead>
     <tr>
