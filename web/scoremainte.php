@@ -40,6 +40,4 @@ foreach ($scorelist as $key => $row) {
 array_multisort( $tmp_matchno, SORT_ASC, SORT_NUMERIC,
                  $scorelist );
 
-return $app['twig']->render('scoremainte.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'memberlist' => $memberlist, 'scorelist' => $scorelist ) );
-
-?>
+echo $app['twig']->render('scoremainte.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'memberlist' => $memberlist, 'scorelist' => $scorelist ) );
