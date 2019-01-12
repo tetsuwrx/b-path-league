@@ -175,6 +175,11 @@ $app->get('/scoremainte', function() use($app) {
   $utils = new DataUtils();
 
   $memberlist = $utils->getMemberList();
+  foreach ($memberlist as $key => $row) {
+    $tmp_name[$key] = $row['name'];
+  }
+  array_multisort( $tmp_name, SORT_ASC, 
+                   $memberlist );
 
   $nowDate = date("Y-m-d");
 
@@ -184,7 +189,7 @@ $app->get('/scoremainte', function() use($app) {
   $dateFrom = date('Y-m-d', strtotime('first day of ' . $nowMonth));
   $dateTo = date("Y-m-d");
 
-  $scorelist = $utils->getScoreList('1900-01-01', $nowDate);
+  $scorelist = $utils->getScoreList($dateFrom, $dateTo);
 
   foreach ($scorelist as $key => $row) {
     $tmp_matchno[$key] = $row['matchno'];
