@@ -13,12 +13,13 @@
     </tr>
   </thead>
   {% if memberlist|length > 0 %}
+  {% set i = 1 %}
   {% for member in memberlist %}
   <tbody>
     <tr>
-      <td>{{ member.memberno }}</td>
+      <td><label id="no_{{ i }}">{{ member.memberno }}</label></td>
       <td>{{ member.registdate }}</td>
-      <td>{{ member.name }}</td>
+      <td><input type="text" id="name_{{ i }}" value="{{ member.name }}"></td>
       <td>
         <select name="class">
           {% if member.class == 'UC' %}
@@ -48,10 +49,24 @@
           {% endif %}
       </td>
       <td>{{ member.score }}</td>
-      <td>{{ member.sex }}</td>
+      <td>
+      <select id="sex_{{ i }}">
+        {% if  member.sex == '男' %}
+          <option value="男" selected><p>男</p></option>
+        {% else %}
+          <option value="男"><p>男</p></option>
+        {% endif %}
+        {% if  member.sex == '女' %}
+          <option value="女" selected><p>女</p></option>
+        {% else %}
+          <option value="女"><p>女</p></option>
+        {% endif %}
+      </select>
+      </td>
       <td><input type="button" value="編集"></td>
     </tr>
   </tbody>
+  {% set i = i + 1 %}
   {% endfor %}
   {% endif %}
 </table>
