@@ -34,6 +34,18 @@ function searchScore()
 
   formObj.action = '/scoremainte.php';
   formObj.method = 'post';
+
+  var dateFrom = document.getElementById('dateFrom').value;
+  var obj = document.createElement('input');
+  obj.name = 'dateFrom';
+  obj.value = dateFrom;
+  formObj.appendChild(obj);
+
+  var dateTo = document.getElementById('dateTo').value;
+  var obj = document.createElement('input');
+  obj.name = 'dateTo';
+  obj.value = dateTo;
+  formObj.appendChild(obj);
 }
 
 function updateMatchScore( matchno, rowno )
