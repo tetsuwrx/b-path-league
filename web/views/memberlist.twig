@@ -21,7 +21,7 @@
       <td>{{ member.registdate }}</td>
       <td><input type="text" id="name_{{ i }}" value="{{ member.name }}"></td>
       <td>
-        <select name="class" id="class_{{ i }}">
+        <select name="class" id="class_{{ i }}" onchange="setClass(this, {{ i }});">
           {% if member.class == 'UC' %}
             <option value="UC" selected><p name="memberclass">UC</p></option>
           {% else %}
@@ -63,7 +63,7 @@
         {% endif %}
       </select>
       </td>
-      <td><input type="button" value="編集"></td>
+      <td><input type="button" value="更新"></td>
     </tr>
   </tbody>
   {% set i = i + 1 %}
