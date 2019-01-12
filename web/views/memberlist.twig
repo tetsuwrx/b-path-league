@@ -21,7 +21,7 @@
       <td>{{ member.registdate }}</td>
       <td><input type="text" id="name_{{ i }}" value="{{ member.name }}"></td>
       <td>
-        <select name="class">
+        <select name="class" id="class_{{ i }}">
           {% if member.class == 'UC' %}
             <option value="UC" selected><p name="memberclass">UC</p></option>
           {% else %}
@@ -48,7 +48,7 @@
             <option value="SA"><p name="memberclass">SA</p></option>
           {% endif %}
       </td>
-      <td>{{ member.score }}</td>
+      <td><label id="score_{{ i }}">{{ member.score }}</label></td>
       <td>
       <select id="sex_{{ i }}">
         {% if  member.sex == '男' %}
@@ -70,4 +70,7 @@
   {% endfor %}
   {% endif %}
 </table>
+<p>
+  <a class="gotoMenu" href="/maintenance">メニューへ</a>
+</p>
 {% endblock %}
