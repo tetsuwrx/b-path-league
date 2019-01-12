@@ -28,11 +28,19 @@ function setClass(nameObj, classID, masuID)
   }
 }
 
+function searchScore()
+{
+  var formObj = document.createElement('form');
+
+  formObj.action = '/scoremainte.php';
+  formObj.method = 'post';
+}
+
 function updateMatchScore( matchno, rowno )
 {
   var formObj = document.createElement('form');
 
-  formObj.action = 'scoremainte.php';
+  formObj.action = 'updatescore.php';
   formObj.method = 'post';
 
   var obj = document.createElement('input');
