@@ -178,6 +178,9 @@ $app->get('/scoremainte', function() use($app) {
 
   $nowDate = date("Y-m-d");
 
+  $dateFrom = date("Y-m-d");
+  $dateTo = date("Y-m-d");
+
   $scorelist = $utils->getScoreList('1900-01-01', $nowDate);
 
   foreach ($scorelist as $key => $row) {
@@ -186,7 +189,7 @@ $app->get('/scoremainte', function() use($app) {
   array_multisort( $tmp_matchno, SORT_ASC, SORT_NUMERIC,
                    $scorelist );
 
-  return $app['twig']->render('scoremainte.twig', array( 'memberlist' => $memberlist, 'scorelist' => $scorelist ) );
+  return $app['twig']->render('scoremainte.twig', array('dateFrom' => $dateFrom, 'dateTo' => $dateTo, 'memberlist' => $memberlist, 'scorelist' => $scorelist ) );
 });
 
 $app->get('/bowlards', function() use($app) {
