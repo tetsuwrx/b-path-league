@@ -22,7 +22,7 @@
     <tr>
       <td>{{ i }}</td>
       <td>
-        <input class="entryDate" id="entryDate_{{ i }}" type="date" value="{{ entryDate }}">
+        <input class="entryDate" id="entryDate_{{ i }}" type="date" value="{{ entryDate }}" onchange="setEntryDate(this, '{{ i }}');">
       </td>
       <td>
         <select class="pName" id="player1name_{{ i }}" onchange="setClass(this, 'class1_{{ i }}', 'p1Masu_{{ i }}')">

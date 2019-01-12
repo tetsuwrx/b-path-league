@@ -205,3 +205,13 @@ function checkEntry()
   }
 
 }
+
+function setEntryDate( dateObj, rowno )
+{
+  for ( i = rowno; i < scorelist.rows.length; i++ )
+  {
+    var entryDate = document.getElementById('entryDate_' + i);
+
+    entryDate.value = dateObj.value;
+  }
+}
