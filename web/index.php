@@ -178,7 +178,10 @@ $app->get('/scoremainte', function() use($app) {
 
   $nowDate = date("Y-m-d");
 
-  $dateFrom = date("Y-m-d");
+  //現在の月を取得
+  $nowMonth = date('Y-n');
+  //現在の日付から、月初と月末の日付を取得
+  $dateFrom = date('Y-m-d', strtotime('first day of ' . $nowMonth));
   $dateTo = date("Y-m-d");
 
   $scorelist = $utils->getScoreList('1900-01-01', $nowDate);
