@@ -45,10 +45,10 @@ div.main{
 div.conditionForm{
   margin-left:1vw;
   float:left;
-  height:8vh;
+  height:4vh;
   width:30%;
-  margin-top:6vh;
-  margin-bottom:3vh;
+  margin-top:2vh;
+  margin-bottom:2vh;
   overflow:hidden;
   border:solid;
   border-radius:0.5em;
