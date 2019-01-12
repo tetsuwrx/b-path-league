@@ -46,6 +46,12 @@ function searchScore()
   obj.name = 'dateTo';
   obj.value = dateTo;
   formObj.appendChild(obj);
+
+  document.body.appendChild(formObj);
+
+  formObj.submit();
+
+  document.body.removeChild(formObj);
 }
 
 function updateMatchScore( matchno, rowno )

@@ -119,6 +119,8 @@ function registScore()
   document.body.appendChild(formObj);
 
   formObj.submit();
+
+  document.body.removeChild(formObj);
 }
 
 function checkEntry()
