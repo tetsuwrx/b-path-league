@@ -163,6 +163,11 @@ $app->get('/scoreregist', function() use($app) {
   $utils = new DataUtils();
 
   $memberlist = $utils->getMemberList();
+  foreach ($memberlist as $key => $row) {
+    $tmp_name[$key] = $row['name'];
+  }
+  array_multisort( $tmp_name, SORT_ASC,
+                   $memberlist );
 
   $entryDate = date("Y-m-d");
 
@@ -178,7 +183,7 @@ $app->get('/scoremainte', function() use($app) {
   foreach ($memberlist as $key => $row) {
     $tmp_name[$key] = $row['name'];
   }
-  array_multisort( $tmp_name, SORT_ASC, 
+  array_multisort( $tmp_name, SORT_ASC,
                    $memberlist );
 
   $nowDate = date("Y-m-d");
