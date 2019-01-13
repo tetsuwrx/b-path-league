@@ -27,7 +27,7 @@ $class = $_REQUEST['class'];
 $sex = $_REQUEST['sex'];
 
 $member = array( 'memberno' => $memberno
-              , 'membername' => $membername
+              , 'name' => $membername
               , 'class' => $class
               , 'sex' => $sex
           );
