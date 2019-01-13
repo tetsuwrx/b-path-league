@@ -20,7 +20,7 @@
   {% for i in 1..20 %}
   <tbody>
     <tr>
-      <td><input type="button" id="row_{{ i }}" value="{{ i }}" onclick="copyScore('{{ i }}');"></td>
+      <td><input type="button" id="row_{{ i }}" value="{{ i }}" onclick="copyScore({{ i }});"></td>
       <td>
         <input class="entryDate" id="entryDate_{{ i }}" type="date" value="{{ entryDate }}" onchange="setEntryDate(this, '{{ i }}');">
       </td>
