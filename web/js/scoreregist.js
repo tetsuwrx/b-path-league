@@ -215,3 +215,23 @@ function setEntryDate( dateObj, rowno )
     entryDate.value = dateObj.value;
   }
 }
+
+function copyScore( rowno )
+{
+  if ( rowno == 20 )
+  {
+    return;
+  }
+
+  var nextrow = rowno + 1;
+
+  document.getElementById('entryDate_' + nextrow).value = document.getElementById('entryDate_' + rowno).value;
+  document.getElementById('player1name_' + nextrow).value = document.getElementById('player1name_' + rowno).value;
+  document.getElementById('class1_' + nextrow).value = document.getElementById('class1_' + rowno).value;
+  document.getElementById('score1_' + nextrow).value = document.getElementById('score1_' + rowno).value;
+  document.getElementById('p1Masu_' + nextrow).value = document.getElementById('p1Masu_' + rowno).value;
+  document.getElementById('player2name_' + nextrow).value = document.getElementById('player2name_' + rowno).value;
+  document.getElementById('class2_' + nextrow).value = document.getElementById('class2_' + rowno).value;
+  document.getElementById('score2_' + nextrow).value = document.getElementById('score2_' + rowno).value;
+  document.getElementById('p2Masu_' + nextrow).value = document.getElementById('p2Masu_' + rowno).value;
+}
