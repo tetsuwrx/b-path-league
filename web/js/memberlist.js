@@ -31,7 +31,7 @@ function updateMember( rowno )
 {
   var formObj = document.createElement('form');
 
-  formObj.action = 'updatescore.php';
+  formObj.action = 'updatemember.php';
   formObj.method = 'post';
 
   var obj = document.createElement('input');
@@ -53,4 +53,10 @@ function updateMember( rowno )
   obj.name = 'sex';
   obj.value = document.getElementById('sex_' + rowno).value;
   formObj.appendChild(obj);
+
+  document.body.appendChild(formObj);
+
+  formObj.submit();
+
+  document.body.removeChild(formObj);
 }
