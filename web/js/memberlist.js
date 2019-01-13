@@ -36,7 +36,7 @@ function updateMember( rowno )
 
   var obj = document.createElement('input');
   obj.name = 'memberno';
-  obj.value = document.getElementById('no_' + rowno).innetText;
+  obj.value = document.getElementById('no_' + rowno).innerText;
   formObj.appendChild(obj);
 
   var obj = document.createElement('input');
