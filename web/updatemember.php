@@ -36,8 +36,8 @@ $member = array( 'memberno' => $memberno
 $dtutils->updateMember($memberno, $member);
 
 echo 'メンバーの修正を行いました：<br>';
-echo 'メンバーNo：', $membername, '<br>';
-echo 'なまえ：', $matchdate, '<br>';
+echo 'メンバーNo：', $memberno, '<br>';
+echo 'なまえ：', $membername, '<br>';
 echo 'クラス：', $class, '<br>';
 echo '性別：', $sex, '<br>';
 

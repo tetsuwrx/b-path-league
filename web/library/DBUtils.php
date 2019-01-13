@@ -112,12 +112,13 @@
 
       $pdo = new PDO($dsn, $url['user'], $url['pass']);
 
-      $sql = "update members set class = :class, score = :score, sex = :sex where memberno = :memberno";
+      $sql = "update members set name = :name, class = :class, score = :score, sex = :sex where memberno = :memberno";
 
       $stmt = $pdo->prepare($sql);
 
       $score = $this->getScore( $member['class'] );
 
+      $stmt->bindValue(":name", $member['name']);
       $stmt->bindValue(":class", $member['class']);
       $stmt->bindValue(":score", $score);
       $stmt->bindValue(":sex", $member['sex']);
