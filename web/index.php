@@ -210,6 +210,11 @@ $app->get('/bowlards', function() use($app) {
   return $app['twig']->render('bowlard.twig');
 });
 
+$app->get('/bowlards_score', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $app['twig']->render('bowlard_score.twig');
+});
+
 $app->get('/admin', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('auth.twig');
